@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "D:/ownCloud/Documents/Projects/RC6502/RC6502 RAM/RC6502 RAM.sch")
-    (date "06/05/2017 21:17:26")
+    (date "14/05/2017 21:19:26")
     (tool "Eeschema 4.0.6")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -231,14 +231,14 @@
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive)))))
   (libraries
-    (library (logical memory)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\memory.lib"))
     (library (logical device)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib"))
     (library (logical conn)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\conn.lib"))
     (library (logical 74xx)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\74xx.lib")))
+      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\74xx.lib"))
+    (library (logical memory)
+      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\memory.lib")))
   (nets
     (net (code 1) (name "Net-(J3-Pad23)")
       (node (ref J3) (pin 23)))
