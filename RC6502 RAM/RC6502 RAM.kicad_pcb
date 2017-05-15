@@ -3,7 +3,7 @@
   (general
     (links 48)
     (no_connects 0)
-    (area 88.824999 101.524999 188.035001 149.935001)
+    (area 86.925 87.843332 190.035 159.215001)
     (thickness 1.6)
     (drawings 50)
     (tracks 419)
@@ -64,8 +64,8 @@
     (aux_axis_origin 0 0)
     (visible_elements 7FFFFFFF)
     (pcbplotparams
-      (layerselection 0x00030_80000001)
-      (usegerberextensions false)
+      (layerselection 0x011fc_80000001)
+      (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
       (plotframeref false)
@@ -87,7 +87,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory "D:/ownCloud/Documents/Projects/RC6502/RC6502 RAM/export/"))
   )
 
   (net 0 "")

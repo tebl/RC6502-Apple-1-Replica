@@ -1,4 +1,4 @@
-update=08/05/2017 23:38:53
+update=15/05/2017 22:14:45
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,13 @@ LibName30=65xx
 LibName31=C:/Program Files/KiCad/share/kicad/library/atmel
 LibName32=w_connectors
 LibName33=C:/Program Files/KiCad/share/kicad/library/switches
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 Serial IO/export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

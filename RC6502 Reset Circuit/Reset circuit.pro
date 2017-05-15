@@ -1,4 +1,4 @@
-update=03/05/2017 18:10:59
+update=15/05/2017 22:21:42
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,13 @@ LibName30=C:/Program Files/KiCad/share/kicad/library/analog_devices
 LibName31=C:/Program Files/KiCad/share/kicad/library/analog_switches
 LibName32=C:/Program Files/KiCad/share/kicad/library/switches
 LibName33=C:/Program Files/KiCad/share/kicad/library/Oscillators
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 Reset Circuit/export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
