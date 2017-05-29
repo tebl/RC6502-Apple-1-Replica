@@ -154,7 +154,7 @@ A0
 Text Notes 8375 7500 2    60   ~ 0
 RC6502 Pageable RAM
 Text Notes 10625 7650 2    60   ~ 0
-A
+B
 NoConn ~ -500 7850
 $Comp
 L CONN_01X39 J1
@@ -254,45 +254,45 @@ A14_W
 $Comp
 L 74HCT00 U2
 U 4 1 590F02B0
-P 4400 4950
-F 0 "U2" H 4400 5000 50  0000 C CNN
-F 1 "74HCT00" H 4400 4850 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 4400 4950 50  0001 C CNN
-F 3 "" H 4400 4950 50  0001 C CNN
-	4    4400 4950
+P 4375 5450
+F 0 "U2" H 4375 5500 50  0000 C CNN
+F 1 "74HCT00" H 4375 5350 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 4375 5450 50  0001 C CNN
+F 3 "" H 4375 5450 50  0001 C CNN
+	4    4375 5450
 	-1   0    0    1   
 $EndComp
 $Comp
 L 74HCT00 U2
 U 3 1 590F036D
-P 3050 4950
-F 0 "U2" H 3050 5000 50  0000 C CNN
-F 1 "74HCT00" H 3050 4850 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 3050 4950 50  0001 C CNN
-F 3 "" H 3050 4950 50  0001 C CNN
-	3    3050 4950
+P 3025 5450
+F 0 "U2" H 3025 5500 50  0000 C CNN
+F 1 "74HCT00" H 3025 5350 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 3025 5450 50  0001 C CNN
+F 3 "" H 3025 5450 50  0001 C CNN
+	3    3025 5450
 	-1   0    0    1   
 $EndComp
 $Comp
 L 74HCT00 U2
 U 2 1 590F04E0
-P 1850 5050
-F 0 "U2" H 1850 5100 50  0000 C CNN
-F 1 "74HCT00" H 1850 4950 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 1850 5050 50  0001 C CNN
-F 3 "" H 1850 5050 50  0001 C CNN
-	2    1850 5050
+P 1825 5550
+F 0 "U2" H 1825 5600 50  0000 C CNN
+F 1 "74HCT00" H 1825 5450 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 1825 5550 50  0001 C CNN
+F 3 "" H 1825 5550 50  0001 C CNN
+	2    1825 5550
 	-1   0    0    1   
 $EndComp
-Text GLabel 5000 4850 2    60   Input ~ 0
+Text GLabel 4975 5350 2    60   Input ~ 0
 A15
-Text GLabel 5000 5050 2    60   Input ~ 0
+Text GLabel 4975 5550 2    60   Input ~ 0
 A14
-Text GLabel 2450 5150 2    60   Input ~ 0
+Text GLabel 2425 5650 2    60   Input ~ 0
 A13
 Text GLabel 1300 2800 0    60   Input ~ 0
 CS
-Text GLabel 1250 5050 0    60   Output ~ 0
+Text GLabel 1225 5550 0    60   Output ~ 0
 CS_IN
 $Comp
 L Jumper_NO_Small JP4
@@ -353,17 +353,17 @@ Connection ~ 8250 5950
 Wire Wire Line
 	8250 5100 8250 4850
 Wire Wire Line
-	3800 4850 3650 4850
-Connection ~ 3800 4950
+	3775 5350 3625 5350
+Connection ~ 3775 5450
 Wire Wire Line
-	3800 4850 3800 5050
+	3775 5350 3775 5550
 Wire Wire Line
-	3800 5050 3650 5050
+	3775 5550 3625 5550
 Text GLabel 4150 3850 2    60   Input ~ 0
 PAGE_EN
 Text GLabel 4150 4350 2    60   Input ~ 0
 CS_IN
-Text GLabel 1250 4100 0    60   Output ~ 0
+Text GLabel 850  4500 0    60   Output ~ 0
 CS
 $Comp
 L 74HCT00 U2
@@ -418,8 +418,6 @@ Wire Wire Line
 Wire Wire Line
 	3950 3750 4050 3750
 Connection ~ 4050 3850
-Wire Wire Line
-	2750 4350 2750 4200
 Wire Wire Line
 	2750 4200 2450 4200
 Wire Wire Line
@@ -506,4 +504,29 @@ Text GLabel 1125 2600 0    60   Input ~ 0
 VCC
 Wire Wire Line
 	1425 2600 1550 2600
+$Comp
+L Jumper_NC_Dual JP5
+U 1 1 592A3680
+P 1075 4500
+F 0 "JP5" H 1125 4400 50  0000 L CNN
+F 1 "Page mode" H 1075 4600 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm" H 1075 4500 50  0001 C CNN
+F 3 "" H 1075 4500 50  0001 C CNN
+	1    1075 4500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	850  4500 975  4500
+Wire Wire Line
+	1075 4250 1075 4100
+Wire Wire Line
+	1075 4100 1250 4100
+Wire Wire Line
+	1075 4875 1075 4750
+Wire Wire Line
+	2750 4200 2750 4350
+Wire Wire Line
+	1075 4875 1250 4875
+Text GLabel 1250 4875 2    60   Input ~ 0
+CS_IN
 $EndSCHEMATC
