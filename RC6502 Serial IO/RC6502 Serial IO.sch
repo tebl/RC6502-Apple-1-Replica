@@ -217,7 +217,7 @@ NoConn ~ 3900 4150
 Text GLabel 2650 2850 0    60   Input ~ 0
 VCC
 Text GLabel 3950 950  2    60   Input ~ 0
-KBD_DA
+KBD_STROBE
 Text GLabel 3950 1050 2    60   Output ~ 0
 KBD_READY
 NoConn ~ 3950 1150
@@ -302,8 +302,6 @@ F 3 "" H 5950 2800 50  0001 C CNN
 	1    5700 1800
 	1    0    0    -1  
 $EndComp
-Text GLabel 2650 1750 0    60   Output ~ 0
-KBD_D7
 Text GLabel 5200 1900 0    60   Input ~ 0
 OUT_D0
 Text GLabel 5200 2000 0    60   Input ~ 0
@@ -463,12 +461,10 @@ Wire Wire Line
 	8350 1450 8350 1300
 Wire Wire Line
 	8350 1300 8100 1300
-Text GLabel 5200 2600 0    60   Output ~ 0
-OUT_D7
 Text GLabel 7400 1400 0    60   Input ~ 0
 KBD_READY
 Text GLabel 7400 1600 0    60   Output ~ 0
-KBD_DA
+KBD_STROBE
 Text GLabel 7400 1700 0    60   Output ~ 0
 OUT_READY
 Text GLabel 7400 1500 0    60   Input ~ 0
@@ -617,4 +613,11 @@ NoConn ~ 7400 1200
 NoConn ~ 7400 1100
 NoConn ~ 7400 1000
 NoConn ~ 7400 1300
+NoConn ~ 5200 2600
+Text GLabel 2025 1600 1    60   Input ~ 0
+VCC
+Wire Wire Line
+	2025 1600 2025 1750
+Wire Wire Line
+	2025 1750 2650 1750
 $EndSCHEMATC
