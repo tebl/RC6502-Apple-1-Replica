@@ -25,6 +25,7 @@ void setup() {
   Serial.println("Initializing...");
   configure_pins();
   configure_bridge();
+  output_status();
   Serial.println("Initialization done!");
 }
 
@@ -48,6 +49,16 @@ void configure_bridge() {
   for (int i = 8; i <= 15; i++) {
     bridge.pinMode(i, OUTPUT);
   }
+}
+
+void output_status() {
+  Serial.print("Video DA: ");
+  Serial.println(digitalRead(VIDEO_DA));
+  Serial.print("Video D0-D6: 0x");
+  Serial.println(bridge.readPort(IO_VIDEO) & 127, HEX);
+
+  Serial.print("KBD RDY: ");
+  Serial.println(digitalRead(KBD_READY));
 }
 
 void serial_receive() {
