@@ -260,7 +260,7 @@ F 3 "" H 1250 2750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 2650 2650 0    60   Input ~ 0
-OUT_READY
+OUT_RDA
 Text GLabel 950  2550 0    60   Output ~ 0
 OUT_DA
 Text GLabel 2650 1050 0    60   Input ~ 0
@@ -466,7 +466,7 @@ KBD_READY
 Text GLabel 7400 1600 0    60   Output ~ 0
 KBD_STROBE
 Text GLabel 7400 1700 0    60   Output ~ 0
-OUT_READY
+OUT_RDA
 Text GLabel 7400 1500 0    60   Input ~ 0
 OUT_DA
 Text GLabel 5200 1000 0    60   Output ~ 0
@@ -614,10 +614,6 @@ NoConn ~ 7400 1100
 NoConn ~ 7400 1000
 NoConn ~ 7400 1300
 NoConn ~ 5200 2600
-Text GLabel 2025 1600 1    60   Input ~ 0
-VCC
-Wire Wire Line
-	2025 1600 2025 1750
-Wire Wire Line
-	2025 1750 2650 1750
+Text GLabel 2650 1750 0    60   Input ~ 0
+KBD_D7
 $EndSCHEMATC
