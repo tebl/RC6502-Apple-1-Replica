@@ -1,4 +1,4 @@
-update=14/05/2017 21:25:43
+update=31/05/2017 01:08:48
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,13 @@ LibName29=valves
 LibName30=C:/Program Files/KiCad/share/kicad/library/Zilog
 LibName31=65xx
 LibName32=C:/Program Files/KiCad/share/kicad/library/Oscillators
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 CPU/export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

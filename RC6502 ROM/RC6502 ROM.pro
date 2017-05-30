@@ -1,4 +1,4 @@
-update=07/05/2017 00:01:40
+update=31/05/2017 01:10:07
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,13 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Program Files/KiCad/share/kicad/library/atmel
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 ROM/export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
