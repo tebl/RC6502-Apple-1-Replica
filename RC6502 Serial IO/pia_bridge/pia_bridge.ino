@@ -2,13 +2,15 @@
 #include <MCP23S17.h>
 
 #define IO_SS 10
+#define IO_VIDEO 0
+#define IO_VIDEO_D0 0
+#define IO_VIDEO_D6 6
+
+#define IO_KBD 1
 #define IO_KBD_D0 8
 #define IO_KBD_D6 14
 #define IO_KBD_DA 15
 
-#define IO_VIDEO_D0 0
-#define IO_VIDEO_D6 6
-#define IO_VIDEO_DA 7
 
 #define KBD_READY 2
 #define KBD_STROBE 4
@@ -37,10 +39,10 @@ void configure_bridge() {
   bridge.begin();
 
   /* Configure video section */
-  for (int i = 0; i <= 6; i++) {
+  for (int i = IO_VIDEO_D0; i <= IO_VIDEO_D6; i++) {
     bridge.pinMode(i, INPUT);
   }
-  bridge.pinMode(7, OUTPUT);
+  bridge.pinMode(7, INPUT_PULLUP);
 
   /* Configure keyboard section */
   for (int i = 8; i <= 15; i++) {
@@ -48,54 +50,17 @@ void configure_bridge() {
   }
 }
 
-byte incomingByte;
-void handle_input() {
+void serial_receive() {
   if (Serial.available() > 0) {
-    digitalWrite(KBD_STROBE, LOW);
-    incomingByte = Serial.read();
-
-    /* Convert ESC key */
-    if (incomingByte == 203) {
-      incomingByte = 27;
-    }
-
-    /* Convert lowercase keys to UPPERCASE */
-    if (incomingByte > 96 && incomingByte < 123) {
-      incomingByte -= 32;
-    }
-
-    if (incomingByte == 65) {
-      incomingByte = 10;
-    }
-    if (incomingByte == 66) {
-      incomingByte = 13;
-    }
-
-    /* Output the actual keys as long as it's supported */
-    if (incomingByte < 96) {
-      bridge.writePort(1, reverse(incomingByte));
-      digitalWrite(KBD_STROBE, HIGH);
-      delay(20);
-      digitalWrite(KBD_STROBE, LOW);
-      //Serial.print("TX ");
-      //print_chr(incomingByte);
-    }
+    pia_send( Serial.read() );
   }
 }
 
-unsigned char reverse( unsigned char x ) 
-{ 
-   x = ((x >> 1) & 0x55) | ((x << 1) & 0xaa); 
-   x = ((x >> 2) & 0x33) | ((x << 2) & 0xcc); 
-   x = ((x >> 4) & 0x0f) | ((x << 4) & 0xf0); 
-   return x;    
-}
-
-void handle_output() {
+void serial_transmit() {
   digitalWrite(VIDEO_RDA, HIGH);
-
+  delay(12);
   if (digitalRead(VIDEO_DA) == HIGH) {
-    char incomingByte = bridge.readPort(0) & 127;
+    char incomingByte = bridge.readPort(IO_VIDEO) & 127;
     digitalWrite(VIDEO_RDA, LOW);
     delay(12);
 
@@ -111,7 +76,44 @@ void print_chr(char c) {
     Serial.println(")");
 }
 
+void pia_send(byte c) {
+  /* Make sure STROBE signal is off */
+  digitalWrite(KBD_STROBE, LOW);
+
+  /* Convert ESC key */
+  if (c == 203) {
+    c = 27;
+  }
+
+  /* Convert lowercase keys to UPPERCASE */
+  if (c > 96 && c < 123) {
+    c -= 32;
+  }
+
+  /* Output the actual keys as long as it's supported */
+  if (c < 96) {
+    bridge.writePort(IO_KBD, c | 128);
+    digitalWrite(KBD_STROBE, HIGH);
+    /*
+    while(digitalRead(KBD_READY) != LOW) {
+      Serial.print("-");
+      delay(1);
+    }
+    */
+    delay(23);
+    digitalWrite(KBD_STROBE, LOW);
+    /*
+    while(digitalRead(KBD_READY) == HIGH) {
+      Serial.print(".");
+      delay(1);
+    }
+    */
+    Serial.print("TX ");
+    print_chr(c);
+  }
+}
+
 void loop() {
-  handle_input();
-  handle_output();
+  serial_receive();
+  serial_transmit();
 }
