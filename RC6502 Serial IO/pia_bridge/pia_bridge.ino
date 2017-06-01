@@ -1,7 +1,9 @@
 #include <SPI.h>
 #include <MCP23S17.h>
 
-#define debug 0
+#define DEBUG 0
+#define KBD_INTERRUPT_ENABLE true
+#define KBD_SEND_TIMEOUT 23
 
 #define IO_SS 10
 
@@ -62,7 +64,7 @@ void debug_value(String description, byte value) {
 }
 
 void debug_value(String description, byte value, int level) {
-  if (debug < level) return;
+  if (DEBUG < level) return;
   Serial.print(description);
   Serial.print(": ");
   print_hex(value);
@@ -99,21 +101,31 @@ void pia_send(int c) {
   /* Output the actual keys as long as it's supported */
   if (c < 96) {
     bridge.writePort(IO_KBD, c | 128);
+
     digitalWrite(KBD_STROBE, HIGH);
-    /*
-    while(digitalRead(KBD_READY) != LOW) {
-      Serial.print("-");
-      delay(1);
+    if (KBD_INTERRUPT_ENABLE) {
+      byte timeout;
+
+      /* Wait for KBD_READY (CA2) to go HIGH */
+      timeout = KBD_SEND_TIMEOUT;
+      while(digitalRead(KBD_READY) != HIGH) {
+        delay(1);
+        if (timeout == 0) break;
+        else timeout--;
+      }
+      digitalWrite(KBD_STROBE, LOW);
+
+      /* Wait for KBD_READY (CA2) to go LOW */
+      timeout = KBD_SEND_TIMEOUT;
+      while(digitalRead(KBD_READY) != LOW) {
+        delay(1);
+        if (timeout == 0) break;
+        else timeout--;
+      }
+    } else {
+      delay(KBD_SEND_TIMEOUT);
+      digitalWrite(KBD_STROBE, LOW);
     }
-    */
-    delay(23);
-    digitalWrite(KBD_STROBE, LOW);
-    /*
-    while(digitalRead(KBD_READY) == HIGH) {
-      Serial.print(".");
-      delay(1);
-    }
-    */
   }
 }
 
