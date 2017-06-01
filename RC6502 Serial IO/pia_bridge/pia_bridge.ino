@@ -1,32 +1,30 @@
 #include <SPI.h>
 #include <MCP23S17.h>
 
+#define debug 0
+
 #define IO_SS 10
+
 #define IO_VIDEO 0
 #define IO_VIDEO_D0 0
 #define IO_VIDEO_D6 6
+#define VIDEO_RDA 5
+#define VIDEO_DA 3
 
 #define IO_KBD 1
 #define IO_KBD_D0 8
 #define IO_KBD_D6 14
 #define IO_KBD_DA 15
-
-
 #define KBD_READY 2
 #define KBD_STROBE 4
-
-#define VIDEO_RDA 5
-#define VIDEO_DA 3
 
 MCP23S17 bridge(&SPI, IO_SS, 0);
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Initializing...");
   configure_pins();
   configure_bridge();
   output_status();
-  Serial.println("Initialization done!");
 }
 
 void configure_pins() {
@@ -52,55 +50,51 @@ void configure_bridge() {
 }
 
 void output_status() {
-  Serial.print("Video DA: ");
-  Serial.println(digitalRead(VIDEO_DA));
-  Serial.print("Video D0-D6: 0x");
-  Serial.println(bridge.readPort(IO_VIDEO) & 127, HEX);
+  Serial.println("RC6502 Apple 1 Replica");
+  
+  debug_value("Video DA", digitalRead(VIDEO_DA));
+  debug_value("Video D0-D6", bridge.readPort(IO_VIDEO) & 127);
+  debug_value("Keyboard RDY", digitalRead(KBD_READY));
+}
 
-  Serial.print("KBD RDY: ");
-  Serial.println(digitalRead(KBD_READY));
+void debug_value(String description, byte value) {
+  debug_value(description, value, 1);
+}
+
+void debug_value(String description, byte value, int level) {
+  if (debug < level) return;
+  Serial.print(description);
+  Serial.print(": ");
+  print_hex(value);
+}
+
+void print_hex(byte value) {
+  print_hex(value, true);
+}
+
+void print_hex(byte value, bool newline) {
+  if (value <= 0xF) {
+    Serial.print("0x0");
+  } else {
+    Serial.print("0x");
+  }
+  
+  if (newline) Serial.println(value, HEX);
+  else Serial.print(value, HEX);
 }
 
 void serial_receive() {
   if (Serial.available() > 0) {
-    pia_send( Serial.read() );
+    int c = Serial.read();
+    debug_value("PIA RX", c, 10);
+    pia_send(c);
   }
 }
 
-void serial_transmit() {
-  digitalWrite(VIDEO_RDA, HIGH);
-  delay(12);
-  if (digitalRead(VIDEO_DA) == HIGH) {
-    char incomingByte = bridge.readPort(IO_VIDEO) & 127;
-    digitalWrite(VIDEO_RDA, LOW);
-    delay(12);
-
-    //Serial.print("RX ");
-    //print_chr(incomingByte);
-    Serial.print(incomingByte);
-  }
-}
-
-void print_chr(char c) {
-    Serial.print((char) c);
-    Serial.print(" (0x");
-    Serial.print(c, HEX);
-    Serial.println(")");
-}
-
-void pia_send(byte c) {
+void pia_send(int c) {
   /* Make sure STROBE signal is off */
   digitalWrite(KBD_STROBE, LOW);
-
-  /* Convert ESC key */
-  if (c == 203) {
-    c = 27;
-  }
-
-  /* Convert lowercase keys to UPPERCASE */
-  if (c > 96 && c < 123) {
-    c -= 32;
-  }
+  c = map_to_ascii(c);
 
   /* Output the actual keys as long as it's supported */
   if (c < 96) {
@@ -120,8 +114,46 @@ void pia_send(byte c) {
       delay(1);
     }
     */
-    //Serial.print("TX ");
-    //print_chr(c);
+  }
+}
+
+char map_to_ascii(int c) {
+  /* Convert ESC key */
+  if (c == 203) {
+    c = 27;
+  }
+
+  /* Ctrl A-Z */
+  if (c > 576 && c < 603) {
+    c -= 576;
+  }
+
+  /* Convert lowercase keys to UPPERCASE */
+  if (c > 96 && c < 123) {
+    c -= 32;
+  }
+  
+  return c;
+}
+
+void serial_transmit() {
+  digitalWrite(VIDEO_RDA, HIGH);
+
+  if (digitalRead(VIDEO_DA) == HIGH) {
+    char c = bridge.readPort(IO_VIDEO) & 127;
+    debug_value("PIA TX", c, 10);
+    digitalWrite(VIDEO_RDA, LOW);
+    delay(12);
+
+    send_ascii(c);
+  }
+}
+
+char send_ascii(char c) {
+  switch (c) {
+    case 0x0d: Serial.println(); /* Replace CR with LF */
+    default:
+      Serial.print(c);
   }
 }
 
