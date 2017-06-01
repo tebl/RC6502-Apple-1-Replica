@@ -115,26 +115,14 @@ F 3 "" H 2150 2700 60  0000 C CNN
 	1    2650 2500
 	1    0    0    -1  
 $EndComp
-Text GLabel 3300 1800 2    60   Input ~ 0
+Text GLabel 3750 1475 1    60   Input ~ 0
 VCC
-Text GLabel 3300 3500 2    60   Output ~ 0
+Text GLabel 3750 3875 3    60   Output ~ 0
 GND
 Text GLabel 9350 3800 0    60   Input ~ 0
-WR
+RW
 Text GLabel 3300 2200 2    60   Output ~ 0
-R/W
-Text GLabel 9350 3900 0    60   Input ~ 0
-RD
-Text GLabel 9350 3700 0    60   Input ~ 0
-MREQ
-Text GLabel 9350 4000 0    60   Input ~ 0
-IORQ
-Text GLabel 10425 1650 3    60   Input ~ 0
-GND
-Text GLabel 10600 1525 2    60   Input ~ 0
-MREQ
-Text GLabel 10250 1525 0    60   Input ~ 0
-IORQ
+RW
 Wire Wire Line
 	675  1500 675  2300
 Wire Wire Line
@@ -154,32 +142,6 @@ Wire Wire Line
 	1025 1900 2000 1900
 Wire Wire Line
 	1025 2100 2000 2100
-Wire Wire Line
-	10250 1525 10600 1525
-Wire Wire Line
-	10425 1525 10425 1650
-Connection ~ 10425 1525
-Text GLabel 5200 1050 0    60   Input ~ 0
-R/W
-Text GLabel 5525 1050 2    60   Output ~ 0
-WR
-Wire Wire Line
-	5200 1050 5525 1050
-$Comp
-L 74HCT04 U2
-U 1 1 590BCEA0
-P 5300 1525
-F 0 "U2" H 5450 1625 50  0000 C CNN
-F 1 "74HCT04" H 5500 1425 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 5300 1525 50  0001 C CNN
-F 3 "" H 5300 1525 50  0001 C CNN
-	1    5300 1525
-	1    0    0    -1  
-$EndComp
-Text GLabel 4850 1525 0    60   Input ~ 0
-R/W
-Text GLabel 5750 1525 2    60   Output ~ 0
-RD
 Text GLabel 2000 2400 0    60   Output ~ 0
 A0
 Text GLabel 2000 2500 0    60   Output ~ 0
@@ -263,8 +225,6 @@ A0
 NoConn ~ 3300 2100
 NoConn ~ 3300 2000
 NoConn ~ 2000 2000
-NoConn ~ 2000 1800
-NoConn ~ 2000 2200
 Text GLabel 3300 1900 2    60   Input ~ 0
 CLOCK
 Text GLabel 9350 3500 0    60   BiDi ~ 0
@@ -334,18 +294,14 @@ Wire Wire Line
 $Comp
 L C C1
 U 1 1 590DA9CE
-P 7575 1300
-F 0 "C1" H 7600 1400 50  0000 L CNN
-F 1 "100nF" H 7600 1200 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 7613 1150 50  0001 C CNN
-F 3 "" H 7575 1300 50  0001 C CNN
-	1    7575 1300
+P 7125 1300
+F 0 "C1" H 7150 1400 50  0000 L CNN
+F 1 "100nF" H 7150 1200 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 7163 1150 50  0001 C CNN
+F 3 "" H 7125 1300 50  0001 C CNN
+	1    7125 1300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7125 1150 7950 1150
-Wire Wire Line
-	7125 1450 7950 1450
 Text GLabel 7125 1575 3    60   Output ~ 0
 GND
 Text GLabel 7125 1000 1    60   Input ~ 0
@@ -354,19 +310,6 @@ Wire Wire Line
 	7125 1000 7125 1150
 Wire Wire Line
 	7125 1450 7125 1575
-$Comp
-L C C2
-U 1 1 590DB42B
-P 7950 1300
-F 0 "C2" H 7975 1400 50  0000 L CNN
-F 1 "100nF" H 7975 1200 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 7988 1150 50  0001 C CNN
-F 3 "" H 7950 1300 50  0001 C CNN
-	1    7950 1300
-	1    0    0    -1  
-$EndComp
-Connection ~ 7575 1150
-Connection ~ 7575 1450
 $Comp
 L CXO_DIP14 X1
 U 1 1 5918B14F
@@ -436,4 +379,21 @@ Wire Wire Line
 	1900 1600 2000 1600
 Text Notes 10600 7650 0    60   ~ 0
 B
+Wire Wire Line
+	3750 1475 3750 1800
+Wire Wire Line
+	3750 1800 3300 1800
+Wire Wire Line
+	3750 3500 3750 3875
+Wire Wire Line
+	3750 3500 3300 3500
+NoConn ~ 9350 3700
+Text GLabel 9350 3900 0    60   Input ~ 0
+RDY
+Text GLabel 9350 4000 0    60   Input ~ 0
+SYNC
+Text GLabel 2000 1800 0    60   Output ~ 0
+RDY
+Text GLabel 2000 2200 0    60   Output ~ 0
+SYNC
 $EndSCHEMATC
