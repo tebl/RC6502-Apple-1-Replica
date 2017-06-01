@@ -196,9 +196,9 @@ F 3 "" H 3300 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 10600 4500 0    60   Output ~ 0
-WR
+RW
 Text GLabel 3950 2850 2    60   Input ~ 0
-WR
+RW
 Text GLabel 2700 3550 0    60   Input ~ 0
 A13
 Text GLabel 2700 3650 0    60   Input ~ 0

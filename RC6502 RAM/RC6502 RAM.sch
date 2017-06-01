@@ -55,7 +55,7 @@ F 3 "" H 1950 1775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9100 4450 0    60   Input ~ 0
-WR
+RW
 Text GLabel 9100 3750 0    60   Input ~ 0
 GND
 Text GLabel 9100 3850 0    60   Input ~ 0
@@ -133,36 +133,8 @@ NoConn ~ 9100 4250
 NoConn ~ 9100 4650
 NoConn ~ 9100 5550
 NoConn ~ 9100 5650
-Text GLabel 7850 2950 1    60   Input ~ 0
-VCC
-Text GLabel 7625 4075 0    60   Output ~ 0
-PAGE_EN
 Text GLabel 8425 5850 0    60   Output ~ 0
 PAGE
-Text GLabel 8025 4075 2    60   Input ~ 0
-PAGE
-$Comp
-L R R1
-U 1 1 590BED30
-P 7850 3250
-F 0 "R1" V 7930 3250 50  0000 C CNN
-F 1 "10k" V 7850 3250 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7780 3250 50  0001 C CNN
-F 3 "" H 7850 3250 50  0001 C CNN
-	1    7850 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X02 J1
-U 1 1 590C6113
-P 8050 3575
-F 0 "J1" H 8050 3725 50  0000 C CNN
-F 1 "Page PullUp" V 8150 3575 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 8050 3575 50  0001 C CNN
-F 3 "" H 8050 3575 50  0001 C CNN
-	1    8050 3575
-	1    0    0    -1  
-$EndComp
 Text GLabel 1450 2425 0    60   Input ~ 0
 A14
 Text GLabel 1450 2325 0    60   Input ~ 0
@@ -235,7 +207,7 @@ F 3 "" H 4875 1425 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Text GLabel 6875 1325 2    60   Input ~ 0
-WR
+RW
 $Comp
 L 74HCT00 U2
 U 4 1 590BAFC8
@@ -290,15 +262,6 @@ F 3 "" H 3925 3050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8675 5850 9100 5850
-Wire Wire Line
-	7625 4075 8025 4075
-Wire Wire Line
-	7850 3625 7850 4075
-Connection ~ 7850 4075
-Wire Wire Line
-	7850 3525 7850 3400
-Wire Wire Line
-	7850 3100 7850 2950
 Wire Wire Line
 	2450 1975 3100 1975
 Wire Wire Line
@@ -394,4 +357,41 @@ Wire Wire Line
 	8450 1125 8450 1225
 Wire Wire Line
 	8450 1625 8450 1525
+Wire Wire Line
+	7850 3100 7850 2950
+Wire Wire Line
+	7850 3525 7850 3400
+Connection ~ 7850 4075
+Wire Wire Line
+	7850 3625 7850 4075
+Wire Wire Line
+	7625 4075 8025 4075
+$Comp
+L CONN_01X02 J1
+U 1 1 590C6113
+P 8050 3575
+F 0 "J1" H 8050 3725 50  0000 C CNN
+F 1 "Page PullUp" V 8150 3575 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 8050 3575 50  0001 C CNN
+F 3 "" H 8050 3575 50  0001 C CNN
+	1    8050 3575
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 590BED30
+P 7850 3250
+F 0 "R1" V 7930 3250 50  0000 C CNN
+F 1 "10k" V 7850 3250 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7780 3250 50  0001 C CNN
+F 3 "" H 7850 3250 50  0001 C CNN
+	1    7850 3250
+	1    0    0    -1  
+$EndComp
+Text GLabel 8025 4075 2    60   Input ~ 0
+PAGE
+Text GLabel 7625 4075 0    60   Output ~ 0
+PAGE_EN
+Text GLabel 7850 2950 1    60   Input ~ 0
+VCC
 $EndSCHEMATC
