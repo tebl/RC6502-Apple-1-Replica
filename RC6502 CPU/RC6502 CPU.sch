@@ -61,34 +61,34 @@ RESET
 $Comp
 L R R1
 U 1 1 590BA496
-P 1050 1700
-F 0 "R1" V 1130 1700 50  0000 C CNN
-F 1 "10k" V 1050 1700 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 980 1700 50  0001 C CNN
-F 3 "" H 1050 1700 50  0001 C CNN
-	1    1050 1700
+P 875 1700
+F 0 "R1" V 955 1700 50  0000 C CNN
+F 1 "3.3k" V 875 1700 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 805 1700 50  0001 C CNN
+F 3 "" H 875 1700 50  0001 C CNN
+	1    875  1700
 	0    1    1    0   
 $EndComp
 $Comp
 L R R2
 U 1 1 590BA57A
-P 1050 1900
-F 0 "R2" V 1130 1900 50  0000 C CNN
-F 1 "10k" V 1050 1900 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 980 1900 50  0001 C CNN
-F 3 "" H 1050 1900 50  0001 C CNN
-	1    1050 1900
+P 875 1900
+F 0 "R2" V 955 1900 50  0000 C CNN
+F 1 "3.3k" V 875 1900 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 805 1900 50  0001 C CNN
+F 3 "" H 875 1900 50  0001 C CNN
+	1    875  1900
 	0    1    1    0   
 $EndComp
 $Comp
 L R R3
 U 1 1 590BA5A2
-P 1050 2100
-F 0 "R3" V 1130 2100 50  0000 C CNN
-F 1 "10k" V 1050 2100 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 980 2100 50  0001 C CNN
-F 3 "" H 1050 2100 50  0001 C CNN
-	1    1050 2100
+P 875 2100
+F 0 "R3" V 955 2100 50  0000 C CNN
+F 1 "3.3k" V 875 2100 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 805 2100 50  0001 C CNN
+F 3 "" H 875 2100 50  0001 C CNN
+	1    875  2100
 	0    1    1    0   
 $EndComp
 $Comp
@@ -102,7 +102,7 @@ F 3 "" H 9550 3400 50  0001 C CNN
 	1    9550 3400
 	1    0    0    -1  
 $EndComp
-Text GLabel 850  1500 1    60   Input ~ 0
+Text GLabel 675  1500 1    60   Input ~ 0
 VCC
 $Comp
 L WD65C02 U1
@@ -136,24 +136,24 @@ MREQ
 Text GLabel 10250 1525 0    60   Input ~ 0
 IORQ
 Wire Wire Line
-	850  1500 850  2300
+	675  1500 675  2300
 Wire Wire Line
-	850  2300 2000 2300
+	675  2300 2000 2300
 Wire Wire Line
-	900  2100 850  2100
-Connection ~ 850  2100
+	725  2100 675  2100
+Connection ~ 675  2100
 Wire Wire Line
-	900  1900 850  1900
-Connection ~ 850  1900
+	725  1900 675  1900
+Connection ~ 675  1900
 Wire Wire Line
-	900  1700 850  1700
-Connection ~ 850  1700
+	725  1700 675  1700
+Connection ~ 675  1700
 Wire Wire Line
-	1200 1700 2000 1700
+	1025 1700 2000 1700
 Wire Wire Line
-	1200 1900 2000 1900
+	1025 1900 2000 1900
 Wire Wire Line
-	1200 2100 2000 2100
+	1025 2100 2000 2100
 Wire Wire Line
 	10250 1525 10600 1525
 Wire Wire Line
@@ -269,20 +269,20 @@ Text GLabel 3300 1900 2    60   Input ~ 0
 CLOCK
 Text GLabel 9350 3500 0    60   BiDi ~ 0
 CLOCK
-Text GLabel 2000 1600 0    60   Output ~ 0
+Text GLabel 1900 1025 1    60   Output ~ 0
 GND
 Text GLabel 9350 3600 0    60   Output ~ 0
 IRQ
-Text GLabel 1400 1025 1    60   Input ~ 0
+Text GLabel 1225 1025 1    60   Input ~ 0
 IRQ
 Wire Wire Line
-	1400 1300 1400 1900
-Connection ~ 1400 1900
-Text GLabel 1600 1025 1    60   Input ~ 0
+	1225 1300 1225 1900
+Connection ~ 1225 1900
+Text GLabel 1425 1025 1    60   Input ~ 0
 NMI
 Wire Wire Line
-	1600 1300 1600 2100
-Connection ~ 1600 2100
+	1425 1300 1425 2100
+Connection ~ 1425 2100
 Text GLabel 9350 4100 0    60   BiDi ~ 0
 D0
 Text GLabel 9350 4200 0    60   BiDi ~ 0
@@ -308,29 +308,29 @@ NMI
 $Comp
 L CONN_01X02 J2
 U 1 1 590D2BF8
-P 1200 1250
-F 0 "J2" H 1200 1400 50  0000 C CNN
-F 1 "IRQ OnBus" V 1300 1250 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1200 1250 50  0001 C CNN
-F 3 "" H 1200 1250 50  0001 C CNN
-	1    1200 1250
+P 1025 1250
+F 0 "J2" H 1025 1400 50  0000 C CNN
+F 1 "IRQ OnBus" V 1125 1250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1025 1250 50  0001 C CNN
+F 3 "" H 1025 1250 50  0001 C CNN
+	1    1025 1250
 	-1   0    0    1   
 $EndComp
 $Comp
 L CONN_01X02 J3
 U 1 1 590D2C70
-P 1800 1250
-F 0 "J3" H 1800 1400 50  0000 C CNN
-F 1 "NMI OnBus" V 1900 1250 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1800 1250 50  0001 C CNN
-F 3 "" H 1800 1250 50  0001 C CNN
-	1    1800 1250
+P 1625 1250
+F 0 "J3" H 1625 1400 50  0000 C CNN
+F 1 "NMI OnBus" V 1725 1250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 1625 1250 50  0001 C CNN
+F 3 "" H 1625 1250 50  0001 C CNN
+	1    1625 1250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1400 1025 1400 1200
+	1225 1025 1225 1200
 Wire Wire Line
-	1600 1025 1600 1200
+	1425 1025 1425 1200
 $Comp
 L C C1
 U 1 1 590DA9CE
@@ -417,4 +417,23 @@ Wire Wire Line
 	5500 2800 5650 2800
 Wire Wire Line
 	5850 2800 6000 2800
+$Comp
+L CONN_01X02 J4
+U 1 1 59304984
+P 2100 1250
+F 0 "J4" H 2100 1400 50  0000 C CNN
+F 1 "VP GND" V 2200 1250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 2100 1250 50  0001 C CNN
+F 3 "" H 2100 1250 50  0001 C CNN
+	1    2100 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 1600 1900 1300
+Wire Wire Line
+	1900 1200 1900 1025
+Wire Wire Line
+	1900 1600 2000 1600
+Text Notes 10600 7650 0    60   ~ 0
+B
 $EndSCHEMATC
