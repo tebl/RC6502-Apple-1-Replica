@@ -155,8 +155,8 @@ void serial_transmit() {
     char c = bridge.readPort(IO_VIDEO) & 127;
     debug_value("PIA TX", c, 10);
     digitalWrite(VIDEO_RDA, LOW);
-    delay(12);
 
+    delay(12);
     send_ascii(c);
   }
 }
