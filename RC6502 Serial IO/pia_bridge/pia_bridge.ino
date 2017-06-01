@@ -75,8 +75,9 @@ void serial_transmit() {
     digitalWrite(VIDEO_RDA, LOW);
     delay(12);
 
-    Serial.print("RX ");
-    print_chr(incomingByte);
+    //Serial.print("RX ");
+    //print_chr(incomingByte);
+    Serial.print(incomingByte);
   }
 }
 
@@ -119,8 +120,8 @@ void pia_send(byte c) {
       delay(1);
     }
     */
-    Serial.print("TX ");
-    print_chr(c);
+    //Serial.print("TX ");
+    //print_chr(c);
   }
 }
 
