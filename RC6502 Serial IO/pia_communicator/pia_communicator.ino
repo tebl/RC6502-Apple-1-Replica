@@ -162,11 +162,13 @@ void serial_transmit() {
 }
 
 char send_ascii(char c) {
+  if (DEBUG >= 5) Serial.print("[");
   switch (c) {
     case 0x0d: Serial.println(); /* Replace CR with LF */
     default:
       Serial.print(c);
   }
+  if (DEBUG >= 5) Serial.print("]");
 }
 
 void loop() {
