@@ -9,7 +9,7 @@ The serial module works by replacing all of this so that characters are transfer
 # Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a starting
 point for ordering PCBs, the schematic is also available in
-[PDF-format](https://github.com/tebl/RC6502/raw/master/RC6502%20Serial%20IO/export/RC6502%20Serial%20IO.pdf).
+[PDF-format](https://github.com/tebl/RC6502/raw/master/RC6502%20Serial%20IO/export/RC6502%20Serial%20IO.pdf). You can refer to the BOM below for a list of suggested components to use, part numbers in parenthesis are optional and is not required.
 
 # BOM
 | Reference | Item                                  | Count  |
