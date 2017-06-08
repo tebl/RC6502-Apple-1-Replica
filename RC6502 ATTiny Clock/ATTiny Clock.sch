@@ -60,7 +60,7 @@ U 1 1 5909A2A2
 P 2150 2600
 F 0 "Y1" H 2150 2750 50  0000 C CNN
 F 1 "20Mhz" H 2150 2450 50  0000 C CNN
-F 2 "Crystals:Crystal_HC52-6mm_Vertical" H 2150 2600 50  0001 C CNN
+F 2 "Crystals:Crystal_HC49-4H_Vertical" H 2150 2600 50  0001 C CNN
 F 3 "" H 2150 2600 50  0001 C CNN
 	1    2150 2600
 	0    1    1    0   
