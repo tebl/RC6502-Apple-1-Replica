@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "D:/ownCloud/Documents/Projects/RC6502/RC6502 ROM/RC6502 ROM.sch")
-    (date "28/05/2017 21:42:38")
+    (date "09/06/2017 18:56:28")
     (tool "Eeschema 4.0.6")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -95,7 +95,7 @@
       (tstamp 5910A54B))
     (comp (ref JP5)
       (value "Page mode")
-      (footprint Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm)
+      (footprint Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm)
       (libsource (lib device) (part Jumper_NC_Dual))
       (sheetpath (names /) (tstamps /))
       (tstamp 592A3680)))
@@ -262,10 +262,10 @@
   (libraries
     (library (logical memory)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\memory.lib"))
-    (library (logical device)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib"))
     (library (logical 74xx)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\74xx.lib"))
+    (library (logical device)
+      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib"))
     (library (logical conn)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\conn.lib")))
   (nets
