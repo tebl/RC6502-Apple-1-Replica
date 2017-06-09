@@ -339,7 +339,7 @@ F 1 "XTAL Power" H 5210 2240 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 5200 2300 50  0001 C CNN
 F 3 "" H 5200 2300 50  0001 C CNN
 	1    5200 2300
-	0    -1   -1   0   
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	5200 2200 5200 2100
@@ -350,7 +350,7 @@ L Jumper_NO_Small JP2
 U 1 1 5918CD82
 P 5750 2800
 F 0 "JP2" H 5750 2880 50  0000 C CNN
-F 1 "XTAL Enable" H 5760 2740 50  0000 C CNN
+F 1 "XTAL Enable" H 5750 2725 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 5750 2800 50  0001 C CNN
 F 3 "" H 5750 2800 50  0001 C CNN
 	1    5750 2800
