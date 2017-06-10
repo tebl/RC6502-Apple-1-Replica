@@ -48,7 +48,7 @@ Comment4 ""
 $EndDescr
 Text GLabel 10250 3250 0    60   Input ~ 0
 GND
-Text GLabel 10250 3350 0    60   Input ~ 0
+Text GLabel 10250 3350 0    60   Output ~ 0
 VCC
 Text GLabel 10250 3550 0    60   Input ~ 0
 RESET
@@ -65,7 +65,7 @@ F 3 "" H 7100 3375 50  0001 C CNN
 $EndComp
 Text GLabel 7100 2525 1    60   Input ~ 0
 VCC
-Text GLabel 7100 4250 3    60   Input ~ 0
+Text GLabel 7100 4250 3    60   Output ~ 0
 GND
 $Comp
 L R R1
@@ -84,7 +84,7 @@ U 1 1 5909CD8B
 P 6100 3825
 F 0 "C1" H 6125 3925 50  0000 L CNN
 F 1 "100nF" H 6125 3725 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 6138 3675 50  0001 C CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 6138 3675 50  0001 C CNN
 F 3 "" H 6100 3825 50  0001 C CNN
 	1    6100 3825
 	1    0    0    -1  
@@ -95,7 +95,7 @@ U 1 1 5909D33C
 P 8400 3225
 F 0 "C3" H 8425 3325 50  0000 L CNN
 F 1 "100nF" H 8425 3125 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 8438 3075 50  0001 C CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 8438 3075 50  0001 C CNN
 F 3 "" H 8400 3225 50  0001 C CNN
 	1    8400 3225
 	1    0    0    -1  
@@ -127,7 +127,7 @@ L 74LS04 U2
 U 1 1 5909E441
 P 8175 1800
 F 0 "U2" H 8370 1915 50  0000 C CNN
-F 1 "74LS04" H 8365 1675 50  0000 C CNN
+F 1 "74HCT04" H 8365 1675 50  0000 C CNN
 F 2 "Housings_DIP:DIP-14_W7.62mm" H 8175 1800 50  0001 C CNN
 F 3 "" H 8175 1800 50  0001 C CNN
 	1    8175 1800
@@ -204,21 +204,109 @@ F 3 "" H 4175 3400 50  0001 C CNN
 	1    4275 3400
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X02 J2
-U 1 1 590A1B9F
-P 5000 2850
-F 0 "J2" H 5000 3000 50  0000 C CNN
-F 1 "XTAL Enable" V 5100 2850 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 5000 2850 50  0001 C CNN
-F 3 "" H 5000 2850 50  0001 C CNN
-	1    5000 2850
-	0    1    1    0   
-$EndComp
-Text GLabel 4575 3400 2    60   Input ~ 0
-CLOCK
+Text GLabel 4700 3400 2    60   Output ~ 0
+CLOCK/1
 Text GLabel 10250 3650 0    60   Input ~ 0
 CLOCK
+$Comp
+L CONN_01X39 J1
+U 1 1 590BF97A
+P 10450 3550
+F 0 "J1" H 10450 5550 50  0000 C CNN
+F 1 "CONN_01X39" V 10550 3550 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x39_Pitch2.54mm" H 10450 3550 50  0001 C CNN
+F 3 "" H 10450 3550 50  0001 C CNN
+	1    10450 3550
+	1    0    0    -1  
+$EndComp
+Text GLabel 1100 1850 3    60   Output ~ 0
+GND
+Text GLabel 1100 1100 1    60   Input ~ 0
+VCC
+$Comp
+L C C4
+U 1 1 591A9FB0
+P 1100 1475
+F 0 "C4" H 1125 1575 50  0000 L CNN
+F 1 "100nF" H 1125 1375 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 1138 1325 50  0001 C CNN
+F 3 "" H 1100 1475 50  0001 C CNN
+	1    1100 1475
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS74 U3
+U 1 1 593C2A48
+P 2025 6700
+F 0 "U3" H 2175 7000 50  0000 C CNN
+F 1 "74HCT74" H 2325 6405 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 2025 6700 50  0001 C CNN
+F 3 "" H 2025 6700 50  0001 C CNN
+	1    2025 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS74 U3
+U 2 1 593C2BAB
+P 3650 6700
+F 0 "U3" H 3800 7000 50  0000 C CNN
+F 1 "74HCT74" H 3950 6405 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 3650 6700 50  0001 C CNN
+F 3 "" H 3650 6700 50  0001 C CNN
+	2    3650 6700
+	1    0    0    -1  
+$EndComp
+Text GLabel 5550 2850 2    60   Output ~ 0
+CLOCK
+Text GLabel 4900 2750 0    60   Input ~ 0
+CLOCK/1
+Text GLabel 1425 6700 0    60   Input ~ 0
+CLOCK/1
+Text GLabel 4900 2850 0    60   Input ~ 0
+CLOCK/2
+Text GLabel 4900 2950 0    60   Input ~ 0
+CLOCK/4
+Text GLabel 2625 6275 1    60   Output ~ 0
+CLOCK/2
+Text GLabel 4250 6250 1    60   Output ~ 0
+CLOCK/4
+Text GLabel 2025 5450 1    60   Input ~ 0
+VCC
+Text GLabel 4725 6900 1    60   Input ~ 0
+VCC
+$Comp
+L C C5
+U 1 1 593C7AE0
+P 1500 1475
+F 0 "C5" H 1525 1575 50  0000 L CNN
+F 1 "100nF" H 1525 1375 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 1538 1325 50  0001 C CNN
+F 3 "" H 1500 1475 50  0001 C CNN
+	1    1500 1475
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_02X04 J2
+U 1 1 593CC468
+P 5150 2800
+F 0 "J2" H 5150 3050 50  0000 C CNN
+F 1 "CONN_02X04" H 5150 2550 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm" H 5150 1600 50  0001 C CNN
+F 3 "" H 5150 1600 50  0001 C CNN
+	1    5150 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D1
+U 1 1 593CDC46
+P 2275 1725
+F 0 "D1" H 2275 1825 50  0000 C CNN
+F 1 "Power" H 2275 1625 50  0000 C CNN
+F 2 "LEDs:LED_D5.0mm" H 2275 1725 50  0001 C CNN
+F 3 "" H 2275 1725 50  0001 C CNN
+	1    2275 1725
+	0    -1   -1   0   
+$EndComp
 Wire Wire Line
 	7100 2525 7100 2975
 Wire Wire Line
@@ -238,7 +326,7 @@ Connection ~ 6100 4150
 Wire Wire Line
 	6600 3575 6450 3575
 Wire Wire Line
-	6450 3575 6450 2650
+	6450 2650 6450 3575
 Connection ~ 6450 2650
 Wire Wire Line
 	8400 2650 8400 3075
@@ -289,39 +377,171 @@ Wire Wire Line
 Connection ~ 5650 4150
 Connection ~ 6100 2650
 Wire Wire Line
-	5050 2650 8400 2650
-Wire Wire Line
-	4950 2650 4275 2650
+	5400 2650 8400 2650
 Wire Wire Line
 	4275 2650 4275 3100
-$Comp
-L CONN_01X39 J1
-U 1 1 590BF97A
-P 10450 3550
-F 0 "J1" H 10450 5550 50  0000 C CNN
-F 1 "CONN_01X39" V 10550 3550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x39_Pitch2.54mm" H 10450 3550 50  0001 C CNN
-F 3 "" H 10450 3550 50  0001 C CNN
-	1    10450 3550
-	1    0    0    -1  
-$EndComp
-Text GLabel 1100 1850 3    60   Output ~ 0
-GND
-Text GLabel 1100 1100 1    60   Input ~ 0
-VCC
-$Comp
-L C C4
-U 1 1 591A9FB0
-P 1100 1475
-F 0 "C4" H 1125 1575 50  0000 L CNN
-F 1 "100nF" H 1125 1375 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 1138 1325 50  0001 C CNN
-F 3 "" H 1100 1475 50  0001 C CNN
-	1    1100 1475
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	1100 1325 1100 1100
+	1100 1100 1100 1325
 Wire Wire Line
 	1100 1625 1100 1850
+Wire Wire Line
+	5400 2850 5550 2850
+Wire Wire Line
+	5475 2950 5400 2950
+Wire Wire Line
+	5475 2750 5475 2950
+Connection ~ 5475 2850
+Wire Wire Line
+	5400 2750 5475 2750
+Wire Wire Line
+	2625 6500 2625 6275
+Wire Wire Line
+	4250 6250 4250 6500
+Wire Wire Line
+	2625 6900 2875 6900
+Wire Wire Line
+	2875 6900 2875 6700
+Wire Wire Line
+	2875 6700 3050 6700
+Wire Wire Line
+	1425 6500 875  6500
+Wire Wire Line
+	875  6500 875  7325
+Wire Wire Line
+	875  7325 2675 7325
+Wire Wire Line
+	2675 7325 2675 6900
+Connection ~ 2675 6900
+Wire Wire Line
+	3050 6500 2975 6500
+Wire Wire Line
+	2975 6500 2975 7325
+Wire Wire Line
+	2975 7325 4250 7325
+Wire Wire Line
+	4250 7325 4250 6900
+Wire Wire Line
+	2025 5450 2025 6150
+Connection ~ 2025 5650
+Wire Wire Line
+	3650 7250 3650 7475
+Wire Wire Line
+	2025 7250 2025 7475
+Wire Wire Line
+	3650 6150 3650 5650
+Wire Wire Line
+	3650 5650 2025 5650
+Wire Wire Line
+	2025 7475 4725 7475
+Wire Wire Line
+	4725 7475 4725 6900
+Connection ~ 3650 7475
+Wire Wire Line
+	1100 1225 1500 1225
+Wire Wire Line
+	1500 1225 1500 1325
+Connection ~ 1100 1225
+Wire Wire Line
+	1500 1625 1500 1750
+Wire Wire Line
+	1500 1750 1100 1750
+Connection ~ 1100 1750
+Wire Wire Line
+	4575 3400 4700 3400
+Wire Wire Line
+	4900 2650 4275 2650
+$Comp
+L R R4
+U 1 1 593CE753
+P 2275 1350
+F 0 "R4" V 2355 1350 50  0000 C CNN
+F 1 "330" V 2275 1350 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2205 1350 50  0001 C CNN
+F 3 "" H 2275 1350 50  0001 C CNN
+	1    2275 1350
+	1    0    0    -1  
+$EndComp
+Text GLabel 2275 1075 1    60   Input ~ 0
+VCC
+Text GLabel 2275 2000 3    60   Output ~ 0
+GND
+Wire Wire Line
+	2275 1075 2275 1200
+Wire Wire Line
+	2275 1500 2275 1575
+Wire Wire Line
+	2275 1875 2275 2000
+$Comp
+L 74LS04 U2
+U 2 1 593CF341
+P 10925 975
+F 0 "U2" H 11120 1090 50  0000 C CNN
+F 1 "74HCT04" H 11115 850 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 10925 975 50  0001 C CNN
+F 3 "" H 10925 975 50  0001 C CNN
+	2    10925 975 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 74LS04 U2
+U 3 1 593CF3C4
+P 10500 975
+F 0 "U2" H 10695 1090 50  0000 C CNN
+F 1 "74HCT04" H 10690 850 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 10500 975 50  0001 C CNN
+F 3 "" H 10500 975 50  0001 C CNN
+	3    10500 975 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 74LS04 U2
+U 4 1 593CF44E
+P 10075 975
+F 0 "U2" H 10270 1090 50  0000 C CNN
+F 1 "74HCT04" H 10265 850 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 10075 975 50  0001 C CNN
+F 3 "" H 10075 975 50  0001 C CNN
+	4    10075 975 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 74LS04 U2
+U 5 1 593CF4D7
+P 9650 975
+F 0 "U2" H 9845 1090 50  0000 C CNN
+F 1 "74HCT04" H 9840 850 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 9650 975 50  0001 C CNN
+F 3 "" H 9650 975 50  0001 C CNN
+	5    9650 975 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 74LS04 U2
+U 6 1 593CF56B
+P 9225 975
+F 0 "U2" H 9420 1090 50  0000 C CNN
+F 1 "74HCT04" H 9415 850 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 9225 975 50  0001 C CNN
+F 3 "" H 9225 975 50  0001 C CNN
+	6    9225 975 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9225 1425 10925 1425
+Connection ~ 9650 1425
+Connection ~ 10075 1425
+Connection ~ 10500 1425
+NoConn ~ 10925 525 
+NoConn ~ 10500 525 
+NoConn ~ 10075 525 
+NoConn ~ 9650 525 
+NoConn ~ 9225 525 
+Wire Wire Line
+	10925 1425 10925 1600
+Text GLabel 10925 1600 3    60   Input ~ 0
+GND
+Text Notes 7400 7500 0    60   ~ 0
+RC6502 Reset Circuit
+Text Notes 10575 7650 0    60   ~ 0
+B
 $EndSCHEMATC
