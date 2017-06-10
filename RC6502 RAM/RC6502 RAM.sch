@@ -168,7 +168,7 @@ A0
 Text Notes 8375 7500 2    60   ~ 0
 RC6502 Pageable RAM
 Text Notes 10625 7650 2    60   ~ 0
-A
+B
 NoConn ~ -500 7850
 $Comp
 L CONN_01X39 J3
@@ -184,13 +184,13 @@ $EndComp
 $Comp
 L CONN_01X02 J2
 U 1 1 590B8522
-P 8625 5650
-F 0 "J2" H 8625 5800 50  0000 C CNN
-F 1 "Bus enable" V 8725 5650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 8625 5650 50  0001 C CNN
-F 3 "" H 8625 5650 50  0001 C CNN
-	1    8625 5650
-	0    -1   -1   0   
+P 8625 6050
+F 0 "J2" H 8625 6200 50  0000 C CNN
+F 1 "Bus enable" V 8725 6050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 8625 6050 50  0001 C CNN
+F 3 "" H 8625 6050 50  0001 C CNN
+	1    8625 6050
+	0    1    1    0   
 $EndComp
 NoConn ~ 9100 5950
 Text GLabel 9100 3950 0    60   Output ~ 0
@@ -369,13 +369,13 @@ Wire Wire Line
 $Comp
 L CONN_01X02 J1
 U 1 1 590C6113
-P 8050 3575
-F 0 "J1" H 8050 3725 50  0000 C CNN
-F 1 "Page PullUp" V 8150 3575 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 8050 3575 50  0001 C CNN
-F 3 "" H 8050 3575 50  0001 C CNN
-	1    8050 3575
-	1    0    0    -1  
+P 7650 3575
+F 0 "J1" H 7650 3725 50  0000 C CNN
+F 1 "Page PullUp" V 7750 3575 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 7650 3575 50  0001 C CNN
+F 3 "" H 7650 3575 50  0001 C CNN
+	1    7650 3575
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R1
