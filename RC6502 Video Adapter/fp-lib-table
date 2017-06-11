@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name w_conn_av)(type Legacy)(uri "$(KIPRJMOD)/libraries/kicad/w_conn_av.mod")(options "")(descr ""))
+  (lib (name rca)(type KiCad)(uri "$(KIPRJMOD)/rca.pretty")(options "")(descr ""))
 )
