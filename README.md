@@ -22,6 +22,6 @@ In order to use the RC6502 you'll need the following modules:
 - [Serial IO](https://github.com/tebl/RC6502/tree/master/RC6502%20Serial%20IO)
 
 Optional modules:
-- [video Adapter](https://github.com/tebl/RC6502/tree/master/RC6502%20Video%20Adapter)
+- [Video Adapter](https://github.com/tebl/RC6502/tree/master/RC6502%20Video%20Adapter)
 
 If you want your own fabricated versions of the modules in the form of PCBs to own and and assemble yourselves, there are quite a few options avaiable though I tend to use [Seeed Studio](https://www.seeedstudio.com/fusion_pcb.html) since they are a reasonably priced option with affortable shipping to Europe. Zip up the contents of each modules export folders and give them that to get an estimate - I've stayed within the least pricy tier so at the time of writing you'd end up paying 4.90 USD plus shipping per module.
