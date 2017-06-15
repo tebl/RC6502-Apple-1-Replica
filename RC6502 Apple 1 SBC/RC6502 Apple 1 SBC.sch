@@ -628,10 +628,10 @@ F 3 "" H 2400 4725 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper_NC_Dual JP1
+L Jumper_NC_Dual A13
 U 1 1 5941C8BC
 P 1475 2350
-F 0 "JP1" H 1525 2250 50  0000 L CNN
+F 0 "A13" H 1525 2250 50  0000 L CNN
 F 1 "A13 Select" H 1475 2450 50  0000 C BNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 1475 2350 50  0001 C CNN
 F 3 "" H 1475 2350 50  0001 C CNN
@@ -639,10 +639,10 @@ F 3 "" H 1475 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper_NC_Dual JP2
+L Jumper_NC_Dual A14
 U 1 1 5941C8BD
 P 2550 2350
-F 0 "JP2" H 2600 2250 50  0000 L CNN
+F 0 "A14" H 2600 2250 50  0000 L CNN
 F 1 "A14 Select" H 2550 2450 50  0000 C BNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 2550 2350 50  0001 C CNN
 F 3 "" H 2550 2350 50  0001 C CNN
