@@ -1,4 +1,4 @@
-update=10/06/2017 01:39:04
+update=14/06/2017 15:23:44
 version=1
 last_client=kicad
 [pcbnew]
@@ -67,7 +67,7 @@ PageLayoutDescrFile=
 PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 CPU/export/
 SubpartIdSeparator=0
 SubpartFirstId=65
-NetFmtName=
+NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60

@@ -392,8 +392,12 @@ Text GLabel 9350 3900 0    60   Input ~ 0
 RDY
 Text GLabel 9350 4000 0    60   Input ~ 0
 SYNC
-Text GLabel 2000 1800 0    60   Output ~ 0
+Text GLabel 1600 2375 3    60   Output ~ 0
 RDY
 Text GLabel 2000 2200 0    60   Output ~ 0
 SYNC
+Wire Wire Line
+	1600 2375 1600 1700
+Connection ~ 1600 1700
+NoConn ~ 2000 1800
 $EndSCHEMATC
