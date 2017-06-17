@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 4040
+D Binary Counter 12 stages (Asynchronous)
+K CMOS CNT CNT12
+F cmos4000/MC14040.pdf
+$ENDCMP
+#
+#End Doc Library
