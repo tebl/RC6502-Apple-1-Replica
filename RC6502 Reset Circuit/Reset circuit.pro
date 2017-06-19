@@ -1,4 +1,4 @@
-update=10/06/2017 19:55:35
+update=20/06/2017 00:10:34
 version=1
 last_client=kicad
 [pcbnew]
@@ -65,7 +65,7 @@ LibName33=C:/Program Files/KiCad/share/kicad/library/Oscillators
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=D:/ownCloud/Documents/Projects/RC6502/RC6502 Reset Circuit/export/
+PlotDirectoryName=export/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew

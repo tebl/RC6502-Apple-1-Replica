@@ -3,7 +3,7 @@
   (general
     (links 55)
     (no_connects 0)
-    (area 92.634999 111.684999 191.845001 147.395001)
+    (area 90.735 110.15 195.938572 156.675001)
     (thickness 1.6)
     (drawings 35)
     (tracks 160)
@@ -87,7 +87,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "D:/ownCloud/Documents/Projects/RC6502/RC6502 Reset Circuit/export/"))
+      (outputdirectory export/))
   )
 
   (net 0 "")
