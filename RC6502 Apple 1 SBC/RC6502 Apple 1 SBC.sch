@@ -67,7 +67,7 @@ A0
 Text Notes 8300 7500 2    60   ~ 0
 RC6502 Apple 1 SBC
 Text Notes 10650 7650 2    60   ~ 0
-A
+B
 Text GLabel 5525 2875 2    60   BiDi ~ 0
 D5
 $Comp
@@ -546,7 +546,6 @@ D7
 Text GLabel 9775 5650 2    60   Output ~ 0
 D6
 NoConn ~ 9775 4850
-NoConn ~ 9775 4750
 NoConn ~ 8475 4750
 Text GLabel 9775 4650 2    60   Input ~ 0
 CLOCK
@@ -568,7 +567,7 @@ Wire Wire Line
 Wire Wire Line
 	10225 4225 10225 4550
 Wire Wire Line
-	10225 4550 9775 4550
+	9775 4550 10400 4550
 Wire Wire Line
 	7500 4850 8475 4850
 Wire Wire Line
@@ -1398,4 +1397,20 @@ F 3 "" H 10400 2225 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10550 2025 10450 2025
+$Comp
+L R R10
+U 1 1 596284F8
+P 10250 4750
+F 0 "R10" V 10330 4750 50  0000 C CNN
+F 1 "3.3k" V 10250 4750 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10180 4750 50  0001 C CNN
+F 3 "" H 10250 4750 50  0001 C CNN
+	1    10250 4750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 4750 9775 4750
+Wire Wire Line
+	10400 4550 10400 4750
+Connection ~ 10225 4550
 $EndSCHEMATC
