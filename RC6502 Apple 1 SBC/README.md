@@ -59,4 +59,5 @@ Some vendors will have the same ICs in different form factors, the ones you want
 |              | Jumpers for settings (CAP headers)    |     3 |
 | Nano         | Arduino Nano v3.0 with USB cable      |     1 |
 
-* R10 was added to revised schematic, see [gallery image](https://github.com/tebl/RC6502/raw/master/RC6502%20Apple%201%20SBC/gallery/2017-07-09%2020.06.43.jpg) for how to install this on the back!
+* R10 was added to revised schematic, see image below for how to install this on the back of the PCB!
+![PCB Backside](https://github.com/tebl/RC6502/raw/master/RC6502%20Apple%201%20SBC/gallery/2017-07-09%2020.06.43.jpg)
