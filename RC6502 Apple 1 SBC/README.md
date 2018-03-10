@@ -39,13 +39,13 @@ Some vendors will have the same ICs in different form factors, the ones you want
 | U8           | MC6821P PIA DIP-40                    |     1 |
 | U9           | MCP23S17 DIP-28                       |     1 |
 | X1           | 1.000Mhz TTL Oscillator, (DIP 14)     |     1 |
-| R1,R6-R8,R10 | 3.3k resistor                         |     5 |
+| R1,R6-R8,R10*| 3.3k resistor                         |     5 |
 | R2           | 1M resistor                           |     1 |
 | R3           | 47k resistor                          |     1 |
 | R4           | 1k resistor                           |     1 |
 | R5           | 330 resistor                          |     1 |
 | R9           | 10k resistor                          |     1 |
-| D1           | 1N4848 diode                          |     1 |
+| D1           | 5mm LED diode, green or red color     |     1 |
 | J1, J8       | Single row, 2p right angle connector  |     2 |
 | J2           | 15p female pin headers                |     2 |
 | J3           | Single row, 39p right angle connector |     1 |
@@ -55,3 +55,5 @@ Some vendors will have the same ICs in different form factors, the ones you want
 | C12          | 10nF 16V electrolytic capacitor       |     1 |
 | SW1          | Momentary push button                 |     1 |
 |              | Jumpers for settings (CAP headers)    |     3 |
+
+* R10 was added to revised schematic, see [gallery image](https://github.com/tebl/RC6502/raw/master/RC6502%20Apple%201%20SBC/gallery/2017-07-09%2020.06.43.jpg) for how to install this on the back!
