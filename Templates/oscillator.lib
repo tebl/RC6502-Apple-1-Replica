@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# Oscillator
+#
+DEF Oscillator X 0 10 Y Y 1 F N
+F0 "X" -200 250 50 H V L CNN
+F1 "Oscillator" 50 -250 50 H V L CNN
+F2 "Oscillators:Oscillator_DIP-14" 450 -350 50 H I C CNN
+F3 "" -100 0 50 H I C CNN
+$FPLIST
+ Oscillator*DIP*14*
+$ENDFPLIST
+DRAW
+S -200 200 200 -200 0 1 10 f
+P 9 0 1 0 -100 -25 -75 -25 -75 25 -50 25 -50 -25 -25 -25 -25 25 0 25 0 -25 N
+X NC 1 -300 0 100 R 50 50 1 1 N N
+X GND 7 0 -300 100 U 50 50 1 1 W
+X OUT 8 300 0 100 L 50 50 1 1 O C
+X Vcc 14 0 300 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+#End Library

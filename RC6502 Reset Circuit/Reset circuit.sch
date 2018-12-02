@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:Reset circuit-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -136,7 +137,7 @@ $EndComp
 Text GLabel 8775 1800 2    60   Input ~ 0
 RESET
 $Comp
-L SW_SPST SW1
+L SW_SPST-RESCUE-Reset_circuit SW1
 U 1 1 5909ECDD
 P 5650 3650
 F 0 "SW1" H 5650 3775 50  0000 C CNN
@@ -326,7 +327,7 @@ Connection ~ 6100 4150
 Wire Wire Line
 	6600 3575 6450 3575
 Wire Wire Line
-	6450 2650 6450 3575
+	6450 3575 6450 2650
 Connection ~ 6450 2650
 Wire Wire Line
 	8400 2650 8400 3075
