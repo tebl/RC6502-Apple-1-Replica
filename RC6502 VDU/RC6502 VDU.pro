@@ -1,4 +1,4 @@
-update=02/12/2018 15:35:53
+update=02/12/2018 20:22:01
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -62,5 +64,4 @@ LibName32=valves
 LibName33=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
 LibName34=D:/ownCloud/Documents/Projects/RC6502/Templates/mounting
 LibName35=D:/ownCloud/Documents/Projects/RC6502/Templates/oscillator
-[general]
-version=1
+LibName36=D:/ownCloud/Documents/Projects/RC6502/Templates/mc6847
