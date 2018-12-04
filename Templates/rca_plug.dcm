@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP RCA_PLUG
+D coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)
+K BNC SMA SMB SMC coaxial connector CINCH RCA
+$ENDCMP
+#
+#End Doc Library
