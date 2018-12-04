@@ -56,7 +56,7 @@ A12
 Text Notes 8300 7500 2    60   ~ 0
 RC6502 Apple 1 SBC
 Text Notes 10650 7650 2    60   ~ 0
-B
+A
 $Comp
 L 74LS138 U7
 U 1 1 5C045924
@@ -710,29 +710,29 @@ VA8
 $Comp
 L 74LS374 U6
 U 1 1 5C049977
-P 8350 5125
-F 0 "U6" H 8350 5025 50  0000 C CNN
-F 1 "74LS374" H 8350 5225 50  0000 C CNN
-F 2 "" H 8350 5125 50  0001 C CNN
-F 3 "" H 8350 5125 50  0001 C CNN
-	1    8350 5125
+P 8350 5400
+F 0 "U6" H 8350 5300 50  0000 C CNN
+F 1 "74LS374" H 8350 5500 50  0000 C CNN
+F 2 "" H 8350 5400 50  0001 C CNN
+F 3 "" H 8350 5400 50  0001 C CNN
+	1    8350 5400
 	-1   0    0    1   
 $EndComp
-Text GLabel 9050 4925 2    60   Input ~ 0
+Text GLabel 9050 5200 2    60   Input ~ 0
 D7
-Text GLabel 9050 5025 2    60   Input ~ 0
+Text GLabel 9050 5300 2    60   Input ~ 0
 D6
-Text GLabel 9050 5125 2    60   Input ~ 0
+Text GLabel 9050 5400 2    60   Input ~ 0
 D5
-Text GLabel 9050 5225 2    60   Input ~ 0
+Text GLabel 9050 5500 2    60   Input ~ 0
 D4
-Text GLabel 9050 5325 2    60   Input ~ 0
+Text GLabel 9050 5600 2    60   Input ~ 0
 D3
-Text GLabel 9050 5425 2    60   Input ~ 0
+Text GLabel 9050 5700 2    60   Input ~ 0
 D2
-Text GLabel 9050 5525 2    60   Input ~ 0
+Text GLabel 9050 5800 2    60   Input ~ 0
 D1
-Text GLabel 9050 5625 2    60   Input ~ 0
+Text GLabel 9050 5900 2    60   Input ~ 0
 D0
 $Comp
 L GND #PWR07
@@ -748,16 +748,16 @@ $EndComp
 $Comp
 L GND #PWR08
 U 1 1 5C04E709
-P 9800 4700
-F 0 "#PWR08" H 9800 4450 50  0001 C CNN
-F 1 "GND" H 9800 4550 50  0000 C CNN
-F 2 "" H 9800 4700 50  0001 C CNN
-F 3 "" H 9800 4700 50  0001 C CNN
-	1    9800 4700
+P 9800 4975
+F 0 "#PWR08" H 9800 4725 50  0001 C CNN
+F 1 "GND" H 9800 4825 50  0000 C CNN
+F 2 "" H 9800 4975 50  0001 C CNN
+F 3 "" H 9800 4975 50  0001 C CNN
+	1    9800 4975
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9050 4625 9800 4625
+	9050 4900 9800 4900
 Text GLabel 7650 3425 0    60   BiDi ~ 0
 VD7
 Text GLabel 7650 3525 0    60   BiDi ~ 0
@@ -837,9 +837,9 @@ Text GLabel 925  6950 0    60   Input ~ 0
 VA9
 Text GLabel 925  6850 0    60   Input ~ 0
 VA8
-Text GLabel 7500 5525 0    60   Output ~ 0
+Text GLabel 7500 5800 0    60   Output ~ 0
 VA14
-Text GLabel 7500 5625 0    60   Output ~ 0
+Text GLabel 7500 5900 0    60   Output ~ 0
 VA13
 Text GLabel 925  7450 0    60   Input ~ 0
 VA14
@@ -972,9 +972,9 @@ Wire Wire Line
 NoConn ~ 6250 3050
 NoConn ~ 6250 2950
 Wire Wire Line
-	7500 5525 7650 5525
+	7500 5800 7650 5800
 Wire Wire Line
-	7500 5625 7650 5625
+	7500 5900 7650 5900
 Text GLabel 10400 4450 0    60   Input ~ 0
 PHI0
 $Comp
@@ -1017,11 +1017,11 @@ Wire Wire Line
 Connection ~ 6700 1850
 Text GLabel 6250 2050 2    60   Input ~ 0
 G/~A
-Text GLabel 7500 5425 0    60   Output ~ 0
+Text GLabel 7500 5700 0    60   Output ~ 0
 G/~A
 Text GLabel 6250 2150 2    60   Input ~ 0
 S/~A
-Text GLabel 7500 5325 0    60   Output ~ 0
+Text GLabel 7500 5600 0    60   Output ~ 0
 S/~A
 Text GLabel 6250 2350 2    60   Input ~ 0
 GM2
@@ -1031,26 +1031,26 @@ Text GLabel 6250 2550 2    60   Input ~ 0
 GM0
 Text GLabel 6250 2650 2    60   Input ~ 0
 CSS
-Text GLabel 7500 4925 0    60   Output ~ 0
+Text GLabel 7500 5200 0    60   Output ~ 0
 CSS
-Text GLabel 7500 5025 0    60   Output ~ 0
+Text GLabel 7500 5300 0    60   Output ~ 0
 GM0
-Text GLabel 7500 5125 0    60   Output ~ 0
+Text GLabel 7500 5400 0    60   Output ~ 0
 GM1
-Text GLabel 7500 5225 0    60   Output ~ 0
+Text GLabel 7500 5500 0    60   Output ~ 0
 GM2
 Wire Wire Line
-	7500 4925 7650 4925
+	7500 5200 7650 5200
 Wire Wire Line
-	7650 5025 7500 5025
+	7650 5300 7500 5300
 Wire Wire Line
-	7500 5125 7650 5125
+	7500 5400 7650 5400
 Wire Wire Line
-	7650 5225 7500 5225
+	7650 5500 7500 5500
 Wire Wire Line
-	7500 5325 7650 5325
+	7500 5600 7650 5600
 Wire Wire Line
-	7650 5425 7500 5425
+	7650 5700 7500 5700
 $Comp
 L GND #PWR010
 U 1 1 5C06A7C5
@@ -1101,7 +1101,7 @@ F 3 "" H 3400 925 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3500 925  3575 925 
-Text GLabel 9050 4725 2    60   Input ~ 0
+Text GLabel 9050 5000 2    60   Input ~ 0
 ~CS_CTRL_EXT
 Text GLabel 9200 725  2    60   Input ~ 0
 ~CS_RAM_EXT
@@ -1318,7 +1318,7 @@ Wire Wire Line
 Text GLabel 3075 4075 2    60   Output ~ 0
 ~VDU_WRITE
 Wire Wire Line
-	9800 4625 9800 4700
+	9800 4900 9800 4975
 Wire Wire Line
 	2025 5050 2100 5050
 Wire Wire Line
@@ -1659,4 +1659,6 @@ Wire Wire Line
 	4625 5575 4900 5575
 Wire Wire Line
 	4900 5575 4900 5650
+Text Notes 7025 6875 0    60   ~ 0
+Display adapter based on the Motorola 6847 Video Display Generator (VDG), this maps\ninto the memory space and does not follow the designs of the Apple 1 computer,\ninstead it is only intended for use with the RC6502 computer.
 $EndSCHEMATC
