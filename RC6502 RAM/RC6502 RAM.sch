@@ -158,8 +158,8 @@ Text GLabel 1450 1125 0    60   Input ~ 0
 A1
 Text GLabel 1450 1025 0    60   Input ~ 0
 A0
-Text Notes 8175 8000 2    60   ~ 0
-RC6502 Pageable RAM
+Text Notes 8950 7500 2    60   ~ 0
+RC6502 Enhanced RAM/ROM board
 Text Notes 10625 7650 2    60   ~ 0
 B
 Text GLabel 10300 3950 0    60   Output ~ 0
@@ -199,11 +199,11 @@ F 3 "" H 1575 6975 50  0001 C CNN
 	1    1575 6975
 	1    0    0    -1  
 $EndComp
-Text GLabel 975  6625 0    60   Input ~ 0
+Text GLabel 975  6825 0    60   Input ~ 0
 A14
 Text GLabel 975  6725 0    60   Input ~ 0
 A13
-Text GLabel 975  6825 0    60   Input ~ 0
+Text GLabel 975  6625 0    60   Input ~ 0
 A12
 $Comp
 L RC6502_Backplane J3
@@ -966,7 +966,7 @@ L Jumper_NC_Dual JP9
 U 1 1 5C1ECAEA
 P 3500 1325
 F 0 "JP9" H 3550 1225 50  0000 L CNN
-F 1 "HI/LO" H 3500 1425 50  0000 C BNN
+F 1 "LO/HI" H 3500 1425 50  0000 C BNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3500 1325 50  0001 C CNN
 F 3 "" H 3500 1325 50  0001 C CNN
 	1    3500 1325
@@ -987,4 +987,6 @@ Wire Wire Line
 Wire Wire Line
 	5100 1325 5175 1325
 Connection ~ 5100 1325
+Text Notes 7025 6775 0    60   ~ 0
+Enhanced RAM board with added support for ROM ICs of type 28C64 or 28C256, can be\naddressed high/low. Individual 4k blocks can be enabled via jumpers.
 $EndSCHEMATC
