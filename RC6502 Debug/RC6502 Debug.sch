@@ -955,7 +955,6 @@ Text GLabel 6875 6675 2    60   Output ~ 0
 RDY
 Text GLabel 2775 6475 0    60   Output ~ 0
 SYNC
-NoConn ~ 3500 6275
 NoConn ~ 6275 7425
 Text GLabel 5525 6875 0    60   Input ~ 0
 Phi0
@@ -1142,4 +1141,15 @@ Wire Wire Line
 	7650 7650 7725 7650
 Text Notes 11875 10300 0    60   ~ 0
 RC6502 Debug card, adding bus monitor features and a single step circuit to the\ncomputer in order to aid with software and hardware development. Based on schematic\nincluded in the original Apple 1 manual.
+$Comp
+L SW_Push_SPDT SW?
+U 1 1 5C205A95
+P 4475 7425
+F 0 "SW?" H 4475 7595 50  0000 C CNN
+F 1 "SW_Push_SPDT" H 4475 7225 50  0000 C CNN
+F 2 "" H 4475 7425 50  0001 C CNN
+F 3 "" H 4475 7425 50  0001 C CNN
+	1    4475 7425
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

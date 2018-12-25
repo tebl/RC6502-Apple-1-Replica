@@ -1,4 +1,4 @@
-update=22/12/2018 23:01:55
+update=25/12/2018 17:17:42
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -63,3 +61,15 @@ LibName31=contrib
 LibName32=valves
 LibName33=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
 LibName34=D:/ownCloud/Documents/Projects/RC6502/Templates/mc14495p1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
+[general]
+version=1
