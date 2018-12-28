@@ -34,6 +34,7 @@ LIBS:valves
 LIBS:rc6502_backplane
 LIBS:SN76489AN
 LIBS:Oscillators
+LIBS:trs_3.5mm
 LIBS:RC6502 PSG-cache
 EELAYER 25 0
 EELAYER END
@@ -532,10 +533,8 @@ $EndComp
 Entry Wire Line
 	6925 3825 7025 3925
 Wire Wire Line
-	6625 3825 6925 3825
+	6525 3825 6925 3825
 Text Label 9000 4325 0    60   ~ 0
-CLK
-Text Label 6875 3825 2    60   ~ 0
 CLK
 $Comp
 L LM386 U1
@@ -626,7 +625,7 @@ U 1 1 5C22F68D
 P 2325 1075
 F 0 "C3" H 2350 1175 50  0000 L CNN
 F 1 "100uF" H 2350 975 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D4.0mm_P2.00mm" H 2363 925 50  0001 C CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 2363 925 50  0001 C CNN
 F 3 "" H 2325 1075 50  0001 C CNN
 	1    2325 1075
 	0    -1   -1   0   
@@ -673,7 +672,7 @@ U 1 1 5C22FDDA
 P 2525 2750
 F 0 "C5" H 2550 2850 50  0000 L CNN
 F 1 "10uF" H 2550 2650 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_Tantal_D5.0mm_P5.00mm" H 2563 2600 50  0001 C CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 2563 2600 50  0001 C CNN
 F 3 "" H 2525 2750 50  0001 C CNN
 	1    2525 2750
 	0    1    1    0   
@@ -708,7 +707,7 @@ U 1 1 5C2305EC
 P 3000 2000
 F 0 "C6" H 3025 2100 50  0000 L CNN
 F 1 "10uF" H 3025 1900 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_Tantal_D5.0mm_P5.00mm" H 3038 1850 50  0001 C CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 3038 1850 50  0001 C CNN
 F 3 "" H 3000 2000 50  0001 C CNN
 	1    3000 2000
 	0    -1   -1   0   
@@ -837,25 +836,14 @@ Volume
 Text GLabel 7325 4425 0    60   Output ~ 0
 Line
 $Comp
-L Audio-Jack-3 J1
-U 1 1 5C233E8D
-P 4300 1850
-F 0 "J1" H 4250 2025 50  0000 C CNN
-F 1 "Out" H 4400 1780 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 4550 1950 50  0001 C CNN
-F 3 "" H 4550 1950 50  0001 C CNN
-	1    4300 1850
-	-1   0    0    1   
-$EndComp
-$Comp
 L GND #PWR013
 U 1 1 5C234708
-P 4600 1750
-F 0 "#PWR013" H 4600 1500 50  0001 C CNN
-F 1 "GND" H 4600 1600 50  0000 C CNN
-F 2 "" H 4600 1750 50  0001 C CNN
-F 3 "" H 4600 1750 50  0001 C CNN
-	1    4600 1750
+P 4600 1525
+F 0 "#PWR013" H 4600 1275 50  0001 C CNN
+F 1 "GND" H 4600 1375 50  0000 C CNN
+F 2 "" H 4600 1525 50  0001 C CNN
+F 3 "" H 4600 1525 50  0001 C CNN
+	1    4600 1525
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -869,35 +857,10 @@ F 3 "" H 3875 2550 50  0001 C CNN
 	1    3875 2550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Jumper_NC_Dual JP1
-U 1 1 5C235BBC
-P 6525 3825
-F 0 "JP1" H 6575 3725 50  0000 L CNN
-F 1 "CLK_SEL" H 6525 3925 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 6525 3825 50  0001 C CNN
-F 3 "" H 6525 3825 50  0001 C CNN
-	1    6525 3825
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	6425 4250 6525 4250
 Wire Wire Line
 	6525 4250 6525 4075
-Text Label 10375 4550 2    60   ~ 0
-Phi0
-Wire Wire Line
-	10425 4550 10075 4550
-Entry Wire Line
-	9975 4450 10075 4550
-Text Label 6550 3500 0    60   ~ 0
-Phi0
-Entry Wire Line
-	6925 3500 7025 3600
-Wire Wire Line
-	6525 3500 6925 3500
-Wire Wire Line
-	6525 3500 6525 3575
 $Comp
 L R R2
 U 1 1 5C2374DE
@@ -1056,17 +1019,17 @@ F 3 "" H 4050 2375 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3875 1850 4100 1850
+	3875 1725 4100 1725
 Connection ~ 3875 2375
 Wire Wire Line
-	4500 1750 4500 1675
+	4500 1525 4500 1450
 Wire Wire Line
-	4500 1675 4600 1675
+	4150 1450 4600 1450
 Wire Wire Line
-	4600 1675 4600 1750
+	4600 1450 4600 1525
 Wire Wire Line
-	3875 2375 3875 1850
-NoConn ~ 4100 1950
+	3875 1100 3875 2375
+NoConn ~ 4100 1825
 $Comp
 L GND #PWR017
 U 1 1 5C240C7F
@@ -1117,4 +1080,163 @@ Text Notes 7350 7500 0    60   ~ 0
 RC6502 Programmable Sound Generator
 Text Notes 7025 6950 0    60   ~ 0
 A simple sound card for the RC6502 computer, this one implements the sound chip\noriginally found in systems such as the BBC Micro as well as Sega Master System\nconsoles. Note that the card does not have a designed in reset and needs startup\nroutines to stop it from generating a random noise on power-up.
+NoConn ~ 4100 1625
+NoConn ~ 4100 1925
+$Comp
+L TRS_3.5mm J1
+U 1 1 5C2450A7
+P 4300 1725
+F 0 "J1" H 4300 2015 50  0000 C CNN
+F 1 "TRS_3.5mm" H 4150 1525 50  0000 L CNN
+F 2 "TRS:Tayda_3.5mm_stereo_TRS_jack_A-853" H 4550 1825 50  0001 C CNN
+F 3 "" H 4550 1825 50  0001 C CNN
+	1    4300 1725
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C9
+U 1 1 5C245DE4
+P 9425 1150
+F 0 "C9" H 9450 1250 50  0000 L CNN
+F 1 "100nF" H 9450 1050 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 9463 1000 50  0001 C CNN
+F 3 "" H 9425 1150 50  0001 C CNN
+	1    9425 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C10
+U 1 1 5C24602B
+P 9750 1150
+F 0 "C10" H 9775 1250 50  0000 L CNN
+F 1 "100nF" H 9775 1050 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 9788 1000 50  0001 C CNN
+F 3 "" H 9750 1150 50  0001 C CNN
+	1    9750 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C11
+U 1 1 5C24609D
+P 10075 1150
+F 0 "C11" H 10100 1250 50  0000 L CNN
+F 1 "100nF" H 10100 1050 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 10113 1000 50  0001 C CNN
+F 3 "" H 10075 1150 50  0001 C CNN
+	1    10075 1150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9425 850  9425 1000
+Wire Wire Line
+	9425 925  10725 925 
+Wire Wire Line
+	10075 925  10075 1000
+Wire Wire Line
+	9750 1000 9750 925 
+Connection ~ 9750 925 
+Wire Wire Line
+	9425 1300 9425 1375
+Wire Wire Line
+	9425 1375 10725 1375
+Wire Wire Line
+	10075 1375 10075 1300
+Wire Wire Line
+	9750 1300 9750 1375
+Connection ~ 9750 1375
+$Comp
+L C C12
+U 1 1 5C2637FC
+P 10400 1150
+F 0 "C12" H 10425 1250 50  0000 L CNN
+F 1 "100nF" H 10425 1050 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 10438 1000 50  0001 C CNN
+F 3 "" H 10400 1150 50  0001 C CNN
+	1    10400 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C13
+U 1 1 5C26387E
+P 10725 1150
+F 0 "C13" H 10750 1250 50  0000 L CNN
+F 1 "100nF" H 10750 1050 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 10763 1000 50  0001 C CNN
+F 3 "" H 10725 1150 50  0001 C CNN
+	1    10725 1150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10725 925  10725 1000
+Connection ~ 10075 925 
+Wire Wire Line
+	10725 1300 10725 1450
+Connection ~ 10075 1375
+Wire Wire Line
+	10400 1300 10400 1375
+Connection ~ 10400 1375
+Wire Wire Line
+	10400 1000 10400 925 
+Connection ~ 10400 925 
+$Comp
+L GND #PWR019
+U 1 1 5C263DDE
+P 10725 1450
+F 0 "#PWR019" H 10725 1200 50  0001 C CNN
+F 1 "GND" H 10725 1300 50  0000 C CNN
+F 2 "" H 10725 1450 50  0001 C CNN
+F 3 "" H 10725 1450 50  0001 C CNN
+	1    10725 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 10725 1375
+$Comp
+L VCC #PWR020
+U 1 1 5C264246
+P 9425 850
+F 0 "#PWR020" H 9425 700 50  0001 C CNN
+F 1 "VCC" H 9425 1000 50  0000 C CNN
+F 2 "" H 9425 850 50  0001 C CNN
+F 3 "" H 9425 850 50  0001 C CNN
+	1    9425 850 
+	1    0    0    -1  
+$EndComp
+Connection ~ 9425 925 
+$Comp
+L Jumper_NO_Small JP1
+U 1 1 5C265B84
+P 6525 3975
+F 0 "JP1" H 6525 4055 50  0000 C CNN
+F 1 "CLK_EN" H 6535 3915 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 6525 3975 50  0001 C CNN
+F 3 "" H 6525 3975 50  0001 C CNN
+	1    6525 3975
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6525 3875 6525 3825
+NoConn ~ 10425 4550
+Text Label 6875 3825 2    60   ~ 0
+CLK
+$Comp
+L Conn_01x02 J5
+U 1 1 5C266EC8
+P 4425 1100
+F 0 "J5" H 4425 1200 50  0000 C CNN
+F 1 "EXT" H 4425 900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 4425 1100 50  0001 C CNN
+F 3 "" H 4425 1100 50  0001 C CNN
+	1    4425 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 1450 4150 1200
+Wire Wire Line
+	4150 1200 4225 1200
+Connection ~ 4500 1450
+Wire Wire Line
+	3875 1100 4225 1100
+Connection ~ 3875 1725
+Text Label 1650 2525 3    60   ~ 0
+AMP_2
 $EndSCHEMATC
