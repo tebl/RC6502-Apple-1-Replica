@@ -1,4 +1,4 @@
-update=04/12/2018 21:30:28
+update=13/12/2018 15:24:21
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -64,5 +66,4 @@ LibName34=D:/ownCloud/Documents/Projects/RC6502/Templates/mounting
 LibName35=D:/ownCloud/Documents/Projects/RC6502/Templates/oscillator
 LibName36=D:/ownCloud/Documents/Projects/RC6502/Templates/mc6847
 LibName37=D:/ownCloud/Documents/Projects/RC6502/Templates/rca_plug
-[general]
-version=1
+LibName38=vdu_port
