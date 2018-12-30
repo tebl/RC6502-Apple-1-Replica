@@ -500,16 +500,15 @@ Text GLabel 10250 5150 0    60   BiDi ~ 0
 D1
 Text GLabel 10250 5050 0    60   BiDi ~ 0
 D0
-NoConn ~ 2100 1225
 $Comp
-L Conn_02x05_Odd_Even J2
+L Conn_02x07_Odd_Even J2
 U 1 1 5C0413AA
-P 2600 925
-F 0 "J2" H 2650 1225 50  0000 C CNN
+P 2600 1025
+F 0 "J2" H 2650 1325 50  0000 C CNN
 F 1 "VDU_BASE" H 2650 625 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x05_Pitch2.54mm" H 2600 925 50  0001 C CNN
-F 3 "" H 2600 925 50  0001 C CNN
-	1    2600 925 
+F 2 "Pin_Headers:Pin_Header_Straight_2x07_Pitch2.54mm" H 2600 1025 50  0001 C CNN
+F 3 "" H 2600 1025 50  0001 C CNN
+	1    2600 1025
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -522,12 +521,11 @@ Wire Wire Line
 	2100 1025 2400 1025
 Wire Wire Line
 	2100 1125 2400 1125
-NoConn ~ 2100 1325
 NoConn ~ 2100 1425
 Wire Wire Line
 	2900 725  3300 725 
 Wire Wire Line
-	2975 725  2975 1125
+	2975 725  2975 1325
 Wire Wire Line
 	2975 1125 2900 1125
 Wire Wire Line
@@ -539,12 +537,8 @@ Connection ~ 2975 925
 Wire Wire Line
 	2900 825  2975 825 
 Connection ~ 2975 825 
-Text Notes 2125 1325 0    60   ~ 0
-ROM
 Text Notes 2125 1425 0    60   ~ 0
 ROM
-Text Notes 2125 1225 0    60   ~ 0
-PIA
 Text Notes 2125 1125 0    60   ~ 0
 $C000
 Text Notes 2125 1025 0    60   ~ 0
@@ -1224,7 +1218,7 @@ U 1 1 5C12C79F
 P 1200 2525
 F 0 "U11" H 1200 2625 60  0000 C CNN
 F 1 "VDU_Port" H 1475 2075 60  0000 C CNN
-F 2 "vdu_amplifier:VDU Module" H 1200 2525 60  0001 C CNN
+F 2 "vdu_amplifier:Amplifier" H 1200 2525 60  0001 C CNN
 F 3 "" H 1200 2525 60  0001 C CNN
 	1    1200 2525
 	1    0    0    -1  
@@ -1602,4 +1596,18 @@ F 3 "" H 6625 7175 50  0001 C CNN
 	1    6625 7175
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2100 1225 2400 1225
+Wire Wire Line
+	2100 1325 2400 1325
+Text Notes 2125 1225 0    60   ~ 0
+$D000
+Text Notes 2125 1325 0    60   ~ 0
+$E000
+Wire Wire Line
+	2975 1225 2900 1225
+Connection ~ 2975 1125
+Wire Wire Line
+	2975 1325 2900 1325
+Connection ~ 2975 1225
 $EndSCHEMATC
