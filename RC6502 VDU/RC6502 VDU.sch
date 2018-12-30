@@ -554,8 +554,6 @@ Text GLabel 3300 725  2    60   Output ~ 0
 VDU_BASE
 Text GLabel 3150 2475 2    60   Output ~ 0
 VDU_CLK
-Wire Wire Line
-	3000 2475 3150 2475
 $Comp
 L GND #PWR02
 U 1 1 5C0463DB
@@ -890,28 +888,6 @@ Wire Wire Line
 	7500 6350 7650 6350
 Wire Wire Line
 	7500 6450 7650 6450
-Text GLabel 10400 4450 0    60   Input ~ 0
-PHI0
-$Comp
-L Jumper_NO_Small JP2
-U 1 1 5C05E5BB
-P 3275 2250
-F 0 "JP2" H 3275 2330 50  0000 C CNN
-F 1 "PHI0_OUT" H 3285 2190 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 3275 2250 50  0001 C CNN
-F 3 "" H 3275 2250 50  0001 C CNN
-	1    3275 2250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3075 2475 3075 2250
-Connection ~ 3075 2475
-Wire Wire Line
-	3075 2250 3175 2250
-Text GLabel 3475 2250 2    60   Output ~ 0
-PHI0
-Wire Wire Line
-	3375 2250 3475 2250
 $Comp
 L GND #PWR08
 U 1 1 5C0636E6
@@ -1610,4 +1586,7 @@ Connection ~ 2975 1125
 Wire Wire Line
 	2975 1325 2900 1325
 Connection ~ 2975 1225
+Wire Wire Line
+	3000 2475 3150 2475
+NoConn ~ 10400 4450
 $EndSCHEMATC
