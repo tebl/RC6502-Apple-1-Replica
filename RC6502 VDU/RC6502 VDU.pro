@@ -1,4 +1,4 @@
-update=30/12/2018 21:08:07
+update=30/12/2018 21:16:23
 version=1
 last_client=kicad
 [pcbnew]
@@ -65,5 +65,15 @@ LibName35=D:/ownCloud/Documents/Projects/RC6502/Templates/oscillator
 LibName36=D:/ownCloud/Documents/Projects/RC6502/Templates/mc6847
 LibName37=D:/ownCloud/Documents/Projects/RC6502/Templates/rca_plug
 LibName38=vdu_port
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [general]
 version=1
