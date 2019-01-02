@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:65xx
+LIBS:rc6502_backplane
 LIBS:RC6502 Apple 1 SBC-cache
 EELAYER 25 0
 EELAYER END
@@ -774,7 +775,7 @@ U 1 1 59421FD0
 P 750 6600
 F 0 "X1" H 550 6850 50  0000 L CNN
 F 1 "1MHz" H 800 6350 50  0000 L CNN
-F 2 "Oscillators:Oscillator_DIP-14" H 1200 6250 50  0001 C CNN
+F 2 "Oscillator:Oscillator_DIP-14" H 1200 6250 50  0001 C CNN
 F 3 "" H 650 6600 50  0001 C CNN
 	1    750  6600
 	1    0    0    -1  

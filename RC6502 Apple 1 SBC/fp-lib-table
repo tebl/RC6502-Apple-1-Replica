@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name rc6502)(type KiCad)(uri "$(KIPRJMOD)/rc6502.pretty")(options "")(descr ""))
+  (lib (name Oscillator)(type KiCad)(uri D:/ownCloud/Documents/Projects/RC6502/Templates/Oscillator.pretty)(options "")(descr ""))
 )

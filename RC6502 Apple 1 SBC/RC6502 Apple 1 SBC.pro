@@ -1,4 +1,4 @@
-update=02/12/2018 14:01:21
+update=02/01/2019 15:29:42
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,16 +25,6 @@ version=1
 NetIExt=net
 [general]
 version=1
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=export/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -70,3 +60,13 @@ LibName28=contrib
 LibName29=valves
 LibName30=65xx
 LibName31=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
