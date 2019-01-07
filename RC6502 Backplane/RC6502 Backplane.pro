@@ -1,4 +1,4 @@
-update=03/01/2019 14:34:03
+update=07/01/2019 13:41:43
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,4 @@ LibName30=atmel
 LibName31=contrib
 LibName32=valves
 LibName33=rc6502_backplane
+LibName34=D:/ownCloud/Documents/Projects/RC6502/Templates/mounting
