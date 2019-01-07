@@ -1,4 +1,4 @@
-update=07/01/2019 13:41:43
+update=07/01/2019 16:05:22
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,13 @@ LibName31=contrib
 LibName32=valves
 LibName33=rc6502_backplane
 LibName34=D:/ownCloud/Documents/Projects/RC6502/Templates/mounting
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
