@@ -31,7 +31,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:Composite Video Amplifier-cache
+LIBS:RC6502 VDU Amplifier-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -93,17 +93,6 @@ F 3 "" H 5250 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
-U 1 1 5C338145
-P 4650 5050
-F 0 "R2" V 4730 5050 50  0000 C CNN
-F 1 "10k" V 4650 5050 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4580 5050 50  0001 C CNN
-F 3 "" H 4650 5050 50  0001 C CNN
-	1    4650 5050
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Output J2
 U 1 1 5C338146
 P 6975 4250
@@ -116,10 +105,6 @@ F 3 "" H 6975 4250 50  0001 C CNN
 $EndComp
 Text Label 6725 4050 2    60   ~ 0
 VID_OUT
-Text Label 4125 4150 0    60   ~ 0
-AUD_IN
-Text Label 6650 5050 2    60   ~ 0
-AUD_OUT
 $Comp
 L Video J1
 U 1 1 5C338147
@@ -148,7 +133,7 @@ U 1 1 5C33871C
 P 4650 4050
 F 0 "R1" V 4730 4050 50  0000 C CNN
 F 1 "1k" V 4650 4050 50  0000 C CNN
-F 2 "" V 4580 4050 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4580 4050 50  0001 C CNN
 F 3 "" H 4650 4050 50  0001 C CNN
 	1    4650 4050
 	0    1    1    0   
@@ -159,7 +144,7 @@ U 1 1 5C338A5E
 P 5250 4475
 F 0 "R5" V 5330 4475 50  0000 C CNN
 F 1 "180" V 5250 4475 50  0000 C CNN
-F 2 "" V 5180 4475 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5180 4475 50  0001 C CNN
 F 3 "" H 5250 4475 50  0001 C CNN
 	1    5250 4475
 	-1   0    0    1   
@@ -170,10 +155,10 @@ U 1 1 5C338C7C
 P 5025 3775
 F 0 "R3" V 5105 3775 50  0000 C CNN
 F 1 "6k2" V 5025 3775 50  0000 C CNN
-F 2 "" V 4955 3775 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4955 3775 50  0001 C CNN
 F 3 "" H 5025 3775 50  0001 C CNN
 	1    5025 3775
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L R R4
@@ -181,7 +166,7 @@ U 1 1 5C338F74
 P 5250 3550
 F 0 "R4" V 5330 3550 50  0000 C CNN
 F 1 "1k" V 5250 3550 50  0000 C CNN
-F 2 "" V 5180 3550 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5180 3550 50  0001 C CNN
 F 3 "" H 5250 3550 50  0001 C CNN
 	1    5250 3550
 	-1   0    0    1   
@@ -203,7 +188,7 @@ U 1 1 5C3392AC
 P 5950 4275
 F 0 "R6" V 6030 4275 50  0000 C CNN
 F 1 "1k" V 5950 4275 50  0000 C CNN
-F 2 "" V 5880 4275 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5880 4275 50  0001 C CNN
 F 3 "" H 5950 4275 50  0001 C CNN
 	1    5950 4275
 	-1   0    0    1   
@@ -219,18 +204,10 @@ Wire Wire Line
 Wire Wire Line
 	6625 4150 6775 4150
 Wire Wire Line
-	4125 4150 4375 4150
-Wire Wire Line
-	4375 4150 4375 5050
-Wire Wire Line
 	6625 4700 6625 4150
 Wire Wire Line
 	6775 4250 6625 4250
 Connection ~ 6625 4250
-Wire Wire Line
-	6775 4350 6700 4350
-Wire Wire Line
-	6700 4350 6700 5050
 Wire Wire Line
 	4500 4050 4125 4050
 Wire Wire Line
@@ -262,15 +239,13 @@ Wire Wire Line
 	5950 4050 6775 4050
 Connection ~ 5950 4700
 Wire Wire Line
-	4375 5050 4500 5050
-Wire Wire Line
 	5250 4250 5250 4325
 Wire Wire Line
 	5250 3325 5950 3325
-Wire Wire Line
-	6700 5050 4800 5050
 Text Notes 7025 6850 0    60   ~ 0
 This is the analog video amplification circuit used with the VDU card, this variant is\nbased on the original schematic found in the book "22 Micro-computer projects: To\nbuild, use and learn" by Daniel Metzger. An excellent book if you can find a copy!
 Text Notes 7350 7500 0    60   ~ 0
 Video amplifier for the RC6502 VDU
+NoConn ~ 6775 4350
+NoConn ~ 4125 4150
 $EndSCHEMATC
