@@ -33,7 +33,7 @@ Some vendors will have the same ICs in different form factors, the ones you want
 | PCB          | Fabricate yourself using Gerber files |     1 |
 | U1           | 6502 CPU DIP-40, UM6502 or SY6502     |     1 |
 | U2           | 62256 Static RAM DIP-28               |     1 |
-| U3           | 74LS128 DIP                           |     1 |
+| U3           | 74LS138 DIP                           |     1 |
 | U4           | 28C64 or 28C256 DIP-28, EEPROM        |     1 |
 | U5           | 74LS00 DIP                            |     1 |
 | U6           | NE555 DIP                             |     1 |
