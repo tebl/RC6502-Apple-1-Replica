@@ -2,7 +2,7 @@
 
 Did you ever wonder what the first computer created by Apple was like, and then checked what getting one might cost? Well, only a few were made and those that still exist probably would cost you more than my car! Steve Wozniak built what would later be called the Apple I computer in his garage, using only common over the counter components the result was an interesting computer that still holds the imagination of many computer geeks to this day. I don't own a garage so I was limited by whatever I could do from the confines of my kitchen table, the RC6502 was what I came up with and with the files freely available on GitHub you can too!
 
-There are two versions of the RC6502, one has a card for every basic function such as CPU, RAM, ROM etc that requires a RC2014 backplane to connect everything together - this is the version to build if you want to design your own attachments later. The other is the SBC-version (Single Board Computer), this is the version to get if you want to learn a bit about the computer and enjoy building kits that are in a more compact form factor. The SBC version fits neatly on a shelf, or in a small drawer afterwards if you don't get a vote on what belongs on display.
+There are two versions of the RC6502, one has a card for every basic function such as CPU, RAM, ROM etc that requires a backplane to connect everything together - this is the version to build if you want to design your own attachments later. The other is the SBC-version (Single Board Computer), this is the version to get if you want to learn a bit about the computer and enjoy building kits that are in a more compact form factor. The SBC version fits neatly on a shelf, or in a small drawer afterwards if you don't get a vote on what belongs on display in your home. Most can be accomplished with the SBC version so to start things off, I recommend getting PCBs of the SBC ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_D_.html?inviteid=88707)) as well as the backplane ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Backplane_module_revision_A_.html?inviteid=88707)).
 
 Excited yet? Ofcourse you are, the next step is getting a PCB made and with the files available here you can have a company such as Seeed Studio make a stack of them for as little as 5$, then you need to look through the BOM (Bill Of Manufacturing) below to figure out what kind of components you'd need to put it all together. Other than that you need basic tools such as a good soldering iron with a small-ish tip, lead-based solder with a resin core is recommended for beginners and then finally a basic EEPROM programmer (I use a cheap MiniPro TL866A).
 
@@ -41,12 +41,12 @@ Some vendors will have the same ICs in different form factors, the ones you want
 | U8           | MC6821P PIA DIP-40                    |     1 |
 | U9           | MCP23S17 DIP-28                       |     1 |
 | X1           | 1.000Mhz TTL Oscillator, (DIP 14)     |     1 |
-| R1,R6-R8,R10*| 3.3k resistor                         |     5 |
-| R2           | 1M resistor                           |     1 |
-| R3           | 47k resistor                          |     1 |
-| R4           | 1k resistor                           |     1 |
-| R5           | 330 resistor                          |     1 |
-| R9           | 10k resistor                          |     1 |
+| R1,R6-R8,R10 | 3k3 (3300) ohm resistor               |     5 |
+| R2           | 1M ohm resistor                       |     1 |
+| R3           | 47k ohm resistor                      |     1 |
+| R4           | 1k ohm resistor                       |     1 |
+| R5           | 330 ohm resistor                      |     1 |
+| R9           | 10k ohm resistor                      |     1 |
 | D1           | 5mm LED diode, green or red color     |     1 |
 | J1, J8       | Single row, 2p right angle connector  |     2 |
 | J2           | 15p female pin headers                |     2 |
@@ -59,5 +59,4 @@ Some vendors will have the same ICs in different form factors, the ones you want
 |              | Jumpers for settings (CAP headers)    |     3 |
 | Nano         | Arduino Nano v3.0 with USB cable      |     1 |
 
-* R10 was added to revised schematic, see image below for how to install this on the back of the PCB!
-![PCB Backside](https://github.com/tebl/RC6502/raw/master/RC6502%20Apple%201%20SBC/gallery/2017-07-09%2020.06.43.jpg)
+If you would like to have a copy of one or more modules, what you'll need to do is zip up the contents of the export directory for each module and give that to your favourite PCB fabrication plant. Personally I prefer to use [PCBWay](https://www.pcbway.com/setinvite.aspx?inviteid=88707), each module is only 5$ each and new accounts even get the first one free! Please use the supplied link when signing up to help me support this project, I'll get a small discount on future orders and hopefully I can afford to keep developing new and exciting modules. Some of the modules also have an order-link, using this you won't have to deal with the rather daunting PCB fabrication order forms so you know it'll work on the first order attempt!

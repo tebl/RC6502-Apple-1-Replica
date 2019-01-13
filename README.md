@@ -15,7 +15,7 @@ I've been documenting the build process of the various components on my blog at 
 Like the RC2014 I've decided to keep things very modular with each card more or less doing one simple thing, easier to wrap ones head around as a beginner and a lot easier to understand when troubleshooting - also a lot cheaper to upgrade or replace since you don't actually need to replace the entire thing, just the specific board. With the conversion of the RC6502 computer to a SBC-version (Single Board Computer), you now have the option to build an all in one version on a single PCB - alternatively you can build the completely full-sized version as before if you want to!
 
 In order to build a single board computer (SBC) of RC6502 you'll need the following modules:
-- [RC6502 SBC](https://github.com/tebl/RC6502/tree/master/RC6502%20Apple%201%20SBC) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC.html?inviteid=88707))
+- [RC6502 SBC](https://github.com/tebl/RC6502/tree/master/RC6502%20Apple%201%20SBC) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_D_.html?inviteid=88707))
 
 In order to build the complete full-sized RC6502 you'll need the following modules:
 - [Backplane](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20Backplane) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Backplane_module_revision_A_.html?inviteid=88707))
