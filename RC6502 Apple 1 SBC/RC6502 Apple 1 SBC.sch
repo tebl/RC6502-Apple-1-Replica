@@ -670,7 +670,7 @@ Wire Wire Line
 Wire Wire Line
 	1600 5525 1600 5625
 Wire Wire Line
-	1450 5625 1700 5625
+	925  5625 1700 5625
 Connection ~ 1600 5625
 $Comp
 L R R1
@@ -966,7 +966,7 @@ Wire Wire Line
 	3750 1100 3750 1375
 Wire Wire Line
 	2100 1225 2150 1225
-Text GLabel 1450 5625 0    60   Input ~ 0
+Text GLabel 600  5125 1    60   Input ~ 0
 CS_ROM
 $Comp
 L 74HCT00 U5
@@ -1414,4 +1414,27 @@ Wire Wire Line
 Wire Wire Line
 	10400 4550 10400 4750
 Connection ~ 10225 4550
+$Comp
+L Jumper_NC_Dual J9
+U 1 1 5C3B495B
+P 925 5200
+F 0 "J9" H 975 5100 50  0000 L CNN
+F 1 "ROM_EN" H 925 5300 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 925 5200 50  0001 C CNN
+F 3 "" H 925 5200 50  0001 C CNN
+	1    925  5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	675  5200 600  5200
+Wire Wire Line
+	600  5200 600  5125
+Wire Wire Line
+	925  5300 925  5625
+Text GLabel 1250 5125 1    60   Input ~ 0
+VCC
+Wire Wire Line
+	1250 5125 1250 5200
+Wire Wire Line
+	1250 5200 1175 5200
 $EndSCHEMATC
