@@ -421,12 +421,7 @@ A1
 Text GLabel 3875 4100 0    60   Input ~ 0
 A0
 Wire Wire Line
-	4875 4950 5175 4950
-Wire Wire Line
-	5025 4950 5025 5200
-Wire Wire Line
-	5025 5200 4875 5200
-Connection ~ 5025 4950
+	4875 5200 5350 5200
 Text GLabel 9775 4450 2    60   Output ~ 0
 PHI2
 Text GLabel 9775 4350 2    60   Input ~ 0
@@ -1280,7 +1275,7 @@ Text GLabel 2150 1650 2    60   Output ~ 0
 CS_RAM
 Wire Wire Line
 	1950 1650 2150 1650
-Text GLabel 5175 4950 2    60   Input ~ 0
+Text GLabel 5675 5375 2    60   Input ~ 0
 CS_RAM
 Wire Wire Line
 	6900 4950 6900 5150
@@ -1437,4 +1432,30 @@ Wire Wire Line
 	1250 5125 1250 5200
 Wire Wire Line
 	1250 5200 1175 5200
+$Comp
+L Jumper_NC_Dual J10
+U 1 1 5C3B8C28
+P 5350 5375
+F 0 "J10" H 5400 5275 50  0000 L CNN
+F 1 "RAM_EN" H 5350 5475 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 5350 5375 50  0001 C CNN
+F 3 "" H 5350 5375 50  0001 C CNN
+	1    5350 5375
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5600 5375 5675 5375
+Text GLabel 5025 5450 3    60   Input ~ 0
+VCC
+Wire Wire Line
+	5025 5450 5025 5375
+Wire Wire Line
+	5025 5375 5100 5375
+Wire Wire Line
+	5350 5200 5350 5275
+Connection ~ 5025 5200
+Wire Wire Line
+	4875 4950 5025 4950
+Wire Wire Line
+	5025 4950 5025 5200
 $EndSCHEMATC
