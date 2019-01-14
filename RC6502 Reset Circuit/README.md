@@ -4,6 +4,8 @@ Funny story, the original Apple 1 computer did not have a power-on reset circuit
 
 In addition to power-on reset and normal reset functionality, this module also takes care of handling the system clock by including a footprint for a 5v TTL crystal oscillator. While you can use a standard 1Mhz oscillator, there are 2Mhz capable CPUs normally labelled 6502A so in many ways it make sense to install a 2Mhz oscillator and then jumper J2 for a /2 (pins 5-6) clock division for standard 1Mhz CPUs. Jumper positions 3-4 if installing 1Mhz oscillator. Note that the [CPU](https://github.com/tebl/RC6502/tree/master/RC6502%20CPU)-module also includes a footprint for an oscillator, disable that and then jumper J2 pins 1-2 to enable the one on this board. If you have plans of using several CPU boards with varying speeds so that you can easily swap between them, then it would make sense to only use the oscillators installed on the CPU module themselves.
 
+Picture below shows the first revision of the board, note that this does not include the functionality for setting up a clock divider.
+
 ![Wired up](https://github.com/tebl/RC6502-Apple-1-Replica/raw/master/RC6502%20Reset%20Circuit/gallery/2017-06-02%2019.52.46.jpg)
 
 # Schematic
