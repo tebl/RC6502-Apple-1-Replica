@@ -10,6 +10,9 @@ The RC6502 computer makes the same changes to the hardware dealing with ROM as w
 
 The implementation of the ROM module answers to addresses from $E000 to $FFFF, in other words the last 8KB of the 6502s 64KB total addressable memory space. The onboard socket takes an EPROM/EEPROM with sizes from 64Kb (27C64/28C64) to 256Kb (27C256/28C256), the latter size giving you the option of using up to four switchable combinations (using A13/14 jumpers). When using the smaller size, these two jumpers should be left unjumpered as the corresponding address pins whould be designated NC (No Connect) on the chips themselves!
 
+**NB!** Note that the redesigned RAM module now supports ROM chips on the same card, so if you do not intend to use the optional paging feature you may want to consider using the new RAM module instead (normally you'd get 5-10 per order anyway)!
+
+## Optional feature
 The board enables the use of backplane pin number 39 for paging purposes, this in essence means the ability to shut of the ROM module using appropriate hardware for controlling this pin. This would enable the computer to regain this section of memory space for other purposes afterwards, possibly by switching it out for more RAM... In most cases this will not be needed, so instead I encourage you to solder a hard links between pads 2 and 3 on JP5 - U2 can also be left off the board.
 
 ## Software
@@ -26,7 +29,7 @@ The following overview is also printed on the back of the SBC silkscreen, while 
 # Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a starting
 point for ordering PCBs, the schematic is also available in
-[PDF-format](https://github.com/tebl/RC6502/raw/master/RC6502%20Serial%20IO/export/RC6502%20Serial%20IO.pdf). You can refer to the BOM below for a list of suggested components to use, part numbers in parenthesis are optional and is not required.
+[PDF-format](https://github.com/tebl/RC6502-Apple-1-Replica/raw/master/RC6502%20ROM/export/RC6502%20ROM.pdf). You can refer to the BOM below for a list of suggested components to use, part numbers in parenthesis are optional and is not required.
 
 # BOM
 These are the components needed to put together your very own ROM-module for the RC6502 computer, should be able to get all of this from your favourite parts supplier through your favourite local parts supplier. For the pin headers, both male and female - if you can't find the exact pin count, just buy the longer versions and snip/cut off the parts you don't need (get extra in case of accidents, and don't cut yourself either!). Part counts in parenthesis are to be considered optional, so if you don't have any plans for them - then they can probably be left out until you need them.
