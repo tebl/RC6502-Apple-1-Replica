@@ -17,7 +17,6 @@ These are the components needed to put together your very own Backplane-module f
 | Reference | Item                                  | Count   |
 | --------- | ------------------------------------- | ------- |
 | PCB       | Fabricate yourself using KiCad files ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Backplane_module_revision_A_.html?inviteid=88707))|      1  |
-
 | J1,J3-J6  | 1x39 straight pin header, female      |      5  |
 | JP1       | Solder wire, when not intalling U1    |     (1) |
 | J2        | 3 pin DC barrel connector             |     (1) |
