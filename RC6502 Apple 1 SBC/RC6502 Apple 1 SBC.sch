@@ -771,7 +771,7 @@ F 3 "" H 650 6600 50  0001 C CNN
 	1    750  6600
 	1    0    0    -1  
 $EndComp
-Text GLabel 1175 6600 2    60   Output ~ 0
+Text GLabel 1400 6400 1    60   Output ~ 0
 CLOCK
 $Comp
 L LED D1
@@ -835,8 +835,6 @@ Connection ~ 1725 7350
 Connection ~ 2175 5850
 Wire Wire Line
 	750  5725 750  6300
-Wire Wire Line
-	1050 6600 1175 6600
 $Comp
 L R R5
 U 1 1 59421FD8
@@ -1473,4 +1471,21 @@ Text GLabel 6075 3600 3    60   Output ~ 0
 GND
 Wire Wire Line
 	6075 3600 6075 3525
+$Comp
+L Jumper_NC_Small JP1
+U 1 1 5C60279D
+P 1225 6600
+F 0 "JP1" H 1225 6680 50  0000 C CNN
+F 1 "OSC_EN" H 1235 6540 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 1225 6600 50  0001 C CNN
+F 3 "" H 1225 6600 50  0001 C CNN
+	1    1225 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 6600 1125 6600
+Wire Wire Line
+	1400 6400 1400 6600
+Wire Wire Line
+	1400 6600 1325 6600
 $EndSCHEMATC
