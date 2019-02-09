@@ -122,7 +122,7 @@ NoConn ~ 5525 1875
 NoConn ~ 5525 1975
 Text GLabel 4225 1675 0    60   Output ~ 0
 GND
-Text GLabel 6025 3125 1    60   Input ~ 0
+Text GLabel 6075 2950 1    60   Input ~ 0
 VCC
 Text GLabel 5525 3475 2    60   Input ~ 0
 A4
@@ -231,10 +231,6 @@ Wire Wire Line
 Wire Wire Line
 	900  1425 600  1425
 Connection ~ 600  1425
-Wire Wire Line
-	6025 3125 6025 3275
-Wire Wire Line
-	6025 3275 5525 3275
 Wire Wire Line
 	3875 3475 4225 3475
 Wire Wire Line
@@ -1458,4 +1454,23 @@ Wire Wire Line
 	4875 4950 5025 4950
 Wire Wire Line
 	5025 4950 5025 5200
+$Comp
+L Jumper_NC_Dual J11
+U 1 1 5C5FEAD4
+P 6075 3275
+F 0 "J11" H 6125 3175 50  0000 L CNN
+F 1 "PIA_EN" H 6075 3375 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 6075 3275 50  0001 C CNN
+F 3 "" H 6075 3275 50  0001 C CNN
+	1    6075 3275
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5525 3275 5975 3275
+Wire Wire Line
+	6075 2950 6075 3025
+Text GLabel 6075 3600 3    60   Output ~ 0
+GND
+Wire Wire Line
+	6075 3600 6075 3525
 $EndSCHEMATC
