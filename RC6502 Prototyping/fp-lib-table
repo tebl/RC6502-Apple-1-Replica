@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name mounting)(type KiCad)(uri D:/ownCloud/Documents/Projects/RC6502/Templates/mounting.pretty)(options "")(descr ""))
+  (lib (name Prototyping)(type KiCad)(uri "$(KIPRJMOD)/Prototyping.pretty")(options "")(descr ""))
+)
