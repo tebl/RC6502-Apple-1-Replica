@@ -2829,7 +2829,7 @@
   (gr_line (start 151.13 81.28) (end 76.2 81.28) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 175.26 103.505) (end 175.26 96.52) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 164.465 94.615) (end 173.355 94.615) (angle 90) (layer Edge.Cuts) (width 0.15))
-  (gr_text "RC6502\nDigital I/O\nRevision A" (at 111.76 124.46) (layer F.SilkS)
+  (gr_text "RC6502\nDigital I/O\n& Joystick\nRevision A" (at 112.395 124.46) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
   (gr_text $xC00 (at 127 135.255) (layer B.SilkS)
