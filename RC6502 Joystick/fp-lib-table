@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name RND_DSUB)(type KiCad)(uri D:/owncloud/Documents/Projects/RC6502/Templates/RND_DSUB.pretty)(options "")(descr ""))
+)
