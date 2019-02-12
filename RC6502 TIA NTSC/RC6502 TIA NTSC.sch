@@ -52,8 +52,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 900  725  0    60   Input ~ 0
-A12
 Text Notes 8225 7500 2    60   ~ 0
 RC6502 TIA (NTSC)
 Text Notes 10650 7650 2    60   ~ 0
@@ -61,27 +59,21 @@ A
 $Comp
 L 74LS138 U2
 U 1 1 5C045924
-P 1500 1075
-F 0 "U2" H 1500 1575 50  0000 C CNN
-F 1 "74HCT138" V 1500 1075 50  0000 C CNN
-F 2 "Housings_DIP:DIP-16_W7.62mm_Socket" H 1500 1075 50  0001 C CNN
-F 3 "" H 1500 1075 50  0001 C CNN
-	1    1500 1075
+P 2050 1350
+F 0 "U2" H 2050 1850 50  0000 C CNN
+F 1 "74HCT138" V 2050 1350 50  0000 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket" H 2050 1350 50  0001 C CNN
+F 3 "" H 2050 1350 50  0001 C CNN
+	1    2050 1350
 	1    0    0    -1  
 $EndComp
-Text GLabel 900  825  0    60   Input ~ 0
-A13
-Text GLabel 900  925  0    60   Input ~ 0
-A14
-Text GLabel 900  1225 0    60   Input ~ 0
-A15
 Wire Wire Line
-	900  1325 600  1325
+	1450 1600 1150 1600
 Wire Wire Line
-	600  1325 600  1575
+	1150 1600 1150 1850
 Wire Wire Line
-	900  1425 600  1425
-Connection ~ 600  1425
+	1450 1700 1150 1700
+Connection ~ 1150 1700
 $Comp
 L Oscillator X1
 U 1 1 5C04593A
@@ -120,50 +112,6 @@ NoConn ~ 10400 5950
 Wire Wire Line
 	6175 7275 6175 7350
 $Comp
-L Mounting J4
-U 1 1 5C045951
-P 10725 800
-F 0 "J4" V 10825 800 50  0000 C CNN
-F 1 "Hole" V 10825 800 50  0001 C CNN
-F 2 "mounting:Mounting" H 10725 800 50  0001 C CNN
-F 3 "" H 10725 800 50  0001 C CNN
-	1    10725 800 
-	0    1    1    0   
-$EndComp
-$Comp
-L Mounting J6
-U 1 1 5C045952
-P 10975 800
-F 0 "J6" V 11075 800 50  0000 C CNN
-F 1 "Hole" V 11075 800 50  0001 C CNN
-F 2 "mounting:Mounting" H 10975 800 50  0001 C CNN
-F 3 "" H 10975 800 50  0001 C CNN
-	1    10975 800 
-	0    1    1    0   
-$EndComp
-$Comp
-L Mounting J5
-U 1 1 5C045953
-P 10850 800
-F 0 "J5" V 10950 800 50  0000 C CNN
-F 1 "Hole" V 10950 800 50  0001 C CNN
-F 2 "mounting:Mounting" H 10850 800 50  0001 C CNN
-F 3 "" H 10850 800 50  0001 C CNN
-	1    10850 800 
-	0    1    1    0   
-$EndComp
-$Comp
-L Mounting J7
-U 1 1 5C045954
-P 11100 800
-F 0 "J7" V 11200 800 50  0000 C CNN
-F 1 "Hole" V 11200 800 50  0001 C CNN
-F 2 "mounting:Mounting" H 11100 800 50  0001 C CNN
-F 3 "" H 11100 800 50  0001 C CNN
-	1    11100 800 
-	0    1    1    0   
-$EndComp
-$Comp
 L VCC #PWR01
 U 1 1 5C04B53B
 P 10000 4150
@@ -186,54 +134,54 @@ Wire Wire Line
 $Comp
 L Conn_02x07_Odd_Even J2
 U 1 1 5C0413AA
-P 2600 1025
-F 0 "J2" H 2650 1325 50  0000 C CNN
-F 1 "VDU_BASE" H 2650 625 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x07_Pitch2.54mm" H 2600 1025 50  0001 C CNN
-F 3 "" H 2600 1025 50  0001 C CNN
-	1    2600 1025
+P 3150 1300
+F 0 "J2" H 3200 1600 50  0000 C CNN
+F 1 "VDU_BASE" H 3200 900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x07_Pitch2.54mm" H 3150 1300 50  0001 C CNN
+F 3 "" H 3150 1300 50  0001 C CNN
+	1    3150 1300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2100 725  2400 725 
+	2650 1000 2950 1000
 Wire Wire Line
-	2100 825  2400 825 
+	2650 1100 2950 1100
 Wire Wire Line
-	2100 925  2400 925 
+	2650 1200 2950 1200
 Wire Wire Line
-	2100 1025 2400 1025
+	2650 1300 2950 1300
 Wire Wire Line
-	2100 1125 2400 1125
-NoConn ~ 2100 1425
+	2650 1400 2950 1400
+NoConn ~ 2650 1700
 Wire Wire Line
-	2900 725  3050 725 
+	3450 1000 3600 1000
 Wire Wire Line
-	2975 725  2975 1325
+	3525 1000 3525 1600
 Wire Wire Line
-	2975 1125 2900 1125
+	3525 1400 3450 1400
 Wire Wire Line
-	2900 1025 2975 1025
-Connection ~ 2975 1025
+	3450 1300 3525 1300
+Connection ~ 3525 1300
 Wire Wire Line
-	2900 925  2975 925 
-Connection ~ 2975 925 
+	3450 1200 3525 1200
+Connection ~ 3525 1200
 Wire Wire Line
-	2900 825  2975 825 
-Connection ~ 2975 825 
-Text Notes 2125 1425 0    60   ~ 0
+	3450 1100 3525 1100
+Connection ~ 3525 1100
+Text Notes 2675 1700 0    60   ~ 0
 ROM
-Text Notes 2125 1125 0    60   ~ 0
+Text Notes 2675 1400 0    60   ~ 0
 $C000
-Text Notes 2125 1025 0    60   ~ 0
+Text Notes 2675 1300 0    60   ~ 0
 $B000
-Text Notes 2125 925  0    60   ~ 0
+Text Notes 2675 1200 0    60   ~ 0
 $A000
-Text Notes 2125 825  0    60   ~ 0
+Text Notes 2675 1100 0    60   ~ 0
 $9000
-Text Notes 2125 725  0    60   ~ 0
+Text Notes 2675 1000 0    60   ~ 0
 $8000
-Connection ~ 2975 725 
-Text GLabel 3050 725  2    60   Output ~ 0
+Connection ~ 3525 1000
+Text GLabel 3600 1000 2    60   Output ~ 0
 TIA_BASE
 $Comp
 L GND #PWR02
@@ -282,12 +230,12 @@ $EndComp
 $Comp
 L GND #PWR06
 U 1 1 5C04D9C7
-P 600 1575
-F 0 "#PWR06" H 600 1325 50  0001 C CNN
-F 1 "GND" H 600 1425 50  0000 C CNN
-F 2 "" H 600 1575 50  0001 C CNN
-F 3 "" H 600 1575 50  0001 C CNN
-	1    600  1575
+P 1150 1850
+F 0 "#PWR06" H 1150 1600 50  0001 C CNN
+F 1 "GND" H 1150 1700 50  0000 C CNN
+F 2 "" H 1150 1850 50  0001 C CNN
+F 3 "" H 1150 1850 50  0001 C CNN
+	1    1150 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -319,7 +267,7 @@ U 1 1 5C0DE558
 P 2975 2775
 F 0 "J8" H 2985 2895 50  0000 C CNN
 F 1 "Composite" V 3090 2775 50  0000 C CNN
-F 2 "rca:rca_yellow" H 2975 2775 50  0001 C CNN
+F 2 "RCA:rca_yellow" H 2975 2775 50  0001 C CNN
 F 3 "" H 2975 2775 50  0001 C CNN
 	1    2975 2775
 	1    0    0    -1  
@@ -388,26 +336,26 @@ $EndComp
 Wire Wire Line
 	2975 2975 2975 3050
 Wire Wire Line
-	2100 1225 2400 1225
+	2650 1500 2950 1500
 Wire Wire Line
-	2100 1325 2400 1325
-Text Notes 2125 1225 0    60   ~ 0
+	2650 1600 2950 1600
+Text Notes 2675 1500 0    60   ~ 0
 $D000
-Text Notes 2125 1325 0    60   ~ 0
+Text Notes 2675 1600 0    60   ~ 0
 $E000
 Wire Wire Line
-	2975 1225 2900 1225
-Connection ~ 2975 1125
+	3525 1500 3450 1500
+Connection ~ 3525 1400
 Wire Wire Line
-	2975 1325 2900 1325
-Connection ~ 2975 1225
+	3525 1600 3450 1600
+Connection ~ 3525 1500
 $Comp
 L RCA_PLUG J1
 U 1 1 5C623180
 P 2750 3075
 F 0 "J1" H 2760 3195 50  0000 C CNN
 F 1 "Audio" V 2865 3075 50  0000 C CNN
-F 2 "rca:rca_yellow" H 2750 3075 50  0001 C CNN
+F 2 "RCA:rca_yellow" H 2750 3075 50  0001 C CNN
 F 3 "" H 2750 3075 50  0001 C CNN
 	1    2750 3075
 	1    0    0    -1  
@@ -465,18 +413,8 @@ Text Label 10375 3550 2    60   ~ 0
 A4
 Text Label 10375 3450 2    60   ~ 0
 A5
-Text Label 10375 3350 2    60   ~ 0
-A6
 Text Label 10375 3250 2    60   ~ 0
 A7
-Text Label 10375 3150 2    60   ~ 0
-A8
-Text Label 10375 3050 2    60   ~ 0
-A9
-Text Label 10375 2950 2    60   ~ 0
-A10
-Text Label 10375 2850 2    60   ~ 0
-A11
 Text Label 10375 2750 2    60   ~ 0
 A12
 Text Label 10375 2650 2    60   ~ 0
@@ -488,17 +426,7 @@ Wire Wire Line
 Wire Wire Line
 	9700 3650 10400 3650
 Wire Wire Line
-	9700 3150 10400 3150
-Wire Wire Line
 	9700 3250 10400 3250
-Wire Wire Line
-	9700 3350 10400 3350
-Wire Wire Line
-	9700 2850 10400 2850
-Wire Wire Line
-	9700 2950 10400 2950
-Wire Wire Line
-	9700 3050 10400 3050
 Wire Wire Line
 	9700 2650 10400 2650
 Wire Wire Line
@@ -516,17 +444,7 @@ Entry Wire Line
 Entry Wire Line
 	9600 2650 9700 2750
 Entry Wire Line
-	9600 2750 9700 2850
-Entry Wire Line
-	9600 2850 9700 2950
-Entry Wire Line
-	9600 2950 9700 3050
-Entry Wire Line
-	9600 3050 9700 3150
-Entry Wire Line
 	9600 3150 9700 3250
-Entry Wire Line
-	9600 3250 9700 3350
 Entry Wire Line
 	9600 3350 9700 3450
 Entry Wire Line
@@ -745,7 +663,7 @@ L Jumper_NO_Small JP5
 U 1 1 5C634111
 P 10300 6150
 F 0 "JP5" H 10300 6230 50  0000 C CNN
-F 1 "T0_EX1" H 10310 6090 50  0000 C CNN
+F 1 "T0_EN" H 10310 6090 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 10300 6150 50  0001 C CNN
 F 3 "" H 10300 6150 50  0001 C CNN
 	1    10300 6150
@@ -756,7 +674,7 @@ L Jumper_NO_Small JP4
 U 1 1 5C6341DF
 P 10075 6300
 F 0 "JP4" H 10075 6380 50  0000 C CNN
-F 1 "T1_EX2" H 10085 6240 50  0000 C CNN
+F 1 "T1_EN" H 10085 6240 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 10075 6300 50  0001 C CNN
 F 3 "" H 10075 6300 50  0001 C CNN
 	1    10075 6300
@@ -1103,9 +1021,9 @@ F 3 "" H 8775 3375 50  0001 C CNN
 $EndComp
 Connection ~ 8775 3000
 Wire Wire Line
-	9150 3000 9225 3000
+	9150 3000 9500 3000
 Wire Wire Line
-	9225 2925 9225 3075
+	9225 2925 9225 3000
 $Comp
 L VCC #PWR020
 U 1 1 5C6504AE
@@ -1118,8 +1036,6 @@ F 3 "" H 9225 2625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9225 3000
-Text GLabel 9225 3075 3    60   Output ~ 0
-L_FIRE
 Entry Wire Line
 	8275 4075 8375 4175
 Text Label 8400 4175 0    60   ~ 0
@@ -1174,9 +1090,9 @@ F 3 "" H 8775 4550 50  0001 C CNN
 $EndComp
 Connection ~ 8775 4175
 Wire Wire Line
-	9150 4175 9225 4175
+	9150 4175 9500 4175
 Wire Wire Line
-	9225 4100 9225 4250
+	9225 4100 9225 4175
 $Comp
 L VCC #PWR022
 U 1 1 5C651572
@@ -1189,8 +1105,6 @@ F 3 "" H 9225 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9225 4175
-Text GLabel 9225 4250 3    60   Output ~ 0
-L_FIRE
 Text Notes 8300 2775 0    60   ~ 0
 LEFT player,\nfire button
 Text Notes 8300 3925 0    60   ~ 0
@@ -1701,7 +1615,7 @@ $EndComp
 Wire Bus Line
 	5125 525  5125 3025
 Wire Bus Line
-	5125 525  9600 525 
+	925  525  9600 525 
 Wire Wire Line
 	6475 7275 6475 7425
 Wire Wire Line
@@ -1838,4 +1752,45 @@ Wire Wire Line
 Wire Wire Line
 	3875 5675 3875 5450
 Connection ~ 3975 5775
+Text Notes 7000 6850 0    60   ~ 0
+Hopefully a functional part of the display section used in the Atari 2600 console. This is\nNTSC for the time being as the PAL circuit is somewhat more complex with regards to\ntiming. Color delay is limited by the 5v supply, hopefully this will be sufficient.
+Wire Wire Line
+	1450 1000 1025 1000
+Entry Wire Line
+	1025 1000 925  900 
+Text Label 1425 1000 2    60   ~ 0
+A12
+Wire Wire Line
+	1450 1100 1025 1100
+Entry Wire Line
+	1025 1100 925  1000
+Text Label 1425 1100 2    60   ~ 0
+A13
+Wire Wire Line
+	1450 1200 1025 1200
+Entry Wire Line
+	1025 1200 925  1100
+Text Label 1425 1200 2    60   ~ 0
+A14
+Wire Wire Line
+	1450 1500 1025 1500
+Entry Wire Line
+	1025 1500 925  1400
+Text Label 1425 1500 2    60   ~ 0
+A15
+Wire Bus Line
+	925  525  925  1400
+Entry Wire Line
+	9500 3000 9600 3100
+Entry Wire Line
+	9500 4175 9600 4275
+Text Label 9350 3000 2    60   ~ 0
+T0
+Text Label 9350 4175 2    60   ~ 0
+T1
+NoConn ~ 10400 2850
+NoConn ~ 10400 2950
+NoConn ~ 10400 3050
+NoConn ~ 10400 3150
+NoConn ~ 10400 3350
 $EndSCHEMATC
