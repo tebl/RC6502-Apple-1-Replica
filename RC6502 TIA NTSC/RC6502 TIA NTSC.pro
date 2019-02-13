@@ -1,4 +1,4 @@
-update=11/02/2019 21:31:07
+update=13/02/2019 15:00:52
 version=1
 last_client=kicad
 [pcbnew]
@@ -33,8 +33,6 @@ NetFmtName=
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -77,3 +75,5 @@ LibName35=D:/ownCloud/Documents/Projects/RC6502/Templates/oscillator
 LibName36=D:/ownCloud/Documents/Projects/RC6502/Templates/rca_plug
 LibName37=vdu_port
 LibName38=D:/owncloud/Documents/Projects/RC6502/Templates/atari_tia
+[general]
+version=1
