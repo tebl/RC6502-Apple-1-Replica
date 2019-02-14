@@ -50,8 +50,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7975 7500 2    60   ~ 0
-RC6502 RIOT
+Text Notes 7350 7500 0    60   ~ 0
+RC6502 RIOT 2600
 Text Notes 10650 7650 2    60   ~ 0
 A
 $Comp
@@ -564,7 +564,7 @@ Wire Wire Line
 Wire Wire Line
 	8375 1825 9025 1825
 Wire Bus Line
-	9600 6200 9600 525 
+	9600 525  9600 6200
 Wire Wire Line
 	5225 2025 5650 2025
 Entry Wire Line
@@ -696,7 +696,7 @@ U 1 1 5C6443AB
 P 6300 2025
 F 0 "U1" H 6300 2275 60  0000 C CNN
 F 1 "RIOT" V 6300 1925 60  0000 C CNN
-F 2 "" H 5800 2225 60  0000 C CNN
+F 2 "Housings_DIP:DIP-40_W15.24mm_Socket" H 5800 2225 60  0001 C CNN
 F 3 "" H 5800 2225 60  0000 C CNN
 	1    6300 2025
 	1    0    0    -1  
@@ -753,7 +753,7 @@ U 1 1 5C6454FA
 P 8675 3825
 F 0 "R1" V 8755 3825 50  0000 C CNN
 F 1 "3k3" V 8675 3825 50  0000 C CNN
-F 2 "" V 8605 3825 50  0001 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8605 3825 50  0001 C CNN
 F 3 "" H 8675 3825 50  0001 C CNN
 	1    8675 3825
 	1    0    0    -1  
@@ -790,7 +790,7 @@ F 1 "IRQ_EN" H 8675 4325 50  0000 C BNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 8675 4225 50  0001 C CNN
 F 3 "" H 8675 4225 50  0001 C CNN
 	1    8675 4225
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	8775 4225 9500 4225
@@ -802,29 +802,12 @@ Text Label 9350 4225 2    60   ~ 0
 ~IRQ
 Wire Wire Line
 	8675 4475 8675 4875
-$Comp
-L Jumper_NC_Dual JP6
-U 1 1 5C64A264
-P 8800 2725
-F 0 "JP6" H 8850 2625 50  0000 L CNN
-F 1 "RS_SEL" H 8800 2825 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 8800 2725 50  0001 C CNN
-F 3 "" H 8800 2725 50  0001 C CNN
-	1    8800 2725
-	0    1    1    0   
-$EndComp
 Entry Wire Line
 	9500 2400 9600 2500
-Wire Wire Line
-	8800 2400 9500 2400
-Wire Wire Line
-	8800 2475 8800 2400
 Text Label 8400 2725 0    60   ~ 0
 ~RS
 Entry Wire Line
 	8375 2725 8275 2625
-Wire Wire Line
-	8375 2725 8700 2725
 Wire Notes Line
 	8125 3475 9375 3475
 Text Label 9350 1500 2    60   ~ 0
@@ -880,10 +863,6 @@ Wire Wire Line
 	9125 1325 9125 1250
 Wire Wire Line
 	8800 1325 9125 1325
-Wire Wire Line
-	8800 3050 9500 3050
-Wire Wire Line
-	8800 3050 8800 2975
 Entry Wire Line
 	9500 3050 9600 3150
 Text Label 9350 3050 2    60   ~ 0
@@ -947,7 +926,7 @@ U 1 1 5C65088B
 P 6975 5025
 F 0 "J4" H 6975 5575 50  0000 C CNN
 F 1 "RIGHT PLAYER" H 6975 4450 50  0000 C CNN
-F 2 "" H 6975 5025 50  0001 C CNN
+F 2 "RND_DSUB:DSUB-9_Male_Vertical_Pitch2.77x2.84mm" H 6975 5025 50  0001 C CNN
 F 3 "" H 6975 5025 50  0001 C CNN
 	1    6975 5025
 	1    0    0    -1  
@@ -958,7 +937,7 @@ U 1 1 5C6508D7
 P 5225 5025
 F 0 "J1" H 5225 5575 50  0000 C CNN
 F 1 "LEFT PLAYER" H 5225 4450 50  0000 C CNN
-F 2 "" H 5225 5025 50  0001 C CNN
+F 2 "RND_DSUB:DSUB-9_Male_Vertical_Pitch2.77x2.84mm" H 5225 5025 50  0001 C CNN
 F 3 "" H 5225 5025 50  0001 C CNN
 	1    5225 5025
 	1    0    0    -1  
@@ -969,7 +948,7 @@ U 1 1 5C650F09
 P 6875 3975
 F 0 "J3" H 6875 4175 50  0000 C CNN
 F 1 "Analog" H 6875 3675 50  0000 C CNN
-F 2 "" H 6875 3975 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 6875 3975 50  0001 C CNN
 F 3 "" H 6875 3975 50  0001 C CNN
 	1    6875 3975
 	1    0    0    -1  
@@ -1108,7 +1087,7 @@ Entry Wire Line
 Entry Wire Line
 	4400 5325 4500 5425
 Wire Bus Line
-	6150 6200 6150 3775
+	6150 3775 6150 6200
 Wire Bus Line
 	4400 4525 4400 6200
 Wire Wire Line
@@ -1199,7 +1178,7 @@ U 1 1 5C65BFA4
 P 3175 3875
 F 0 "JP8" H 3225 3775 50  0000 L CNN
 F 1 "B/W" H 3175 3975 50  0000 C BNN
-F 2 "" H 3175 3875 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3175 3875 50  0001 C CNN
 F 3 "" H 3175 3875 50  0001 C CNN
 	1    3175 3875
 	0    1    1    0   
@@ -1228,7 +1207,7 @@ U 1 1 5C65C817
 P 3175 4650
 F 0 "JP9" H 3225 4550 50  0000 L CNN
 F 1 "L_DIFF" H 3175 4750 50  0000 C BNN
-F 2 "" H 3175 4650 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3175 4650 50  0001 C CNN
 F 3 "" H 3175 4650 50  0001 C CNN
 	1    3175 4650
 	0    1    1    0   
@@ -1257,7 +1236,7 @@ U 1 1 5C65CC4B
 P 3175 5400
 F 0 "JP10" H 3225 5300 50  0000 L CNN
 F 1 "R_DIFF" H 3175 5500 50  0000 C BNN
-F 2 "" H 3175 5400 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3175 5400 50  0001 C CNN
 F 3 "" H 3175 5400 50  0001 C CNN
 	1    3175 5400
 	0    1    1    0   
@@ -1286,7 +1265,7 @@ U 1 1 5C65D4C5
 P 1750 3950
 F 0 "SW1" H 1800 4050 50  0000 L CNN
 F 1 "SELECT" H 1750 3890 50  0000 C CNN
-F 2 "" H 1750 4150 50  0001 C CNN
+F 2 "Buttons_Switches_THT:SW_PUSH_6mm" H 1750 4150 50  0001 C CNN
 F 3 "" H 1750 4150 50  0001 C CNN
 	1    1750 3950
 	0    1    1    0   
@@ -1316,7 +1295,7 @@ U 1 1 5C65E10D
 P 1750 4725
 F 0 "SW2" H 1800 4825 50  0000 L CNN
 F 1 "START" H 1750 4665 50  0000 C CNN
-F 2 "" H 1750 4925 50  0001 C CNN
+F 2 "Buttons_Switches_THT:SW_PUSH_6mm" H 1750 4925 50  0001 C CNN
 F 3 "" H 1750 4925 50  0001 C CNN
 	1    1750 4725
 	0    1    1    0   
@@ -1383,7 +1362,7 @@ U 1 1 5C662E55
 P 1825 5600
 F 0 "J5" H 1825 5800 50  0000 C CNN
 F 1 "AUX" H 1825 5400 50  0000 C CNN
-F 2 "" H 1825 5600 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 1825 5600 50  0001 C CNN
 F 3 "" H 1825 5600 50  0001 C CNN
 	1    1825 5600
 	-1   0    0    1   
@@ -1409,5 +1388,56 @@ PB5
 Text Notes 1350 3500 0    60   ~ 0
 Input switches
 Text Notes 7025 6975 0    60   ~ 0
-RIOT card for the RC6502 computer, modelled after the input side of the Atari 2600 -\ntherefore features the same switches and joystick ports. Adressing can be jumpered to\nAtari 2600-mode, when doing so it assumes the presence of the corresponding\nTIA-module.
+RIOT card for the RC6502 computer, modelled after the input side of the Atari 2600 -\ntherefore features the same switches and joystick ports. Addressing can be jumpered to\nAtari 2600-mode, when doing so it assumes the presence of the corresponding\nTIA-module.
+$Comp
+L Jumper_NC_Dual JP6
+U 1 1 5C669D81
+P 9075 2725
+F 0 "JP6" H 9125 2625 50  0000 L CNN
+F 1 "RAM_SEL" H 9075 2825 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 9075 2725 50  0001 C CNN
+F 3 "" H 9075 2725 50  0001 C CNN
+	1    9075 2725
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9075 2475 9075 2400
+Wire Wire Line
+	9075 2975 9075 3050
+Wire Wire Line
+	9075 3050 9500 3050
+Wire Wire Line
+	9075 2400 9500 2400
+$Comp
+L Jumper_NC_Dual JP11
+U 1 1 5C66BB42
+P 8700 2725
+F 0 "JP11" H 8750 2625 50  0000 L CNN
+F 1 "RAM_EN" H 8700 2825 50  0000 C BNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 8700 2725 50  0001 C CNN
+F 3 "" H 8700 2725 50  0001 C CNN
+	1    8700 2725
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8375 2725 8600 2725
+Wire Wire Line
+	8975 2725 8900 2725
+Wire Wire Line
+	8900 2725 8900 3050
+Wire Wire Line
+	8900 3050 8700 3050
+Wire Wire Line
+	8700 3050 8700 2975
+$Comp
+L VCC #PWR021
+U 1 1 5C66C811
+P 8700 2475
+F 0 "#PWR021" H 8700 2325 50  0001 C CNN
+F 1 "VCC" H 8700 2625 50  0000 C CNN
+F 2 "" H 8700 2475 50  0001 C CNN
+F 3 "" H 8700 2475 50  0001 C CNN
+	1    8700 2475
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
