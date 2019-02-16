@@ -1,4 +1,4 @@
-update=16/02/2019 22:23:41
+update=16/02/2019 22:25:14
 version=1
 last_client=kicad
 [pcbnew]
@@ -57,8 +57,6 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
-[general]
-version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -69,3 +67,5 @@ NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
+[general]
+version=1

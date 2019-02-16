@@ -29,7 +29,7 @@ These are the components needed to put together your very own RAM-module for the
 | JP3-JP13  | 1x3 straight pin header, male         |    10  |
 | U1        | 62256 SRAM or 28C256, both DIP-28     |     1  |
 | U2        | 74LS138 DIP                           |     1  |
-| U3-U4     | 74LS02 DIP                            |     2  |
+| U3-U4     | 74LS08 DIP                            |     2  |
 | U5        | 74LS00 DIP                            |     1  |
 |           | Jumper caps                           | 3 (10) |
 
