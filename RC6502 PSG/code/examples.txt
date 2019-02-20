@@ -1,0 +1,48 @@
+/* Status */
+A000
+
+/* silence all channels */
+A000:9F
+A000:BF
+A000:DF
+A000:FF
+
+
+/* turn on all channels */
+A000:90
+A000:B0
+A000:D0
+A000:F0
+
+/* example */
+A000:83  // play tone
+A000:12
+A000:90  // 0x90 - ch0 loud
+A000:9F  // 0x9f - ch0 lowest
+
+/* psg */
+A000:80
+A000:0F
+A000:91
+
+    1 POKE -8192,128
+    2 POKE -8192,15
+    3 POKE -8192,145
+    4 GOTO 1
+
+/* Bridge */
+    1 POKE -8192,159
+    2 POKE -8192,191
+    3 POKE -8192,223
+    4 POKE -8192,255
+    5 POKE -8192,144
+   20 FOR H=0 TO 63
+   25 FOR L=128 TO 143
+   27 FOR C=0 TO 10
+   30 POKE -8192,L
+   40 POKE -8192,H
+   90 NEXT C
+   91 NEXT L
+   92 NEXT H
+   95 POKE -8192,159
+   99 END
