@@ -31,12 +31,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:rc6502_backplane
-LIBS:mounting
-LIBS:oscillator
-LIBS:mc6847
-LIBS:rca_plug
-LIBS:vdu_port
 LIBS:RC6502 VDU Color-cache
 EELAYER 25 0
 EELAYER END
@@ -278,7 +272,7 @@ Wire Wire Line
 	6725 2275 6575 2275
 Connection ~ 6575 2275
 Wire Wire Line
-	7025 1350 7025 2075
+	7025 925  7025 2075
 Connection ~ 6575 1350
 $Comp
 L R R6
@@ -635,4 +629,16 @@ $EndComp
 NoConn ~ 1750 4875
 NoConn ~ 1750 4975
 NoConn ~ 1750 1900
+$Comp
+L VCC #PWR?
+U 1 1 5C772014
+P 7025 925
+F 0 "#PWR?" H 7025 775 50  0001 C CNN
+F 1 "VCC" H 7025 1075 50  0000 C CNN
+F 2 "" H 7025 925 50  0001 C CNN
+F 3 "" H 7025 925 50  0001 C CNN
+	1    7025 925 
+	1    0    0    -1  
+$EndComp
+Connection ~ 7025 1350
 $EndSCHEMATC
