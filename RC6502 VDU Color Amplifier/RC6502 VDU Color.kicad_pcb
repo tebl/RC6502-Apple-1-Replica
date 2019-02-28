@@ -3,7 +3,7 @@
   (general
     (links 42)
     (no_connects 0)
-    (area 52.629999 44.374999 142.950001 90.880001)
+    (area 52.629999 42.205 151.765001 144.145001)
     (thickness 1.6)
     (drawings 29)
     (tracks 162)
@@ -1177,11 +1177,11 @@
   (gr_line (start 142.875 45.72) (end 142.875 63.5) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_arc (start 141.605 45.72) (end 141.605 44.45) (angle 90) (layer Edge.Cuts) (width 0.15))
 
-  (segment (start 106.045 53.34) (end 106.045 49.53) (width 0.25) (layer F.Cu) (net 1) (status 400000))
+  (segment (start 106.045 53.34) (end 106.045 49.53) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 106.045 49.53) (end 106.045 46.99) (width 0.25) (layer B.Cu) (net 1) (tstamp 5C77092B))
-  (segment (start 106.045 46.99) (end 106.68 46.355) (width 0.25) (layer B.Cu) (net 1) (tstamp 5C77091F) (status 800000))
+  (segment (start 106.045 46.99) (end 106.68 46.355) (width 0.25) (layer B.Cu) (net 1) (tstamp 5C77091F))
   (via (at 106.045 49.53) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) (net 1))
-  (segment (start 106.045 53.34) (end 106.68 53.975) (width 0.25) (layer F.Cu) (net 1) (tstamp 5C770933) (status C00000))
+  (segment (start 106.045 53.34) (end 106.68 53.975) (width 0.25) (layer F.Cu) (net 1) (tstamp 5C770933))
   (segment (start 112.395 53.975) (end 111.76 53.34) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 111.76 53.34) (end 107.315 53.34) (width 0.25) (layer F.Cu) (net 1) (tstamp 5C6D5BB1))
   (segment (start 107.315 53.34) (end 106.68 53.975) (width 0.25) (layer F.Cu) (net 1) (tstamp 5C6D5BB2))
