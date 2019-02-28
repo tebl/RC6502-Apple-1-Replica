@@ -22,6 +22,10 @@ The firmware that goes into the EEPROM hasn't been changed since Wozniak himself
 
 At this point you'll certainly have learned a lot, after all you've actually built an entire computer! Thankfully you had some modern tools available, but please take a moment to contemplate the genious needed to build this thing back in 1976! Still wanting more, why not try your hand at designing some extra modules to use with that backplane connector? Add a parallell port, replace the display portion with a proper LCD, or you could even go as far as adding a few pretty blinking lights - the possibilities are truly endless (so long as it's within 64K)!
 
+## Errata
+Revisions D and E of the SBC was missing a line powering the CPU, this is fixed by adding a piece of patch wire or simply a piece of resistor leftovers. Refer to the image below to see where it should be added, but leave some room so that it doesn't short to the pads now in the middle of the wire.
+
+![Adding wire](https://github.com/tebl/RC6502-Apple-1-Replica/blob/master/RC6502%20Apple%201%20SBC/gallery/2019-02-24%2015.27.35-1.jpg)
 
 # Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a starting point for ordering PCBs (basically you could just zip the contents of the export folder and upload that on a fabrication site), the schematic is also available in [PDF-format](https://github.com/tebl/RC6502/raw/master/RC6502%20Apple%201%20SBC/export/RC6502%20Apple%201%20SBC.pdf) so that you can refer to it while troubleshooting. You could even print it out and hang it on your office wall, excellent conversation starter at any technology-oriented business worth working at!
