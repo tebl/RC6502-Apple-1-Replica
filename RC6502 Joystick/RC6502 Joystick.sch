@@ -232,17 +232,6 @@ Text GLabel 6475 875  1    60   Output ~ 0
 WRITE
 Text GLabel 6975 875  1    60   Output ~ 0
 READ
-$Comp
-L 74LS373 U2
-U 1 1 5C237A24
-P 2125 4475
-F 0 "U2" H 2125 4475 50  0000 C CNN
-F 1 "74LS373" H 2175 4125 50  0000 C CNN
-F 2 "Housings_DIP:DIP-20_W7.62mm_Socket" H 2125 4475 50  0001 C CNN
-F 3 "" H 2125 4475 50  0001 C CNN
-	1    2125 4475
-	1    0    0    -1  
-$EndComp
 Entry Wire Line
 	1075 4675 975  4575
 Entry Wire Line
@@ -1294,4 +1283,15 @@ F 3 "" H 3700 4675 50  0001 C CNN
 $EndComp
 Text Notes 7025 6875 0    60   ~ 0
 Sort of a mish-mash digital I/O module, with a DB9 connector for use with Atari-style\njoysticks. Matches address decoding used by PSG so that they can coincide within the\nsame 4K address space.
+$Comp
+L 74LS374 U2
+U 1 1 5C7C91B5
+P 2125 4475
+F 0 "U2" H 2125 4475 50  0000 C CNN
+F 1 "74LS374" H 2175 4125 50  0000 C CNN
+F 2 "Housings_DIP:DIP-20_W7.62mm_Socket" H 2125 4475 50  0001 C CNN
+F 3 "" H 2125 4475 50  0001 C CNN
+	1    2125 4475
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-update=11/02/2019 11:50:23
+update=03/03/2019 23:52:36
 version=1
 last_client=kicad
 [pcbnew]
@@ -33,8 +33,6 @@ NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -73,3 +71,5 @@ LibName31=contrib
 LibName32=valves
 LibName33=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
 LibName34=D:/owncloud/Documents/Projects/RC6502/Templates/atari_joystick
+[general]
+version=1
