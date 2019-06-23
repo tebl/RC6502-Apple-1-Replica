@@ -1,4 +1,4 @@
-update=26/12/2018 15:10:01
+update=23/06/2019 18:05:26
 version=1
 last_client=kicad
 [pcbnew]
@@ -33,8 +33,6 @@ NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -75,3 +73,5 @@ LibName33=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
 LibName34=SN76489AN
 LibName35=C:/Program Files/KiCad/share/kicad/library/Oscillators
 LibName36=D:/ownCloud/Documents/Projects/RC6502/Templates/trs_3.5mm
+[general]
+version=1
