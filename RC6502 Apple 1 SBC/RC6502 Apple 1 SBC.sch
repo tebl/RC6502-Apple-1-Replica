@@ -564,7 +564,6 @@ Wire Wire Line
 	7500 4850 8475 4850
 Wire Wire Line
 	7500 4650 8475 4650
-NoConn ~ 8475 4550
 Text GLabel 3100 3825 2    60   Input ~ 0
 D0
 Text GLabel 3100 3925 2    60   Input ~ 0
@@ -1253,7 +1252,6 @@ NoConn ~ 10775 6150
 NoConn ~ 10775 6250
 Text GLabel 10775 6050 0    60   Input ~ 0
 NMI
-NoConn ~ 10775 4650
 Text GLabel 10775 4850 0    60   Input ~ 0
 RDY
 Text GLabel 10775 4950 0    60   Input ~ 0
@@ -1488,4 +1486,8 @@ Wire Wire Line
 	1400 6400 1400 6600
 Wire Wire Line
 	1400 6600 1325 6600
+Text GLabel 10775 4650 0    60   Input ~ 0
+PHI1
+Text GLabel 8475 4550 0    60   Output ~ 0
+PHI1
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-update=09/02/2019 14:26:25
+update=23/06/2019 20:08:16
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,6 +58,8 @@ LibName28=contrib
 LibName29=valves
 LibName30=65xx
 LibName31=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
+[general]
+version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -68,5 +70,3 @@ NetFmtName=
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
-[general]
-version=1
