@@ -27,5 +27,13 @@ In order to build the complete full-sized RC6502 you'll need the following modul
 
 Optional modules:
 - [Backplane](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20Backplane) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Backplane_module_revision_A_.html?inviteid=88707))
+- [Prototyping module](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20Prototyping) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Module_prototyping_board_.html?inviteid=88707))
+- [Digital I/O and joystick](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20Joystick) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Joystick_module_revision_A_.html?inviteid=88707))
+- [RIOT 2600 (Atari 2600 RAM and digital I/O)](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20RIOT) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__RIOT_2600_revision_A_.html?inviteid=88707))
+- [VDU](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20VDU) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__VDU_module_revision_B_.html?inviteid=88707))
+- [VDU B/W Amplifier](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20VDU%20Amplifier) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__VDU_B_W_Amplifier_revision_A_.html?inviteid=88707))
+- [VDU Color Amplifier](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20VDU%20Color%20Amplifier) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__VDU_Color_Amplifier_revision_A_.html?inviteid=88707))
+
+
 
 If you would like to have a copy of one or more modules, what you'll need to do is zip up the contents of the export directory for each module and give that to your favourite PCB fabrication plant. Personally I prefer to use [PCBWay](https://www.pcbway.com/setinvite.aspx?inviteid=88707), each module is only 5$ each and new accounts even get the first one free! Please use the supplied link when signing up to help me support this project, I'll get a small discount on future orders and hopefully I can afford to keep developing new and exciting modules. Some of the modules also have an order-link, using this you won't have to deal with the rather daunting PCB fabrication order forms so you know it'll work on the first order attempt!
