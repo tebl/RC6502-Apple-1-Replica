@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Link_Power
+D Jumper, normally closed
+K jumper link bridge
+$ENDCMP
+#
+#End Doc Library

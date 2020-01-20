@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MC6821
+D Interface parallele 2 x 8 bits
+K MPRO
+$ENDCMP
+#
+#End Doc Library
