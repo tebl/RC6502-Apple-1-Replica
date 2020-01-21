@@ -1,4 +1,4 @@
-update=21/01/2020 23:00:44
+update=21/01/2020 23:59:55
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,9 +23,11 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=../common/library
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -57,9 +59,9 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=65xx
-LibName31=D:/ownCloud/Documents/Projects/RC6502/Templates/rc6502_backplane
-[general]
-version=1
+LibName31=mc6821
+LibName32=6502
+LibName33=rc6502_backplane
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
