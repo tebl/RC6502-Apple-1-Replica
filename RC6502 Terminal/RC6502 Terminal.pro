@@ -1,4 +1,4 @@
-update=20/01/2020 20:34:57
+update=21/01/2020 12:52:18
 version=1
 last_client=kicad
 [pcbnew]
@@ -67,3 +67,14 @@ LibName35=atmega328_mcu
 LibName36=C:/Program Files/KiCad/share/kicad/library/switches
 LibName37=rca_plug
 LibName38=link_power
+LibName39=library/ps2_connector
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
