@@ -1,0 +1,67 @@
+------- FILE D:\owncloud\Documents\Projects\RC6502\RC6502 VDU\code\VDU Alphanumeric\vdu_alphanumeric.asm LEVEL 1 PASS 2
+      1  fcce					      processor	6502
+      2  fcd0 ????
+      3  fcd0 ????	       00 30	   PAGECTR    EQU	$0030
+      4  fcd0 ????	       00 31	   ZPPTR      EQU	$0031
+      5  fcd0 ????	       00 31	   ZPPTR_LSB  EQU	$0031
+      6  fcd0 ????	       00 32	   ZPPTR_MSB  EQU	$0032
+      7  fcd0 ????
+      8  fcd0 ????	       80 00	   VDU_BASE   EQU	$8000
+      9  fcd0 ????	       88 00	   VDU_REG_0  EQU	$8800
+     10  fcd0 ????	       8c 00	   VDU_REG_1  EQU	$8C00
+     11  fcd0 ????
+     12  fcd0 ????						; Main program
+     13  f000					      org	$F000
+     14  f000		       a9 00	   INIT       lda	#$00
+     15  f002		       8d 00 88 	      STA	VDU_REG_0
+     16  f005		       8d 00 8c 	      STA	VDU_REG_1
+     17  f008
+     18  f008		       20 11 f0 	      JSR	CLEAR
+     19  f00b		       20 33 f0 	      JSR	SET_MOTD
+     20  f00e		       4c 0e f0    DONE       JMP	DONE
+     21  f011
+     22  f011							; Clear screen routine
+     23  f011		       a0 80	   CLEAR      LDY	#$80
+     24  f013		       a2 00		      LDX	#$00
+     25  f015		       a9 01		      LDA	#1
+     26  f017		       20 1b f0 	      JSR	CLEAR_RAM
+     27  f01a		       60		      RTS
+     28  f01b
+     29  f01b		       85 30	   CLEAR_RAM  STA	PAGECTR	;set pages to clear (1-255, 0 = 256)
+     30  f01d		       86 31		      STX	ZPPTR_LSB	;set start address LSB
+     31  f01f		       84 32		      STY	ZPPTR_MSB	;set start address MSB
+     32  f021		       a9 20		      LDA	#$20	;clear value -- could be anything
+     33  f023		       a0 00		      LDY	#0	;index
+     34  f025
+     35  f025		       91 31	   NEXT_BYTE  STA	(ZPPTR_LSB),y
+     36  f027		       c8		      INY
+     37  f028		       d0 fb		      BNE	NEXT_BYTE	;next location
+     38  f02a
+     39  f02a		       c6 30		      DEC	PAGECTR	;one less page to clear
+     40  f02c		       f0 04		      BEQ	CLEAR_DONE	;done
+     41  f02e
+     42  f02e		       e6 32		      INC	ZPPTR_MSB	;next page
+     43  f030		       d0 f3		      BNE	NEXT_BYTE	;more pages remaining
+     44  f032
+     45  f032		       60	   CLEAR_DONE RTS
+     46  f033
+     47  f033
+     48  f033							; Write message to the display
+     49  f033		       a2 00	   SET_MOTD   LDX	#0
+     50  f035		       bd 44 f0    NEXT_CHAR  LDA	MESSAGE,x
+     51  f038		       c9 00		      CMP	#0
+     52  f03a		       f0 07		      BEQ	MOTD_DONE
+     53  f03c
+     54  f03c		       9d 00 80 	      STA	VDU_BASE,x
+     55  f03f		       e8		      INX
+     56  f040		       4c 35 f0 	      JMP	NEXT_CHAR
+     57  f043		       60	   MOTD_DONE  RTS
+     58  f044
+     59  f044
+     60  f044		       0c 03 24 23*MESSAGE    byte.b	12,03,36,35,30,32,20,16,04,15,0
+     61  f04f
+     62  f04f
+     63  f04f							; CPU initialization
+     64  fccc					      org	$FCCC	; Set initialization vectors
+     65  fccc		       00 f0		      word.w	INIT
+     66  fcce		       00 f0		      word.w	INIT
