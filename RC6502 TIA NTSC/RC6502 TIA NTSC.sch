@@ -1172,7 +1172,7 @@ Entry Wire Line
 Text Label 5100 5875 3    60   ~ 0
 CSYNC
 Wire Wire Line
-	7200 5700 7200 6275
+	7200 5525 7200 6275
 Wire Wire Line
 	5100 5700 5100 6275
 Wire Bus Line
@@ -1355,12 +1355,12 @@ Wire Wire Line
 $Comp
 L R R11
 U 1 1 5C65E4DC
-P 7200 5550
-F 0 "R11" V 7280 5550 50  0000 C CNN
-F 1 "1k" V 7200 5550 50  0000 C CNN
-F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7130 5550 50  0001 C CNN
-F 3 "" H 7200 5550 50  0001 C CNN
-	1    7200 5550
+P 7100 5450
+F 0 "R11" V 7180 5450 50  0000 C CNN
+F 1 "1k" V 7100 5450 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7030 5450 50  0001 C CNN
+F 3 "" H 7100 5450 50  0001 C CNN
+	1    7100 5450
 	-1   0    0    1   
 $EndComp
 Connection ~ 7200 5775
@@ -1380,12 +1380,12 @@ $EndComp
 $Comp
 L VCC #PWR027
 U 1 1 5C65F6C2
-P 7200 5400
-F 0 "#PWR027" H 7200 5250 50  0001 C CNN
-F 1 "VCC" H 7200 5550 50  0000 C CNN
-F 2 "" H 7200 5400 50  0001 C CNN
-F 3 "" H 7200 5400 50  0001 C CNN
-	1    7200 5400
+P 7100 5300
+F 0 "#PWR027" H 7100 5150 50  0001 C CNN
+F 1 "VCC" H 7100 5450 50  0000 C CNN
+F 2 "" H 7100 5300 50  0001 C CNN
+F 3 "" H 7100 5300 50  0001 C CNN
+	1    7100 5300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1448,7 +1448,6 @@ VIDEO
 Text GLabel 1500 2775 0    60   Input ~ 0
 VIDEO
 Connection ~ 6750 4950
-NoConn ~ 5650 1425
 Wire Wire Line
 	5650 2625 5225 2625
 Entry Wire Line
@@ -1793,4 +1792,48 @@ NoConn ~ 10400 2950
 NoConn ~ 10400 3050
 NoConn ~ 10400 3150
 NoConn ~ 10400 3350
+Text Label 5100 1125 2    60   ~ 0
+V1
+Text Label 5100 1525 2    60   ~ 0
+V2
+Text Label 5100 1325 2    60   ~ 0
+V3
+Text Label 5100 1625 2    60   ~ 0
+V4
+Text Label 5100 1425 2    60   ~ 0
+V5
+Text Label 5100 1725 2    60   ~ 0
+V6
+Text Label 5625 1425 2    60   ~ 0
+~BLK
+Wire Wire Line
+	5650 1425 5225 1425
+Entry Wire Line
+	5225 1425 5125 1325
+Text Label 7350 5875 3    60   ~ 0
+~BLK
+Entry Wire Line
+	7350 6275 7250 6375
+$Comp
+L R R?
+U 1 1 5C8311A5
+P 7350 5700
+F 0 "R?" V 7430 5700 50  0000 C CNN
+F 1 "680" V 7350 5700 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7280 5700 50  0001 C CNN
+F 3 "" H 7350 5700 50  0001 C CNN
+	1    7350 5700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7350 5550 7350 5525
+Wire Wire Line
+	7350 5525 7200 5525
+Wire Wire Line
+	7100 5600 7100 5650
+Wire Wire Line
+	7100 5650 7200 5650
+Connection ~ 7200 5650
+Wire Wire Line
+	7350 5850 7350 6275
 $EndSCHEMATC
