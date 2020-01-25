@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP R6551
-D EEROM 32Kx8bits
-K EEROM ROM
-F memory/28c256.pdf
-$ENDCMP
-#
-#End Doc Library
