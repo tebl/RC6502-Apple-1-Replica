@@ -1,0 +1,6 @@
+# Woz Monitor
+This project was originally aimed at being an Apple 1 replica, but before long I got distracted by other things and started adding a lot of things that were never present on the original machine - mostly because making them is fun! On the other hand, one shouldn't forget one's own roots - the computer is still an Apple 1 at heart and so it needs the Woz Monitor.
+
+This has always been part of the software package, but I haven't had an attempt at doing something on the coding side of things - step 1 is then, naturally, to get a version of the code that can compile before introducting my own bugs into it all. I'm currently using [SB-Assembler 3](https://www.sbprojects.net/sbasm/index.php) as my choice of assembler, so given that the creator of that hosts a copy of assembler source files for WozMon on the same site at [Apple 1 ROMs](https://www.sbprojects.net/projects/apple1/download.php).
+
+I'm hoping to add more functionality to the code in order to support my own cards as time goes by, but until I get that farI also noticed that someone has already made a version of the monitor that works with an ACIA (serial) called [EWoz](http://www.brielcomputers.com/phpBB3/viewtopic.php?f=9&t=197) which may be of some interest.

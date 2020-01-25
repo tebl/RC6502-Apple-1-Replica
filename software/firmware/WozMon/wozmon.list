@@ -1,0 +1,252 @@
+0000-                  4       ;-------------------------------------------------------------------------
+0000-                  5       ;
+0000-                  6       ;  The WOZ Monitor for the Apple 1
+0000-                  7       ;  Written by Steve Wozniak 1976
+0000-                  8       ;
+0000-                  9       ;-------------------------------------------------------------------------
+0000-                 10
+0000-                 11
+0000-                 12       ;-------------------------------------------------------------------------
+0000-                 13       ;  Memory declaration
+0000-                 14       ;-------------------------------------------------------------------------
+0000-                 15
+0024-                 16       XAML            .EQ     $24             Last "opened" location Low
+0025-                 17       XAMH            .EQ     $25             Last "opened" location High
+0026-                 18       STL             .EQ     $26             Store address Low
+0027-                 19       STH             .EQ     $27             Store address High
+0028-                 20       L               .EQ     $28             Hex value parsing Low
+0029-                 21       H               .EQ     $29             Hex value parsing High
+002A-                 22       YSAV            .EQ     $2A             Used to see if hex value is given
+002B-                 23       MODE            .EQ     $2B             $00=XAM, $7F=STOR, $AE=BLOCK XAM
+0000-                 24
+0200-                 25       IN              .EQ     $0200,$027F     Input buffer
+0000-                 26
+D010-                 27       KBD             .EQ     $D010           PIA.A keyboard input
+D011-                 28       KBDCR           .EQ     $D011           PIA.A keyboard control register
+D012-                 29       DSP             .EQ     $D012           PIA.B display output register
+D013-                 30       DSPCR           .EQ     $D013           PIA.B display control register
+0000-                 31
+0000-                 32       ; KBD b7..b0 are inputs, b6..b0 is ASCII input, b7 is constant high
+0000-                 33       ;     Programmed to respond to low to high KBD strobe
+0000-                 34       ; DSP b6..b0 are outputs, b7 is input
+0000-                 35       ;     CB2 goes low when data is written, returns high when CB1 goes high
+0000-                 36       ; Interrupts are enabled, though not used. KBD can be jumpered to IRQ,
+0000-                 37       ; whereas DSP can be jumpered to NMI.
+0000-                 38
+0000-                 39       ;-------------------------------------------------------------------------
+0000-                 40       ;  Constants
+0000-                 41       ;-------------------------------------------------------------------------
+0000-                 42
+00DF-                 43       BS              .EQ     $DF             Backspace key, arrow left key
+008D-                 44       CR              .EQ     $8D             Carriage Return
+009B-                 45       ESC             .EQ     $9B             ESC key
+00DC-                 46       PROMPT          .EQ     "\"             Prompt character
+0000-                 47
+0000-                 48       ;-------------------------------------------------------------------------
+0000-                 49       ;  Let's get started
+0000-                 50       ;
+0000-                 51       ;  Remark the RESET routine is only to be entered by asserting the RESET
+0000-                 52       ;  line of the system. This ensures that the data direction registers
+0000-                 53       ;  are selected.
+0000-                 54       ;-------------------------------------------------------------------------
+FF00-                 55                       .OR     $FF00
+FF00-D8               56 (  2) RESET           CLD                     Clear decimal arithmetic mode
+FF01-58               57 (  2)                 CLI
+FF02-A0 7F            58 (  2)                 LDY     #%0111.1111     Mask for DSP data direction reg
+FF04-8C 12 D0         59 (  4)                 STY     DSP              (DDR mode is assumed after reset)
+FF07-A9 A7            60 (  2)                 LDA     #%1010.0111     KBD and DSP control register mask
+FF09-8D 11 D0         61 (  4)                 STA     KBDCR           Enable interrupts, set CA1, CB1 for
+FF0C-8D 13 D0         62 (  4)                 STA     DSPCR            positive edge sense/output mode.
+FF0F-                 63
+FF0F-                 64       ; Program falls through to the GETLINE routine to save some program bytes
+FF0F-                 65       ; Please note that Y still holds $7F, which will cause an automatic Escape
+FF0F-                 66
+FF0F-                 67       ;-------------------------------------------------------------------------
+FF0F-                 68       ; The GETLINE process
+FF0F-                 69       ;-------------------------------------------------------------------------
+FF0F-                 70
+FF0F-C9 DF            71 (  2) NOTCR           CMP     #BS             Backspace key?
+FF11-F0 13            72 (2**)                 BEQ     BACKSPACE       Yes
+FF13-C9 9B            73 (  2)                 CMP     #ESC            ESC?
+FF15-F0 03            74 (2**)                 BEQ     ESCAPE          Yes
+FF17-C8               75 (  2)                 INY                     Advance text index
+FF18-10 0F            76 (2**)                 BPL     NEXTCHAR        Auto ESC if line longer than 127
+FF1A-                 77
+FF1A-A9 DC            78 (  2) ESCAPE          LDA     #PROMPT         Print prompt character
+FF1C-20 EF FF         79 (  6)                 JSR     ECHO            Output it.
+FF1F-                 80
+FF1F-A9 8D            81 (  2) GETLINE         LDA     #CR             Send CR
+FF21-20 EF FF         82 (  6)                 JSR     ECHO
+FF24-                 83
+FF24-A0 01            84 (  2)                 LDY     #0+1            Start a new input line
+FF26-88               85 (  2) BACKSPACE       DEY                     Backup text index
+FF27-30 F6            86 (2**)                 BMI     GETLINE         Oops, line's empty, reinitialize
+FF29-                 87
+FF29-AD 11 D0         88 (  4) NEXTCHAR        LDA     KBDCR           Wait for key press
+FF2C-10 FB            89 (2**)                 BPL     NEXTCHAR        No key yet!
+FF2E-AD 10 D0         90 (  4)                 LDA     KBD             Load character. B7 should be '1'
+FF31-99 00 02         91 (  5)                 STA     IN,Y            Add to text buffer
+FF34-20 EF FF         92 (  6)                 JSR     ECHO            Display character
+FF37-C9 8D            93 (  2)                 CMP     #CR
+FF39-D0 D4            94 (2**)                 BNE     NOTCR           It's not CR!
+FF3B-                 95
+FF3B-                 96       ; Line received, now let's parse it
+FF3B-                 97
+FF3B-A0 FF            98 (  2)                 LDY     #-1             Reset text index
+FF3D-A9 00            99 (  2)                 LDA     #0              Default mode is XAM
+FF3F-AA              100 (  2)                 TAX                     X=0
+FF40-                101
+FF40-0A              102 (  2) SETSTOR         ASL                     Leaves $7B if setting STOR mode
+FF41-                103
+FF41-85 2B           104 (  2) SETMODE         STA     MODE            Set mode flags
+FF43-                105
+FF43-C8              106 (  2) BLSKIP          INY                     Advance text index
+FF44-                107
+FF44-B9 00 02        108 ( 4*) NEXTITEM        LDA     IN,Y            Get character
+FF47-C9 8D           109 (  2)                 CMP     #CR
+FF49-F0 D4           110 (2**)                 BEQ     GETLINE         We're done if it's CR!
+FF4B-C9 AE           111 (  2)                 CMP     #"."
+FF4D-90 F4           112 (2**)                 BCC     BLSKIP          Ignore everything below "."!
+FF4F-F0 F0           113 (2**)                 BEQ     SETMODE         Set BLOCK XAM mode ("." = $AE)
+FF51-C9 BA           114 (  2)                 CMP     #":"
+FF53-F0 EB           115 (2**)                 BEQ     SETSTOR         Set STOR mode! $BA will become $7B
+FF55-C9 D2           116 (  2)                 CMP     #"R"
+FF57-F0 3B           117 (2**)                 BEQ     RUN             Run the program! Forget the rest
+FF59-86 28           118 (  3)                 STX     L               Clear input value (X=0)
+FF5B-86 29           119 (  3)                 STX     H
+FF5D-84 2A           120 (  3)                 STY     YSAV            Save Y for comparison
+FF5F-                121
+FF5F-                122       ; Here we're trying to parse a new hex value
+FF5F-                123
+FF5F-B9 00 02        124 ( 4*) NEXTHEX         LDA     IN,Y            Get character for hex test
+FF62-49 B0           125 (  2)                 EOR     #$B0            Map digits to 0-9
+FF64-C9 0A           126 (  2)                 CMP     #9+1            Is it a decimal digit?
+FF66-90 06           127 (2**)                 BCC     DIG             Yes!
+FF68-69 88           128 (  2)                 ADC     #$88            Map letter "A"-"F" to $FA-FF
+FF6A-C9 FA           129 (  2)                 CMP     #$FA            Hex letter?
+FF6C-90 11           130 (2**)                 BCC     NOTHEX          No! Character not hex
+FF6E-                131
+FF6E-0A              132 (  2) DIG             ASL
+FF6F-0A              133 (  2)                 ASL                     Hex digit to MSD of A
+FF70-0A              134 (  2)                 ASL
+FF71-0A              135 (  2)                 ASL
+FF72-                136
+FF72-A2 04           137 (  2)                 LDX     #4              Shift count
+FF74-0A              138 (  2) HEXSHIFT        ASL                     Hex digit left, MSB to carry
+FF75-26 28           139 (  5)                 ROL     L               Rotate into LSD
+FF77-26 29           140 (  5)                 ROL     H               Rotate into MSD's
+FF79-CA              141 (  2)                 DEX                     Done 4 shifts?
+FF7A-D0 F8           142 (2**)                 BNE     HEXSHIFT        No, loop
+FF7C-C8              143 (  2)                 INY                     Advance text index
+FF7D-D0 E0           144 (2**)                 BNE     NEXTHEX         Always taken
+FF7F-                145
+FF7F-C4 2A           146 (  3) NOTHEX          CPY     YSAV            Was at least 1 hex digit given?
+FF81-F0 97           147 (2**)                 BEQ     ESCAPE          No! Ignore all, start from scratch
+FF83-                148
+FF83-24 2B           149 (  3)                 BIT     MODE            Test MODE byte
+FF85-50 10           150 (2**)                 BVC     NOTSTOR         B6=0 is STOR, 1 is XAM or BLOCK XAM
+FF87-                151
+FF87-                152       ; STOR mode, save LSD of new hex byte
+FF87-                153
+FF87-A5 28           154 (  3)                 LDA     L               LSD's of hex data
+FF89-81 26           155 (  6)                 STA     (STL,X)         Store current 'store index'(X=0)
+FF8B-E6 26           156 (  5)                 INC     STL             Increment store index.
+FF8D-D0 B5           157 (2**)                 BNE     NEXTITEM        No carry!
+FF8F-E6 27           158 (  5)                 INC     STH             Add carry to 'store index' high
+FF91-4C 44 FF        159 (  3) TONEXTITEM      JMP     NEXTITEM        Get next command item.
+FF94-                160
+FF94-                161       ;-------------------------------------------------------------------------
+FF94-                162       ;  RUN user's program from last opened location
+FF94-                163       ;-------------------------------------------------------------------------
+FF94-                164
+FF94-6C 24 00        165 (  5) RUN             JMP     (XAML)          Run user's program
+FF97-                166
+FF97-                167       ;-------------------------------------------------------------------------
+FF97-                168       ;  We're not in Store mode
+FF97-                169       ;-------------------------------------------------------------------------
+FF97-                170
+FF97-30 2B           171 (2**) NOTSTOR         BMI     XAMNEXT         B7 = 0 for XAM, 1 for BLOCK XAM
+FF99-                172
+FF99-                173       ; We're in XAM mode now
+FF99-                174
+FF99-A2 02           175 (  2)                 LDX     #2              Copy 2 bytes
+FF9B-B5 27           176 (  4) SETADR          LDA     L-1,X           Copy hex data to
+FF9D-95 25           177 (  4)                 STA     STL-1,X          'store index'
+FF9F-95 23           178 (  4)                 STA     XAML-1,X         and to 'XAM index'
+FFA1-CA              179 (  2)                 DEX                     Next of 2 bytes
+FFA2-D0 F7           180 (2**)                 BNE     SETADR          Loop unless X = 0
+FFA4-                181
+FFA4-                182       ; Print address and data from this address, fall through next BNE.
+FFA4-                183
+FFA4-D0 14           184 (2**) NXTPRNT         BNE     PRDATA          NE means no address to print
+FFA6-A9 8D           185 (  2)                 LDA     #CR             Print CR first
+FFA8-20 EF FF        186 (  6)                 JSR     ECHO
+FFAB-A5 25           187 (  3)                 LDA     XAMH            Output high-order byte of address
+FFAD-20 DC FF        188 (  6)                 JSR     PRBYTE
+FFB0-A5 24           189 (  3)                 LDA     XAML            Output low-order byte of address
+FFB2-20 DC FF        190 (  6)                 JSR     PRBYTE
+FFB5-A9 BA           191 (  2)                 LDA     #":"            Print colon
+FFB7-20 EF FF        192 (  6)                 JSR     ECHO
+FFBA-                193
+FFBA-A9 A0           194 (  2) PRDATA          LDA     #" "            Print space
+FFBC-20 EF FF        195 (  6)                 JSR     ECHO
+FFBF-A1 24           196 (  6)                 LDA     (XAML,X)        Get data from address (X=0)
+FFC1-20 DC FF        197 (  6)                 JSR     PRBYTE          Output it in hex format
+FFC4-86 2B           198 (  3) XAMNEXT         STX     MODE            0 -> MODE (XAM mode).
+FFC6-A5 24           199 (  3)                 LDA     XAML            See if there's more to print
+FFC8-C5 28           200 (  3)                 CMP     L
+FFCA-A5 25           201 (  3)                 LDA     XAMH
+FFCC-E5 29           202 (  3)                 SBC     H
+FFCE-B0 C1           203 (2**)                 BCS     TONEXTITEM      Not less! No more data to output
+FFD0-                204
+FFD0-E6 24           205 (  5)                 INC     XAML            Increment 'examine index'
+FFD2-D0 02           206 (2**)                 BNE     MOD8CHK         No carry!
+FFD4-E6 25           207 (  5)                 INC     XAMH
+FFD6-                208
+FFD6-A5 24           209 (  3) MOD8CHK         LDA     XAML            If address MOD 8 = 0 start new line
+FFD8-29 07           210 (  2)                 AND     #%0000.0111
+FFDA-10 C8           211 (2**)                 BPL     NXTPRNT         Always taken.
+FFDC-                212
+FFDC-                213       ;-------------------------------------------------------------------------
+FFDC-                214       ;  Subroutine to print a byte in A in hex form (destructive)
+FFDC-                215       ;-------------------------------------------------------------------------
+FFDC-                216
+FFDC-48              217 (  3) PRBYTE          PHA                     Save A for LSD
+FFDD-4A              218 (  2)                 LSR
+FFDE-4A              219 (  2)                 LSR
+FFDF-4A              220 (  2)                 LSR                     MSD to LSD position
+FFE0-4A              221 (  2)                 LSR
+FFE1-20 E5 FF        222 (  6)                 JSR     PRHEX           Output hex digit
+FFE4-68              223 (  4)                 PLA                     Restore A
+FFE5-                224
+FFE5-                225       ; Fall through to print hex routine
+FFE5-                226
+FFE5-                227       ;-------------------------------------------------------------------------
+FFE5-                228       ;  Subroutine to print a hexadecimal digit
+FFE5-                229       ;-------------------------------------------------------------------------
+FFE5-                230
+FFE5-29 0F           231 (  2) PRHEX           AND     #%0000.1111     Mask LSD for hex print
+FFE7-09 B0           232 (  2)                 ORA     #"0"            Add "0"
+FFE9-C9 BA           233 (  2)                 CMP     #"9"+1          Is it a decimal digit?
+FFEB-90 02           234 (2**)                 BCC     ECHO            Yes! output it
+FFED-69 06           235 (  2)                 ADC     #6              Add offset for letter A-F
+FFEF-                236
+FFEF-                237       ; Fall through to print routine
+FFEF-                238
+FFEF-                239       ;-------------------------------------------------------------------------
+FFEF-                240       ;  Subroutine to print a character to the terminal
+FFEF-                241       ;-------------------------------------------------------------------------
+FFEF-                242
+FFEF-2C 12 D0        243 (  4) ECHO            BIT     DSP             DA bit (B7) cleared yet?
+FFF2-30 FB           244 (2**)                 BMI     ECHO            No! Wait for display ready
+FFF4-8D 12 D0        245 (  4)                 STA     DSP             Output character. Sets DA
+FFF7-60              246 (  6)                 RTS
+FFF8-                247
+FFF8-                248       ;-------------------------------------------------------------------------
+FFF8-                249       ;  Vector area
+FFF8-                250       ;-------------------------------------------------------------------------
+FFF8-                251
+FFF8-00 00           252                       .DA     $0000           Unused, what a pity
+FFFA-00 0F           253       NMI_VEC         .DA     $0F00           NMI vector
+FFFC-00 FF           254       RESET_VEC       .DA     RESET           RESET vector
+FFFE-00 00           255       IRQ_VEC         .DA     $0000           IRQ vector
