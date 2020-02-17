@@ -1,5 +1,6 @@
-#include <SPI.h>
+#include <Arduino.h>
 #include <MCP23S17.h>
+#include <SPI.h>
 
 #define DEBUG 0
 #define KBD_INTERRUPT_ENABLE true
@@ -161,7 +162,7 @@ void serial_transmit() {
   }
 }
 
-char send_ascii(char c) {
+void send_ascii(char c) {
   if (DEBUG >= 5) Serial.print("[");
   switch (c) {
     case 0x0d: Serial.println(); /* Replace CR with LF */

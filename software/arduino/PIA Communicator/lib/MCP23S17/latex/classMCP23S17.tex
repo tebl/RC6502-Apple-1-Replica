@@ -1,0 +1,232 @@
+\hypertarget{classMCP23S17}{\section{M\-C\-P23\-S17 Class Reference}
+\label{classMCP23S17}\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMCP23S17_a97d5acfce335affc1fd0e90f27bb2773}{M\-C\-P23\-S17} (S\-P\-I\-Class $\ast$spi, uint8\-\_\-t cs, uint8\-\_\-t addr)
+\item 
+void \hyperlink{classMCP23S17_a406756f19493cdec55b56617ddc109f1}{begin} ()
+\item 
+void \hyperlink{classMCP23S17_a6e9078f8c0e9c623de2505ed4c19f09e}{pin\-Mode} (uint8\-\_\-t pin, uint8\-\_\-t mode)
+\item 
+void \hyperlink{classMCP23S17_a14834358725d440513946ac3d6c6a02e}{digital\-Write} (uint8\-\_\-t pin, uint8\-\_\-t value)
+\item 
+uint8\-\_\-t \hyperlink{classMCP23S17_a30386f1e0486570613ea06d110387093}{digital\-Read} (uint8\-\_\-t pin)
+\item 
+uint8\-\_\-t \hyperlink{classMCP23S17_aa798040d8c6b863398978623a73d6cba}{read\-Port} (uint8\-\_\-t port)
+\item 
+uint16\-\_\-t \hyperlink{classMCP23S17_a45d1747d85825e3bf2cf4be7268c9b92}{read\-Port} ()
+\item 
+void \hyperlink{classMCP23S17_ad11ed96faaef273362d2c54260e68891}{write\-Port} (uint8\-\_\-t port, uint8\-\_\-t val)
+\item 
+void \hyperlink{classMCP23S17_a63a34c5b29e75cfd715bd1449626f98e}{write\-Port} (uint16\-\_\-t val)
+\item 
+void \hyperlink{classMCP23S17_a8cfe7bd574736faeca00e133e5e19ec3}{enable\-Interrupt} (uint8\-\_\-t pin, uint8\-\_\-t type)
+\item 
+void \hyperlink{classMCP23S17_aff570e5211f9443769a53f017626b180}{disable\-Interrupt} (uint8\-\_\-t pin)
+\item 
+void \hyperlink{classMCP23S17_a5b9bcf0d06c5a15875f406e1ed73ecc7}{set\-Mirror} (boolean m)
+\item 
+uint16\-\_\-t \hyperlink{classMCP23S17_ad1a11133076a20b9c16e30fb2ddc566c}{get\-Interrupt\-Pins} ()
+\item 
+uint16\-\_\-t \hyperlink{classMCP23S17_adf3b48d655eb9850a9349973d0ece330}{get\-Interrupt\-Value} ()
+\item 
+void \hyperlink{classMCP23S17_a5786c6b9a618a1c7c0fd95ca7d93774d}{set\-Interrupt\-Level} (uint8\-\_\-t level)
+\item 
+void \hyperlink{classMCP23S17_aef7c2e4c24141e8ba455aa1d2e497e6c}{set\-Interrupt\-O\-D} (boolean open\-Drain)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMCP23S17_a97d5acfce335affc1fd0e90f27bb2773}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!M\-C\-P23\-S17@{M\-C\-P23\-S17}}
+\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{M\-C\-P23\-S17}]{\setlength{\rightskip}{0pt plus 5cm}M\-C\-P23\-S17\-::\-M\-C\-P23\-S17 (
+\begin{DoxyParamCaption}
+\item[{S\-P\-I\-Class $\ast$}]{spi, }
+\item[{uint8\-\_\-t}]{cs, }
+\item[{uint8\-\_\-t}]{addr}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a97d5acfce335affc1fd0e90f27bb2773}
+The constructor takes three parameters. The first is an S\-P\-I class pointer. This is the address of an S\-P\-I object (either the default S\-P\-I object on the Arduino, or an object made using the D\-S\-P\-Ix classes on the chip\-K\-I\-T). The second parameter is the chip select pin number to use when communicating with the chip. The third is the internal address number of the chip. This is controlled by the three Ax pins on the chip.
+
+Example\-:
+
+\begin{DoxyVerb}MCP23S17 myExpander(&SPI, 10, 0);\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{classMCP23S17_a406756f19493cdec55b56617ddc109f1}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!begin@{begin}}
+\index{begin@{begin}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a406756f19493cdec55b56617ddc109f1}
+The begin function performs the initial configuration of the I\-O expander chip. Not only does it set up the S\-P\-I communications, but it also configures the chip for address-\/based communication and sets the default parameters and registers to sensible values.
+
+Example\-: \begin{DoxyVerb}myExpander.begin();\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a30386f1e0486570613ea06d110387093}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!digital\-Read@{digital\-Read}}
+\index{digital\-Read@{digital\-Read}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{digital\-Read}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t M\-C\-P23\-S17\-::digital\-Read (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a30386f1e0486570613ea06d110387093}
+This will return the current state of a pin set to I\-N\-P\-U\-T, or the last value written to a pin set to O\-U\-T\-P\-U\-T.
+
+Example\-: \begin{DoxyVerb}byte value = myExpander.digitalRead(4);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a14834358725d440513946ac3d6c6a02e}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!digital\-Write@{digital\-Write}}
+\index{digital\-Write@{digital\-Write}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{digital\-Write}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::digital\-Write (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{pin, }
+\item[{uint8\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a14834358725d440513946ac3d6c6a02e}
+Like the Arduino A\-P\-I's namesake, this function will set an output pin to a specific value, either H\-I\-G\-H (1) or L\-O\-W (0). If the pin is currently set to an I\-N\-P\-U\-T instead of an O\-U\-T\-P\-U\-T, then this function acts like the old way of enabling / disabling the pullup resistor, which pre-\/1.\-0.\-0 versions of the Arduino A\-P\-I used -\/ i.\-e., set H\-I\-G\-H to enable the pullup, or L\-O\-W to disable it.
+
+Example\-: \begin{DoxyVerb}myExpander.digitalWrite(3, HIGH);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_aff570e5211f9443769a53f017626b180}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!disable\-Interrupt@{disable\-Interrupt}}
+\index{disable\-Interrupt@{disable\-Interrupt}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{disable\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::disable\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_aff570e5211f9443769a53f017626b180}
+This disables the interrupt functionality of a pin.
+
+Example\-: \begin{DoxyVerb}myExpander.disableInterrupt(4);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a8cfe7bd574736faeca00e133e5e19ec3}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!enable\-Interrupt@{enable\-Interrupt}}
+\index{enable\-Interrupt@{enable\-Interrupt}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{enable\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::enable\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{pin, }
+\item[{uint8\-\_\-t}]{type}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a8cfe7bd574736faeca00e133e5e19ec3}
+This enables the interrupt functionality of a pin. The interrupt type can be one of\-:
+\begin{DoxyItemize}
+\item C\-H\-A\-N\-G\-E
+\item R\-I\-S\-I\-N\-G
+\item F\-A\-L\-L\-I\-N\-G
+\end{DoxyItemize}
+
+When an interrupt occurs the corresponding port's I\-N\-T pin will be driven to it's configured level, and will remain there until either the port is read with a read\-Port or digital\-Read, or the captured port status at the time of the interrupt is read using get\-Interrupt\-Value.
+
+Example\-: \begin{DoxyVerb}myExpander.enableInterrupt(4, RISING);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_ad1a11133076a20b9c16e30fb2ddc566c}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!get\-Interrupt\-Pins@{get\-Interrupt\-Pins}}
+\index{get\-Interrupt\-Pins@{get\-Interrupt\-Pins}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{get\-Interrupt\-Pins}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t M\-C\-P23\-S17\-::get\-Interrupt\-Pins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_ad1a11133076a20b9c16e30fb2ddc566c}
+This function returns a 16-\/bit bitmap of the the pin or pins that have cause an interrupt to fire.
+
+Example\-: \begin{DoxyVerb}unsigned int pins = myExpander.getInterruptPins();\end{DoxyVerb}
+ \hypertarget{classMCP23S17_adf3b48d655eb9850a9349973d0ece330}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!get\-Interrupt\-Value@{get\-Interrupt\-Value}}
+\index{get\-Interrupt\-Value@{get\-Interrupt\-Value}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{get\-Interrupt\-Value}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t M\-C\-P23\-S17\-::get\-Interrupt\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_adf3b48d655eb9850a9349973d0ece330}
+This returns a snapshot of the I\-O pin states at the moment the last interrupt occured. Reading this value clears the interrupt status (and hence the I\-N\-T pins) for the whole chip. Until this value is read (or the current live port value is read) no further interrupts can be indicated.
+
+Example\-: \begin{DoxyVerb}unsigned int pinValues = myExpander.getInterruptPins();\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a6e9078f8c0e9c623de2505ed4c19f09e}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!pin\-Mode@{pin\-Mode}}
+\index{pin\-Mode@{pin\-Mode}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{pin\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::pin\-Mode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{pin, }
+\item[{uint8\-\_\-t}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a6e9078f8c0e9c623de2505ed4c19f09e}
+Just like the \hyperlink{classMCP23S17_a6e9078f8c0e9c623de2505ed4c19f09e}{pin\-Mode()} function of the Arduino A\-P\-I, this function sets the direction of the pin. The first parameter is the pin nimber (0-\/15) to use, and the second parameter is the direction of the pin. There are standard Arduino macros for different modes which should be used. The supported macros are\-:
+\begin{DoxyItemize}
+\item O\-U\-T\-P\-U\-T
+\item I\-N\-P\-U\-T
+\item I\-N\-P\-U\-T\-\_\-\-P\-U\-L\-L\-U\-P
+\end{DoxyItemize}
+
+The I\-N\-P\-U\-T\-\_\-\-P\-U\-L\-L\-U\-P mode enables the weak pullup that is available on any pin.
+
+Example\-: \begin{DoxyVerb}myExpander.pinMode(5, INPUT_PULLUP);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_aa798040d8c6b863398978623a73d6cba}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!read\-Port@{read\-Port}}
+\index{read\-Port@{read\-Port}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{read\-Port}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t M\-C\-P23\-S17\-::read\-Port (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{port}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_aa798040d8c6b863398978623a73d6cba}
+This function returns the entire 8-\/bit value of a G\-P\-I\-O port. Note that only the bits which correspond to a G\-P\-I\-O pin set to I\-N\-P\-U\-T are valid. Other pins should be ignored. The only parameter defines which port (A/\-B) to retrieve\-: 0 is port A and 1 (or anything other than 0) is port B.
+
+Example\-: \begin{DoxyVerb}byte portA = myExpander.readPort(0);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a45d1747d85825e3bf2cf4be7268c9b92}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!read\-Port@{read\-Port}}
+\index{read\-Port@{read\-Port}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{read\-Port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t M\-C\-P23\-S17\-::read\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a45d1747d85825e3bf2cf4be7268c9b92}
+This is a full 16-\/bit version of the parameterised read\-Port function. This version reads the value of both ports and combines them into a single 16-\/bit value.
+
+Example\-: \begin{DoxyVerb}unsigned int value = myExpander.readPort();\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a5786c6b9a618a1c7c0fd95ca7d93774d}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!set\-Interrupt\-Level@{set\-Interrupt\-Level}}
+\index{set\-Interrupt\-Level@{set\-Interrupt\-Level}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{set\-Interrupt\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::set\-Interrupt\-Level (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a5786c6b9a618a1c7c0fd95ca7d93774d}
+This sets the \char`\"{}active\char`\"{} level for an interrupt. H\-I\-G\-H means the interrupt pin will go H\-I\-G\-H when an interrupt occurs, L\-O\-W means it will go L\-O\-W.
+
+Example\-: \begin{DoxyVerb}myExpander.setInterruptLevel(HIGH);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_aef7c2e4c24141e8ba455aa1d2e497e6c}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!set\-Interrupt\-O\-D@{set\-Interrupt\-O\-D}}
+\index{set\-Interrupt\-O\-D@{set\-Interrupt\-O\-D}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{set\-Interrupt\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::set\-Interrupt\-O\-D (
+\begin{DoxyParamCaption}
+\item[{boolean}]{open\-Drain}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_aef7c2e4c24141e8ba455aa1d2e497e6c}
+Using this function it is possible to configure the interrupt output pins to be open drain. This means that interrupt pins from multiple chips can share the same interrupt pin on the host M\-C\-U. This causes the level set by set\-Interrupt\-Level to be ignored. A pullup resistor will be required on the host M\-C\-U's interrupt pin.
+
+Example\-: \begin{DoxyVerb}myExpander.setInterruptOD(true);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a5b9bcf0d06c5a15875f406e1ed73ecc7}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!set\-Mirror@{set\-Mirror}}
+\index{set\-Mirror@{set\-Mirror}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{set\-Mirror}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::set\-Mirror (
+\begin{DoxyParamCaption}
+\item[{boolean}]{m}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a5b9bcf0d06c5a15875f406e1ed73ecc7}
+The two I\-O banks can have their I\-N\-T pins connected together. This enables you to monitor both banks with just one interrupt pin on the host microcontroller. Calling set\-Mirror with a parameter of {\itshape true} will enable this feature. Calling it with {\itshape false} will disable it.
+
+Example\-: \begin{DoxyVerb}myExpander.setMirror(true);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_ad11ed96faaef273362d2c54260e68891}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!write\-Port@{write\-Port}}
+\index{write\-Port@{write\-Port}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{write\-Port}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::write\-Port (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{port, }
+\item[{uint8\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_ad11ed96faaef273362d2c54260e68891}
+This writes an 8-\/bit value to one of the two I\-O port banks (A/\-B) on the chip. The value is output direct to any pins on that bank that are set as O\-U\-T\-P\-U\-T. Any bits that correspond to pins set to I\-N\-P\-U\-T are ignored. As with the read\-Port function the first parameter defines which bank to use (0 = A, 1+ = B).
+
+Example\-: \begin{DoxyVerb}myExpander.writePort(0, 0x55);\end{DoxyVerb}
+ \hypertarget{classMCP23S17_a63a34c5b29e75cfd715bd1449626f98e}{\index{M\-C\-P23\-S17@{M\-C\-P23\-S17}!write\-Port@{write\-Port}}
+\index{write\-Port@{write\-Port}!MCP23S17@{M\-C\-P23\-S17}}
+\subsubsection[{write\-Port}]{\setlength{\rightskip}{0pt plus 5cm}void M\-C\-P23\-S17\-::write\-Port (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{classMCP23S17_a63a34c5b29e75cfd715bd1449626f98e}
+This is the 16-\/bit version of the write\-Port function. This takes a single 16-\/bit value and splits it between the two I\-O ports, the upper half going to port B and the lower to port A.
+
+Example\-: \begin{DoxyVerb}myExpander.writePort(0x55AA);\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+M\-C\-P23\-S17.\-h\item 
+M\-C\-P23\-S17.\-cpp\end{DoxyCompactItemize}

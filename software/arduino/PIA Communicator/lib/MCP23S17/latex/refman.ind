@@ -1,0 +1,90 @@
+\begin{theindex}
+
+  \item {begin}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{5}
+
+  \indexspace
+
+  \item {digital\discretionary {-}{}{}Read}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{6}
+  \item {digital\discretionary {-}{}{}Write}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{6}
+  \item {disable\discretionary {-}{}{}Interrupt}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{6}
+
+  \indexspace
+
+  \item {enable\discretionary {-}{}{}Interrupt}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{6}
+
+  \indexspace
+
+  \item {get\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Pins}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{6}
+  \item {get\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Value}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{5}
+    \subitem {begin}, \hyperpage{5}
+    \subitem {digital\discretionary {-}{}{}Read}, \hyperpage{6}
+    \subitem {digital\discretionary {-}{}{}Write}, \hyperpage{6}
+    \subitem {disable\discretionary {-}{}{}Interrupt}, \hyperpage{6}
+    \subitem {enable\discretionary {-}{}{}Interrupt}, \hyperpage{6}
+    \subitem {get\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Pins}, 
+		\hyperpage{6}
+    \subitem {get\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Value}, 
+		\hyperpage{7}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{5}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{5}
+    \subitem {pin\discretionary {-}{}{}Mode}, \hyperpage{7}
+    \subitem {read\discretionary {-}{}{}Port}, \hyperpage{7}
+    \subitem {set\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Level}, 
+		\hyperpage{7}
+    \subitem {set\discretionary {-}{}{}Interrupt\discretionary {-}{}{}O\discretionary {-}{}{}D}, 
+		\hyperpage{8}
+    \subitem {set\discretionary {-}{}{}Mirror}, \hyperpage{8}
+    \subitem {write\discretionary {-}{}{}Port}, \hyperpage{8}
+
+  \indexspace
+
+  \item {pin\discretionary {-}{}{}Mode}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {read\discretionary {-}{}{}Port}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {set\discretionary {-}{}{}Interrupt\discretionary {-}{}{}Level}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{7}
+  \item {set\discretionary {-}{}{}Interrupt\discretionary {-}{}{}O\discretionary {-}{}{}D}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{8}
+  \item {set\discretionary {-}{}{}Mirror}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {write\discretionary {-}{}{}Port}
+    \subitem {M\discretionary {-}{}{}C\discretionary {-}{}{}P23\discretionary {-}{}{}S17}, 
+		\hyperpage{8}
+
+\end{theindex}

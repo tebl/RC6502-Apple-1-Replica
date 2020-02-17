@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+
+my $package = "unknown";
+
+my $maj = 0;
+my $min = 0;
+
+my $out = "";
+
+open (CONTROL, "<debian/control");
+while (my $l = <CONTROL>) {
+    chomp($l);
+    if ($l =~ /Source: (.*)/) {
+        $package = $1;
+    }
+}
+close(CONTROL);
+
+open(LOG, "git log --reverse --pretty=format:'%aN|%aE|%cD|%s'|");
+while (my $l = <LOG>) {
+    chomp($l);
+    my ($author, $email, $time, $subject) = split(/\|/, $l);
+    my $add = "$package (1.$maj.$min) uecide; urgency=low\n";
+    $add .= "\n";
+    $add .= "  * $subject\n";
+    $add .= "\n";
+    $add .= " -- $author <$email>  $time\n";
+    $add .= "\n";
+    $min++;
+    if ($min == 10) {
+        $min = 0;
+        $maj++;
+    }
+    $out = $add . $out;
+}
+close(LOG);
+
+open(CL, ">debian/changelog");
+print CL $out;
+close(CL);
