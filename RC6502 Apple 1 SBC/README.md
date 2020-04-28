@@ -69,3 +69,42 @@ Some vendors will have the same ICs in different form factors, the ones you want
 | Nano         | Arduino Nano v3.0 with USB cable      |     1 |
 
 If you would like to have a copy of one or more modules, what you'll need to do is zip up the contents of the export directory for each module and give that to your favourite PCB fabrication plant. Personally I prefer to use [PCBWay](https://www.pcbway.com/setinvite.aspx?inviteid=88707), each module is only 5$ each and new accounts even get the first one free! Please use the supplied link when signing up to help me support this project, I'll get a small discount on future orders and hopefully I can afford to keep developing new and exciting modules. Some of the modules also have an order-link, using this you won't have to deal with the rather daunting PCB fabrication order forms so you know it'll work on the first order attempt!
+
+
+Jumper Settings
+===============
+
+Revision F+ board jumpers are marked on the back of the board with a
+box around the pins that enable.
+
+- `OSC_EN`
+  - Shorted: Use onboard clock. This connects pin 8 (OUT) of the
+    oscillator to the `CLOCK` line.
+  - Open: Use external clock, usually supplied to the `CLOCK` pin of
+    the expansion bus connector.
+
+- `VP GND`
+  - Shorted: WD65C02 CPU. Leaves pin 1 of the CPU (`V̅P̅` on the
+    WD65C02) floating.
+  - Open: Original MOS 6502, UM6502, SY6502, R65C02. Connects pin 1 of
+    the CPU to ground, providing an additional ground connection for
+    the CPU.
+
+- `PIA_EN`
+  - Top pair shorted: Enable PIA. Connects `CS1` to Vcc.
+  - Bottom pair shorted: Disable PIA. Connects `CS1` to ground.
+
+- `RAM_EN`
+  - Left pair shorted: Enable RAM. Connects RAM `C̅S̅`/`O̅E̅` to ground.
+  - Right pair shorted: Disable RAM. Connects RAM `C̅S̅`/`O̅E̅` to Vcc.
+
+- `ROM_EN`
+  - Top pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to ground.
+  - Bottom pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to Vcc.
+
+- `A14_W`, `A13_W`
+  - Right pair shorted: `A14`/`A13` address line pulled low.
+  - Left pair shorted: `A14`/`A13` address line pulled high.
+  - For 8K×8 AT28C64 EEPROM, use no jumpers (short nothing).
+  - For 8K×32 AT28C256 EEPROM, program the lowest 8 KB bank and
+    short the right-hand pair of both `A14_W` and `A13_W`.
