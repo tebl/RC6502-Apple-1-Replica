@@ -95,11 +95,13 @@ box around the pins that enable.
   - Bottom pair shorted: Disable PIA. Connects `CS1` to ground.
 
 - `RAM_EN`
-  - Left pair shorted: Enable RAM. Connects RAM `C̅S̅`/`O̅E̅` to ground.
+  - Left pair shorted: Enable RAM. Connects RAM `C̅S̅`/`O̅E̅` to address
+    decoding logic (`CS_RAM`).
   - Right pair shorted: Disable RAM. Connects RAM `C̅S̅`/`O̅E̅` to Vcc.
 
 - `ROM_EN`
-  - Top pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to ground.
+  - Top pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to address
+    decoding logic (`CS_ROM`).
   - Bottom pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to Vcc.
 
 - `A14_W`, `A13_W`
