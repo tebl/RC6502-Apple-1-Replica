@@ -174,6 +174,71 @@ The following boards may optionally use this line as an output:
   joystick/paddle fire button signal.
 
 
+RC2014 Bus Comparison
+---------------------
+
+The RC6502 bus is very similar to the [RC2014 bus] used on some Z80
+homebrew computers. The following table compares the two; pins with
+substantially different/incompatible functions are marked with a bullet
+(`●`).
+
+The 6502 uses the Motorola bus prococols; the Intel bus protocols are
+substantially different, precluding sharing of peripherals unless they are
+specifically designed with the extra hardware necessary to support both.
+However, the backplanes are interchagable with some cavats; see below for
+details.
+
+        RC6502  Pin   RC2014      Notes
+    ----------------------------------------------------------------
+           A15   1    A15
+             …   …    …
+            A0  16    A0
+           GND  17    GND
+           Vcc  18    Vcc
+         Φ2out  19 ●  /M1         Low on Z80 instruction fetch/int ack cycles
+        /RESET  20    /RESET
+          Φ0in  21    CLK
+          /IRQ  22    /INT
+     Φ1out,EX0  23 ●  /MREQ
+           R/W̅  24 ●  /WR
+           RDY  25 ●  /RD
+          SYNC  26 ●  /IORQ
+            D0  27    D0
+             …  …      …
+            D7  34    D7
+            TX  35    TX,TX2      May be user-specified function on RC2014
+            RX  36    RX,TX2      May be user-specified function on RC2014
+          /NMI  37 ●  USER1
+         -,EX1  38    USER2       Some RC2014 modules use USER2 and USER3 as
+         -,EX2  39    USER3         IEI and IEO for interrupt daisy chain.
+                40    USER4,IEO   Nonexistent on RC6502
+
+### Backplane Compatibility
+
+The [RC2014 backplanes][RC2014-spec] (as of the 0.4 draft specification)
+can be used with RC6502 boards and vice versa, with some caveats. The power
+(18) and ground (19) pins may be supplied by the backplane and are
+compatible. The following other pins have caveats:
+
+* __/RESET__ (20)
+  * RC2014 backplanes with a power supply (SC105, SC112) have a 4.7 kΩ
+    pull-up resistor on /RESET. RC6502 board reset logic should be able to
+    pull this line low to reset the system. RC2014 backplanes also have a
+    reset switch; this ___must not be closed___ as it will conflict with
+    the standard reset output circuitry of RC6502 boards, potentially
+    damaging the board.
+  * RC6502 backplanes have no reset logic, so a pull-up (4.7 kΩ to Vcc) and
+    an RC2014 board will need to supply a reset signal. The SC108 CPU board
+    supplies power-on reset but has no reset button. The SC101, SC114 and
+    SC130 provide a reset button.
+* __Pin 40__.
+  * RC2014 backplanes provide pin 40 as a bus or daisy chain (with pin
+    80) depending on the model. This pin does not exist on RC6502 boards
+    and thus can be ignored. Be careful not to insert the RC6502 board
+    offset by one pin.
+  * RC6502 backplanes do not provide pin 40, so the USER4 signal cannot be
+    used.
+
 
 <!-------------------------------------------------------------------->
 [Backplane]: ./RC6502%20Backplane/
@@ -188,3 +253,6 @@ The following boards may optionally use this line as an output:
 [TIA]: ./RC6502%20TIA%20NTSC/
 [Terminal]: ./RC6502%20Terminal/
 [VDU]: ./RC6502%20VDU/
+
+[RC2014 bus]: https://smallcomputercentral.wordpress.com/documentation/specification-rc2014-bus/
+[RC2014-spec]: https://smallcomputercentral.files.wordpress.com/2018/09/modular-backplane-specification-v0-4-2018-09-19.pdf
