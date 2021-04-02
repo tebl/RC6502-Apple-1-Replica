@@ -17,7 +17,7 @@ Like the RC2014 I've decided to keep things very modular with each card more or 
 The full-sized system uses a 39-pin bus described in [`Bus.md`](Bus.md). The SBC supports the same bus, allowing you to use expansion cards with it; jumpers on the SBC allow you to disable any of the RAM, ROM, PIA and clock so that their functionality can be replaced by peripheral cards on the bus.
 
 In order to build a single board computer (SBC) of RC6502 you'll need the following modules:
-- [RC6502 SBC](https://github.com/tebl/RC6502/tree/master/RC6502%20Apple%201%20SBC) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_D_.html?inviteid=88707))
+- [RC6502 SBC](https://github.com/tebl/RC6502/tree/master/RC6502%20Apple%201%20SBC) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_H_.html?inviteid=88707))
 
 In order to build the complete full-sized RC6502 you'll need the following modules:
 - [Backplane](https://github.com/tebl/RC6502-Apple-1-Replica/tree/master/RC6502%20Backplane) ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_Replica__Backplane_module_revision_A_.html?inviteid=88707))
