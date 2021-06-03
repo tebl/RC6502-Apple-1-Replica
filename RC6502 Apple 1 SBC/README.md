@@ -36,37 +36,37 @@ This is the part list as it stands now, most should be easy to get a hold of fro
 
 Some vendors will have the same ICs in different form factors, the ones you want will often be specified as being in the form of a DIP/PDIP package. Usually you'll want sockets for each of the ICs as well, a bag of assorted sockets should be easily available without setting you back more than a couple bucks. With the sockets in place, you don't need to dread having to remove an IC later, this leads to easier fault finding and you can easily "borrow"  them for other projects later! For the pin headers, both male and female - if you can't find the exact pin count, just buy the longer versions and snip off the parts you don't need. Electrolytic capacitors have a max voltage rating, the cheapest are 16V and should be more than enough - you can use higher rated components if you want to, but note that these might be slightly bigger thought you'll probably be able to fit in there anyway. Personally I prefer the look of the monolithic capacitors over the regular ceramic ones, but either is fine!
 
-| Reference    | Item                                  | Count |
-| ------------ | ------------------------------------- | ----- |
-| PCB          | Fabricate yourself using Gerber files ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_D_.html?inviteid=88707)) |     1 |
-| U1           | 6502 CPU DIP-40, UM6502 or SY6502     |     1 |
-| U2           | 62256 Static RAM DIP-28               |     1 |
-| U3           | 74LS138 DIP                           |     1 |
-| U4           | 28C64 or 28C256 DIP-28, EEPROM        |     1 |
-| U5           | 74LS00 DIP                            |     1 |
-| U6           | NE555 DIP                             |     1 |
-| U7           | 74LS04 DIP                            |     1 |
-| U8           | MC6821P PIA DIP-40                    |     1 |
-| U9           | MCP23S17 DIP-28                       |     1 |
-| X1           | 1.000Mhz TTL Oscillator, (DIP 14)     |     1 |
-| R1,R6-R8,R10 | 3k3 (3300) ohm resistor               |     5 |
-| R2           | 1M ohm resistor                       |     1 |
-| R3           | 47k ohm resistor                      |     1 |
-| R4           | 1k ohm resistor                       |     1 |
-| R5           | 330 ohm resistor                      |     1 |
-| R9           | 10k ohm resistor                      |     1 |
-| D1           | 5mm LED diode, green or red color     |     1 |
-| J1, J8       | Single row, 2p right angle connector  |     2 |
-| J2           | 15p female pin headers                |     2 |
-| J3           | Single row, 39p right angle connector |     1 |
-| J4-J7        | Not needed, holes included with PCB   |     4 |
-| J9, J10      | Single row, 3p right angle connector  |     2 |
-| C1-C9, C11   | 100nF ceramic capacitor               |    10 |
-| C10          | 10uF 16V electrolytic capacitor       |     1 |
-| C12          | 10nF ceramic capacitor                |     1 |
-| SW1          | Momentary push button                 |     1 |
-|              | Jumpers for settings (CAP headers)    |     5 |
-| Nano         | Arduino Nano v3.0 with USB cable      |     1 |
+| Reference | Silkscreen | Item | Count | Socket (optional) |
+|---|---|---|---|---|
+| PCB | Single Board Computer rev H | Fabricate yourself using Gerber files ([order](https://www.pcbway.com/project/shareproject/RC6502_Apple_1_SBC__revision_H_.html?inviteid=88707)) | 1 |  |
+| U1 | CPU | 6502 CPU DIP-40, UM6502 or SY6502 | 1 | DIP40W |
+| U2 | RAM | 62256 Static RAM DIP-28 | 1 | DIP28W |
+| U3 | address decoding | 74LS138 DIP | 1 | DIP16N |
+| U4 | ROM | 28C64 or 28C256 DIP-28, EEPROM | 1 | DIP28W |
+| U5 | NAND gates | 74LS00 DIP | 1 | DIP14N |
+| U7 | Hex inverter | 74LS04 DIP | 1 | DIP14N |
+| U8 | like GPIO | MC6821P PIA DIP-40 | 1 | DIP40W |
+| U9 | Arduino I/O expander | MCP23S17 DIP-28 | 1 | DIP28N |
+| X1 | system clock | 1.000Mhz TTL Oscillator, (DIP 14) | 1 | OSC-4W-fullsize |
+| R1,R6-R8,R10 |  | 3k3 (3300) ohm resistor | 5 |  |
+| R2 |  | 1M ohm resistor | 1 |  |
+| R3 |  | 47k ohm resistor | 1 |  |
+| R4 |  | 1k ohm resistor | 1 |  |
+| R5 |  | 330 ohm resistor | 1 |  |
+| R9 |  | 10k ohm resistor | 1 |  |
+| D1 | "POWER" light | 5mm LED diode, green or red color | 1 |  |
+| J1, JP1 | VP GND, OSC_EN | Single row, 2p straight header | 2 |  |
+| J8 | USB POWER (to SBC from Nano) | Single row, 2p right angle connector | 1 |  |
+| J2 | Arduino Nano socket | 15p female pin headers | 2 |  |
+| J3 | (to backplane) | Single row, 39p right angle connector | 1 (optional) |  |
+| J4-J7 | (optional standoffs in each corner) | Not needed, holes included with PCB | 4 |  |
+| J9–J11, A13_W–A14_W | ROM/RAM/PIA_EN, A13/A14 | Single row, 3p straight header | 5 |  |
+| C1-C9, C11 |  | 100nF ceramic capacitor | 10 |  |
+| C10 |  | 10uF 16V electrolytic capacitor | 1 |  |
+| C12 |  | 10nF ceramic capacitor | 1 |  |
+| SW1 | RESET | Momentary push button | 1 |  |
+|  |  | Jumpers for settings (CAP headers) | up to 8 (depending on configuration) |  |
+| Nano (J2) |  | Arduino Nano v3.0 with USB cable | 1 |  |
 
 If you would like to have a copy of one or more modules, what you'll need to do is zip up the contents of the export directory for each module and give that to your favourite PCB fabrication plant. Personally I prefer to use [PCBWay](https://www.pcbway.com/setinvite.aspx?inviteid=88707), each module is only 5$ each and new accounts even get the first one free! Please use the supplied link when signing up to help me support this project, I'll get a small discount on future orders and hopefully I can afford to keep developing new and exciting modules. Some of the modules also have an order-link, using this you won't have to deal with the rather daunting PCB fabrication order forms so you know it'll work on the first order attempt!
 
@@ -76,6 +76,10 @@ Jumper Settings
 
 Revision F+ board jumpers are marked on the back of the board with a
 box around the pins that enable.
+
+- `USB_POWER`
+  - Shorted: power the SBC from USB supply to Arduino Nano (see below)
+  - Open: take power from `VCC` line of backplane connector, recommended with expansions
 
 - `OSC_EN`
   - Shorted: Use onboard clock. This connects pin 8 (OUT) of the
