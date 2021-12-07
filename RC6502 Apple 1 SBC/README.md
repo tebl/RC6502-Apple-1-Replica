@@ -88,20 +88,18 @@ box around the pins that enable.
     the expansion bus connector.
 
 - `VP GND`
-  - Shorted: WD65C02 CPU. Leaves pin 1 of the CPU (`V̅P̅` on the
-    WD65C02) floating.
-  - Open: Original MOS 6502, UM6502, SY6502, R65C02. Connects pin 1 of
-    the CPU to ground, providing an additional ground connection for
-    the CPU.
+  - Shorted: Original MOS 6502, UM6502, SY6502, R65C02. Connects pin 1 of the
+    CPU to ground, providing an additional ground connection for the CPU.
+  - Open: WD65C02 CPU. Leaves pin 1 of the CPU (`V̅P̅` on the WD65C02) floating.
 
 - `PIA_EN`
   - Top pair shorted: Enable PIA. Connects `CS1` to Vcc.
   - Bottom pair shorted: Disable PIA. Connects `CS1` to ground.
 
 - `RAM_EN`
-  - Left pair shorted: Enable RAM. Connects RAM `C̅S̅`/`O̅E̅` to address
+  - Left or upper pair shorted: Enable RAM. Connects RAM `C̅S̅`/`O̅E̅` to address
     decoding logic (`CS_RAM`).
-  - Right pair shorted: Disable RAM. Connects RAM `C̅S̅`/`O̅E̅` to Vcc.
+  - Right or lower pair shorted: Disable RAM. Connects RAM `C̅S̅`/`O̅E̅` to Vcc.
 
 - `ROM_EN`
   - Top pair shorted: Enable ROM. Connects ROM `C̅E̅`/`O̅E̅` to address
