@@ -1,0 +1,9 @@
+(sym_lib_table
+  (lib (name RC6502-Terminal-rescue)(type Legacy)(uri "${KIPRJMOD}/RC6502 Terminal-rescue.lib")(options "")(descr ""))
+  (lib (name rc6502_backplane)(type Legacy)(uri D:/owncloud/Documents/Projects/RC6502/Templates/rc6502_backplane.lib)(options "")(descr ""))
+  (lib (name mc6821)(type Legacy)(uri D:/owncloud/Documents/Projects/RC6502/common/library/mc6821.lib)(options "")(descr ""))
+  (lib (name atmega328_mcu)(type Legacy)(uri D:/ownCloud/Documents/Projects/RC6502/common/library/atmega328_mcu.lib)(options "")(descr ""))
+  (lib (name rca_plug)(type Legacy)(uri D:/ownCloud/Documents/Projects/RC6502/Templates/rca_plug.lib)(options "")(descr ""))
+  (lib (name link_power)(type Legacy)(uri D:/ownCloud/Documents/Projects/RC6502/common/library/link_power.lib)(options "")(descr ""))
+  (lib (name ps2_connector)(type Legacy)(uri ${KIPRJMOD}/library/ps2_connector.lib)(options "")(descr ""))
+)

@@ -1,4 +1,4 @@
-update=22/01/2020 13:23:30
+update=25.01.2022 22:15:45
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,49 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[eeschema]
-version=1
-LibDir=../Templates;../common/library
-[eeschema/libraries]
-LibName1=power
-LibName2=device
-LibName3=switches
-LibName4=relays
-LibName5=motors
-LibName6=transistors
-LibName7=conn
-LibName8=linear
-LibName9=regul
-LibName10=74xx
-LibName11=cmos4000
-LibName12=adc-dac
-LibName13=memory
-LibName14=xilinx
-LibName15=microcontrollers
-LibName16=dsp
-LibName17=microchip
-LibName18=analog_switches
-LibName19=motorola
-LibName20=texas
-LibName21=intel
-LibName22=audio
-LibName23=interface
-LibName24=digital-audio
-LibName25=philips
-LibName26=display
-LibName27=cypress
-LibName28=siliconi
-LibName29=opto
-LibName30=atmel
-LibName31=contrib
-LibName32=valves
-LibName33=D:/owncloud/Documents/Projects/RC6502/Templates/rc6502_backplane
-LibName34=D:/owncloud/Documents/Projects/RC6502/common/library/mc6821
-LibName35=atmega328_mcu
-LibName36=C:/Program Files/KiCad/share/kicad/library/switches
-LibName37=rca_plug
-LibName38=link_power
-LibName39=library/ps2_connector
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -78,3 +35,6 @@ SpiceUseNetNumbers=0
 LabSize=60
 [general]
 version=1
+[eeschema]
+version=1
+LibDir=
